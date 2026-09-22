@@ -1,0 +1,450 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>차량 상태 확인 · 2.5D 전개도</title><style>*{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:#193b63;background:#edf5fd}button,input{font:inherit}button{cursor:pointer}.stage{position:relative;width:min(100%,calc(100svh * 1.018));max-width:1400px;margin:auto;min-height:0;background:radial-gradient(ellipse at 53% 46%,#d9eafa 0,#edf6ff 51%,#f5f9fe 80%);overflow:hidden}.intro{position:absolute;left:3.7%;top:3.5%;z-index:2}.intro h1{font-size:32px;letter-spacing:-1.4px;margin:0 0 14px;color:#18365b}.intro p{font-size:16px;color:#63758c;line-height:1.8;margin:0}.car-svg{display:block;width:100%;height:auto}.legend{position:absolute;left:2.6%;top:19%;width:157px;padding:18px 16px;display:grid;gap:14px;background:#ffffffed;box-shadow:0 6px 30px #3d6c9d0a;border:1px solid #e1ecf7;border-radius:19px;z-index:2}.legend>div{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:700}.pin{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;color:white;background:#147ff4;box-shadow:inset 0 1px 5px #ffffff44;font-size:25px}.pin svg{width:21px;height:21px}.paint{background:#f32848}.both{background:repeating-linear-gradient(130deg,#ffda39 0 5px,#fff4ad 5px 8px)}.change{background:#24b56b}.other{background:#617487}.views{position:absolute;right:2.3%;top:10%;display:grid;gap:7px;width:94px;padding:13px;background:#ffffffef;border-radius:22px;box-shadow:0 6px 26px #416e9f0b;border:1px solid #e3edf8;z-index:2}.views button{border:0;background:transparent;color:#46617e;border-radius:12px;padding:10px 1px;font-size:13px;font-weight:700;display:grid;place-items:center;gap:5px}.views button.active{background:#dceeff;color:#087dfe}.views svg{width:35px;height:29px}.view-label{position:absolute;background:#ffffffc9;border:1px solid #dbeafa;padding:9px 18px;border-radius:24px;font-size:14px;font-weight:700;color:#285c9a;pointer-events:none}.front-label{top:21%;left:47%}.rear-label{bottom:3.4%;left:47%}.left-label{top:51%;left:17%}.right-label{top:58%;right:14%}.part{cursor:pointer;outline:none;transition:opacity .2s}.part:hover .surface,.part:focus-visible .surface,.part.selected .surface{stroke:#268cf4;stroke-width:1.6}.code-label{opacity:0}.part:focus-visible .code-label{opacity:1}#car-scene{transform-origin:center;transition:transform .45s}.detail-card{position:absolute;left:2.6%;bottom:7%;width:320px;display:flex;gap:15px;align-items:center;background:#fffffff2;padding:18px;border:1px solid #e1ebf6;border-radius:20px;box-shadow:0 8px 24px #426a9610;z-index:2}.detail-icon{width:72px;height:108px;flex-shrink:0;display:grid;place-items:center;border-radius:13px;background:linear-gradient(140deg,#bdddff,#78b6f4);color:#fff}.detail-icon svg{width:100%;height:100%;pointer-events:none}.detail-icon{overflow:hidden;background:linear-gradient(140deg,#edf6ff,#bad6ed)}.detail-card strong{font-size:17px;display:block;margin-bottom:8px}.detail-card span{font-size:13px;color:#6d7e92;line-height:1.8;display:block}.detail-card .detail-state{color:#0981fa;font-weight:600;margin-bottom:5px}.controls{position:absolute;right:2.7%;bottom:5%;display:flex;gap:10px;padding:12px;border-radius:20px;border:1px solid #e1ebf6;background:#ffffffed;box-shadow:0 8px 24px #426a9610;z-index:2}.controls button{border:1px solid #e6eff7;background:#fff;color:#254b75;height:43px;min-width:43px;border-radius:24px;font-size:28px}.controls #rotate{font-size:15px;padding:0 16px}.controls button:hover{background:#e9f3ff}.data-panel{max-width:1240px;margin:0 auto;padding:20px 30px 35px;color:#5a7390;font-size:13px}.data-panel summary{cursor:pointer}.data-panel form{display:flex;gap:15px;align-items:end;flex-wrap:wrap;padding-top:20px}.data-panel label{flex:1;min-width:180px}.data-panel input{display:block;width:100%;border:1px solid #cbddeb;padding:10px;border-radius:7px;margin-top:7px}.apply{border:0;border-radius:7px;background:#147ff4;color:white;padding:11px 22px}#input-message{color:#a2622f;padding-top:10px}#repair-list,#count{display:none}.data-note{font-size:12px;color:#8495a9;margin-top:16px}@media(max-width:800px){.stage{width:100%;min-height:0;padding-top:125px;padding-bottom:150px}.intro{left:22px;top:24px}.intro h1{font-size:25px}.intro p{font-size:13px}.legend{top:125px;left:12px;width:auto;padding:10px;gap:8px}.legend>div{font-size:0;gap:0}.pin{width:26px;height:26px;font-size:19px}.pin svg{width:16px;height:16px}.views{top:125px;right:10px;width:60px;padding:7px;gap:2px}.views button{font-size:10px;padding:6px 0}.views svg{width:25px;height:20px}.detail-card{left:14px;bottom:25px;width:calc(100% - 28px);padding:12px;max-width:350px}.detail-icon{height:68px;width:52px}.detail-card strong{font-size:15px}.detail-card span{font-size:12px}.controls{bottom:130px;right:12px;padding:6px;gap:5px}.controls button{height:32px;min-width:32px;font-size:23px}.controls #rotate{font-size:12px;padding:0 9px}.view-label{display:none}.car-svg{min-height:400px}}@media print{.controls,.views,.data-panel{display:none}.stage{min-height:0}}
+.embed-document,.embed{width:100%;height:100%;margin:0;overflow:hidden;background:transparent}.embed .stage{width:100%;height:100%;max-width:none;min-height:0;margin:0;padding:0;background:transparent}.embed .intro,.embed .legend,.embed .views,.embed .view-label,.embed .detail-card,.embed .data-panel,.embed .controls{display:none!important}.embed .car-svg{display:block;width:100%;height:100%;min-height:0}
+/* Report cards stay in normal flow so they never cover the vehicle. */
+.embed-document,.embed{height:auto}
+.embed .stage{height:auto;display:grid;grid-template-columns:210px minmax(0,1fr);gap:16px;padding:0 0 16px;overflow:visible}
+.embed .car-svg{grid-column:1 / -1;grid-row:1;height:auto;aspect-ratio:760 / 1070}
+.embed .legend,.embed .detail-card{display:flex!important;position:static;width:auto;max-width:none;margin:0;border:1px solid #dce8f5;border-radius:22px;box-shadow:none;background:#fff}
+.embed .legend{grid-column:1;grid-row:2;flex-direction:column;justify-content:center;padding:20px;gap:16px}
+.embed .legend>div{font-size:17px;gap:12px}
+.embed .legend>div:nth-child(n+4){display:none}
+.embed .pin{width:40px;height:40px;flex-shrink:0}
+.embed .pin svg{width:24px;height:24px}
+.embed .detail-card{grid-column:2;grid-row:2;padding:24px;gap:20px;min-width:0}
+.embed .detail-icon{width:96px;height:144px}
+.embed .detail-card strong{font-size:22px}
+.embed .detail-card span{font-size:16px;overflow-wrap:anywhere}
+@media(max-width:560px){
+ .embed .stage{grid-template-columns:minmax(0,1fr);gap:12px}
+ .embed .legend{grid-column:1;grid-row:2;flex-direction:row;flex-wrap:wrap;padding:14px;gap:14px}
+ .embed .legend>div{font-size:13px;gap:6px}
+ .embed .pin{width:30px;height:30px}
+ .embed .pin svg{width:18px;height:18px}
+ .embed .detail-card{grid-column:1;grid-row:3;padding:18px;gap:16px}
+ .embed .detail-card strong{font-size:19px}
+ .embed .detail-card span{font-size:14px}
+ .embed .detail-icon{width:76px;height:114px}
+}
+</style></head><body><main class="stage"><header class="intro"><h1>차량 상태 확인</h1><p>차량의 각 부위를 선택하면<br>상세 정보를 확인할 수 있습니다.</p></header><section class="legend" aria-label="수리 유형 범례"><div><span class="pin paint"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#paint-icon"/></svg></span>도장</div><div><span class="pin detach"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#detach-icon"/></svg></span>탈착</div><div><span class="pin both"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#paint-icon"/></svg></span>도장+탈착</div><div><span class="pin change">↻</span>교환</div><div><span class="pin other">!</span>기타</div></section><svg class="car-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 1120" role="group" aria-labelledby="diagram-title diagram-desc"><title id="diagram-title">승용차 외판패널 입체 전개도</title><desc id="diagram-desc">정면, 후면, 좌우 측면과 상단을 보여주는 승용차 전개도. 각 외판 부위를 선택하면 수리 이력이 표시됩니다.</desc><defs><linearGradient id="metal" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#ffffff"/><stop offset=".48" stop-color="#e6edf1"/><stop offset="1" stop-color="#aebdc9"/></linearGradient><linearGradient id="glass" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#bdd9e6"/><stop offset=".48" stop-color="#607f97"/><stop offset="1" stop-color="#334c63"/></linearGradient><linearGradient id="lamp" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#ffffff"/><stop offset=".48" stop-color="#e6f2fa"/><stop offset="1" stop-color="#aac1d1"/></linearGradient><linearGradient id="tail" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#f3bec0"/><stop offset=".48" stop-color="#c88691"/><stop offset="1" stop-color="#9f5e70"/></linearGradient><linearGradient id="detach" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#d7edff"/><stop offset=".48" stop-color="#88c8fc"/><stop offset="1" stop-color="#378fce"/></linearGradient><linearGradient id="paint" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#ffe0dd"/><stop offset=".48" stop-color="#fb9e99"/><stop offset="1" stop-color="#d35b5d"/></linearGradient><linearGradient id="both" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#fff6cc"/><stop offset=".48" stop-color="#f0d570"/><stop offset="1" stop-color="#c3a541"/></linearGradient><filter id="shadow" x="-40%" y="-40%" width="180%" height="200%"><feDropShadow dx="3" dy="12" stdDeviation="8" flood-color="#314b65" flood-opacity=".18"/></filter><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#dbe3ea"/></pattern><symbol id="detach-icon" viewBox="0 0 24 24"><path d="M14 4a6 6 0 0 0-7 7L2 16a3 3 0 0 0 5 5l6-6a6 6 0 0 0 7-8l-4 4-3-3 4-4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol><symbol id="paint-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="15" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17 6h4v8H11v7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></symbol><pattern id="both-stripes" width="13" height="13" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="5" height="13" fill="#fff" opacity=".5"/></pattern>
+<radialGradient id="pw-rubber" cx="30%" cy="23%" r="77%"><stop stop-color="#424950"/><stop offset=".44" stop-color="#21292f"/><stop offset=".76" stop-color="#11181d"/><stop offset=".92" stop-color="#070d12"/><stop offset="1" stop-color="#263138"/></radialGradient>
+<linearGradient id="pw-depth" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#0b141c"/><stop offset=".55" stop-color="#26323b"/><stop offset="1" stop-color="#050a0f"/></linearGradient>
+<linearGradient id="pw-rim" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f6fafc"/><stop offset=".18" stop-color="#b3c2cd"/><stop offset=".34" stop-color="#faffff"/><stop offset=".47" stop-color="#788892"/><stop offset=".66" stop-color="#b9c7d1"/><stop offset=".79" stop-color="#4b5862"/><stop offset="1" stop-color="#dde8ed"/></linearGradient>
+<radialGradient id="pw-cavity" cx="41%" cy="36%" r="66%"><stop stop-color="#53616b"/><stop offset=".55" stop-color="#29353f"/><stop offset=".85" stop-color="#101820"/><stop offset="1" stop-color="#03090d"/></radialGradient>
+<linearGradient id="pw-disc" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#69747a"/><stop offset=".42" stop-color="#adb4b5"/><stop offset="1" stop-color="#4c565d"/></linearGradient>
+<linearGradient id="pw-spoke" x1="0" y1="0" x2="1" y2=".5"><stop stop-color="#f3f9fd"/><stop offset=".28" stop-color="#c9d6df"/><stop offset=".48" stop-color="#7a8d9b"/><stop offset=".67" stop-color="#dce7ef"/><stop offset="1" stop-color="#667b8b"/></linearGradient>
+<linearGradient id="pw-spoke-edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#aabcc9"/><stop offset=".4" stop-color="#657a89"/><stop offset="1" stop-color="#273a48"/></linearGradient>
+<linearGradient id="pw-hub" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#e3ebef"/><stop offset=".32" stop-color="#b0bdc8"/><stop offset=".65" stop-color="#6e8393"/><stop offset="1" stop-color="#354957"/></linearGradient>
+<linearGradient id="pw-caliper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#aa5953"/><stop offset=".5" stop-color="#883e39"/><stop offset="1" stop-color="#4b2726"/></linearGradient>
+<path id="pw-spoke-shape" d="M-3.7-6.3 -9.7-25.5 -6.4-28.1 -1.6-14.7 1.7-14.7 5.2-28.2 8.6-26.3 3.6-6.3Z"/>
+<symbol id="premium-wheel" viewBox="-45 -45 90 90">
+<!-- Rubber shoulder, tread barrel and satin sidewall. -->
+<circle cy="3.5" r="40.4" fill="url(#pw-depth)" stroke="#071018" stroke-width=".8"/>
+<path d="M-37 14Q-27 39 0 41Q28 41 39 12" fill="none" stroke="#42505a" stroke-opacity=".4" stroke-width="1"/>
+<circle r="39.8" fill="url(#pw-rubber)" stroke="#293842" stroke-width=".75"/>
+<circle r="37.5" fill="none" stroke="#52616a" stroke-opacity=".3" stroke-width=".65"/>
+<circle r="34.5" fill="none" stroke="#090f14" stroke-width=".7"/>
+<circle r="33.3" fill="none" stroke="#69757b" stroke-opacity=".21" stroke-width=".4"/>
+
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(0.000)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(6.429)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(12.857)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(19.286)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(25.714)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(32.143)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(38.571)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(45.000)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(51.429)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(57.857)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(64.286)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(70.714)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(77.143)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(83.571)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(90.000)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(96.429)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(102.857)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(109.286)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(115.714)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(122.143)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(128.571)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(135.000)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(141.429)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(147.857)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(154.286)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(160.714)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(167.143)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(173.571)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(180.000)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(186.429)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(192.857)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(199.286)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(205.714)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(212.143)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(218.571)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(225.000)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(231.429)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(237.857)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(244.286)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(250.714)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(257.143)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(263.571)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(270.000)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(276.429)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(282.857)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(289.286)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(295.714)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(302.143)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(308.571)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(315.000)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(321.429)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(327.857)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(334.286)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(340.714)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(347.143)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(353.571)" fill="none" stroke="#0b1218" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-35.7-11.7A37.6 37.6 0 0 1-10.7-36" fill="none" stroke="#b4c0c6" stroke-opacity=".21" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M-28.1-20.1A34.5 34.5 0 0 1-6-34" fill="none" stroke="#a0adb4" stroke-opacity=".24" stroke-width=".5"/>
+<!-- Turned alloy lip and recessed brake rotor. -->
+<circle r="30.8" fill="url(#pw-rim)" stroke="#0c151c" stroke-width=".9"/>
+<circle r="29" fill="url(#pw-cavity)" stroke="#e5edf0" stroke-opacity=".65" stroke-width=".55"/>
+<circle cx=".6" cy=".8" r="23.6" fill="url(#pw-disc)" stroke="#1b262e" stroke-width=".8"/>
+<circle cx=".6" cy=".8" r="22.4" fill="none" stroke="#e5e8e7" stroke-opacity=".22" stroke-width=".3"/>
+<circle cx=".6" cy=".8" r="20.8" fill="none" stroke="#dbe1e1" stroke-opacity=".22" stroke-width=".35"/>
+<circle cx=".6" cy=".8" r="19.2" fill="none" stroke="#232e35" stroke-opacity=".25" stroke-width=".4"/>
+
+<circle cx="20.90" cy="0.80" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="20.21" cy="6.05" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="18.18" cy="10.95" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="14.95" cy="15.15" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="10.75" cy="18.38" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="5.85" cy="20.41" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="0.60" cy="21.10" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-4.65" cy="20.41" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-9.55" cy="18.38" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-13.75" cy="15.15" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-16.98" cy="10.95" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-19.01" cy="6.05" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-19.70" cy="0.80" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-19.01" cy="-4.45" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-16.98" cy="-9.35" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-13.75" cy="-13.55" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-9.55" cy="-16.78" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="-4.65" cy="-18.81" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="0.60" cy="-19.50" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="5.85" cy="-18.81" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="10.75" cy="-16.78" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="14.95" cy="-13.55" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="18.18" cy="-9.35" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="20.21" cy="-4.45" r=".6" fill="#26333a" opacity=".74"/>
+<circle cx="16.70" cy="3.35" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="13.27" cy="11.06" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="6.44" cy="16.02" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="-1.95" cy="16.90" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="-9.66" cy="13.47" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="-14.62" cy="6.64" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="-15.50" cy="-1.75" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="-12.07" cy="-9.46" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="-5.24" cy="-14.42" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="3.15" cy="-15.30" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="10.86" cy="-11.87" r=".5" fill="#36434c" opacity=".54"/>
+<circle cx="15.82" cy="-5.04" r=".5" fill="#36434c" opacity=".54"/>
+<path d="M17.5-14.7Q22-15 23.2-10.7L26.5 2.7Q26.8 6.6 22.8 8.2L17.3 8.6 15.9-12.8Z" fill="url(#pw-caliper)" stroke="#482a29" stroke-width=".6"/>
+<path d="M20-11.5 22.8-.5M19.3-6.7 21.8 4" stroke="#d3958f" stroke-opacity=".48" stroke-width=".65"/>
+<circle r="11.6" fill="#3d4b54" stroke="#1b2932" stroke-width=".5"/>
+<!-- Five split spokes: deep forged edge, brushed front and narrow bright bevel. -->
+
+<g transform="rotate(12)">
+<use href="#pw-spoke-shape" transform="translate(.65 1.1)" fill="#182b38"/>
+<use href="#pw-spoke-shape" fill="url(#pw-spoke-edge)" stroke="#192a36" stroke-width=".45"/>
+<path d="M-3.1-7.4 -8.8-25.2 -6.8-26.9 -1.4-13.1 2.2-13.4 5.7-27 7.5-25.6 2.9-7.4Z" fill="url(#pw-spoke)"/>
+<path d="M-3.1-8.8 -8.4-24.9 -6.9-26.4M2.2-13.4 5.9-26.9" fill="none" stroke="#f5fbff" stroke-width=".5" stroke-opacity=".9"/>
+<path d="M-.5-12.2 1.1-9.4 4.6-23.9" fill="none" stroke="#526777" stroke-width=".55"/>
+</g>
+<g transform="rotate(84)">
+<use href="#pw-spoke-shape" transform="translate(.65 1.1)" fill="#182b38"/>
+<use href="#pw-spoke-shape" fill="url(#pw-spoke-edge)" stroke="#192a36" stroke-width=".45"/>
+<path d="M-3.1-7.4 -8.8-25.2 -6.8-26.9 -1.4-13.1 2.2-13.4 5.7-27 7.5-25.6 2.9-7.4Z" fill="url(#pw-spoke)"/>
+<path d="M-3.1-8.8 -8.4-24.9 -6.9-26.4M2.2-13.4 5.9-26.9" fill="none" stroke="#f5fbff" stroke-width=".5" stroke-opacity=".9"/>
+<path d="M-.5-12.2 1.1-9.4 4.6-23.9" fill="none" stroke="#526777" stroke-width=".55"/>
+</g>
+<g transform="rotate(156)">
+<use href="#pw-spoke-shape" transform="translate(.65 1.1)" fill="#182b38"/>
+<use href="#pw-spoke-shape" fill="url(#pw-spoke-edge)" stroke="#192a36" stroke-width=".45"/>
+<path d="M-3.1-7.4 -8.8-25.2 -6.8-26.9 -1.4-13.1 2.2-13.4 5.7-27 7.5-25.6 2.9-7.4Z" fill="url(#pw-spoke)"/>
+<path d="M-3.1-8.8 -8.4-24.9 -6.9-26.4M2.2-13.4 5.9-26.9" fill="none" stroke="#f5fbff" stroke-width=".5" stroke-opacity=".9"/>
+<path d="M-.5-12.2 1.1-9.4 4.6-23.9" fill="none" stroke="#526777" stroke-width=".55"/>
+</g>
+<g transform="rotate(228)">
+<use href="#pw-spoke-shape" transform="translate(.65 1.1)" fill="#182b38"/>
+<use href="#pw-spoke-shape" fill="url(#pw-spoke-edge)" stroke="#192a36" stroke-width=".45"/>
+<path d="M-3.1-7.4 -8.8-25.2 -6.8-26.9 -1.4-13.1 2.2-13.4 5.7-27 7.5-25.6 2.9-7.4Z" fill="url(#pw-spoke)"/>
+<path d="M-3.1-8.8 -8.4-24.9 -6.9-26.4M2.2-13.4 5.9-26.9" fill="none" stroke="#f5fbff" stroke-width=".5" stroke-opacity=".9"/>
+<path d="M-.5-12.2 1.1-9.4 4.6-23.9" fill="none" stroke="#526777" stroke-width=".55"/>
+</g>
+<g transform="rotate(300)">
+<use href="#pw-spoke-shape" transform="translate(.65 1.1)" fill="#182b38"/>
+<use href="#pw-spoke-shape" fill="url(#pw-spoke-edge)" stroke="#192a36" stroke-width=".45"/>
+<path d="M-3.1-7.4 -8.8-25.2 -6.8-26.9 -1.4-13.1 2.2-13.4 5.7-27 7.5-25.6 2.9-7.4Z" fill="url(#pw-spoke)"/>
+<path d="M-3.1-8.8 -8.4-24.9 -6.9-26.4M2.2-13.4 5.9-26.9" fill="none" stroke="#f5fbff" stroke-width=".5" stroke-opacity=".9"/>
+<path d="M-.5-12.2 1.1-9.4 4.6-23.9" fill="none" stroke="#526777" stroke-width=".55"/>
+</g>
+<circle r="8.3" fill="url(#pw-hub)" stroke="#cad8e2" stroke-width=".55"/>
+<circle r="4.7" fill="#344956" stroke="#d5e1e7" stroke-width=".7"/>
+<circle r="3.6" fill="url(#pw-hub)" stroke="#718795" stroke-width=".35"/>
+<path d="M-2.5-.6 0-2.3 2.5-.6 0 1.7Z" fill="none" stroke="#d8e5ec" stroke-width=".5"/>
+
+<circle cx="0.00" cy="-6.60" r="1.05" fill="#253d4e" stroke="#d3e0e8" stroke-width=".3"/><circle cx="-0.20" cy="-6.85" r=".45" fill="#a5b9c8"/>
+<circle cx="6.28" cy="-2.04" r="1.05" fill="#253d4e" stroke="#d3e0e8" stroke-width=".3"/><circle cx="6.08" cy="-2.29" r=".45" fill="#a5b9c8"/>
+<circle cx="3.88" cy="5.34" r="1.05" fill="#253d4e" stroke="#d3e0e8" stroke-width=".3"/><circle cx="3.68" cy="5.09" r=".45" fill="#a5b9c8"/>
+<circle cx="-3.88" cy="5.34" r="1.05" fill="#253d4e" stroke="#d3e0e8" stroke-width=".3"/><circle cx="-4.08" cy="5.09" r=".45" fill="#a5b9c8"/>
+<circle cx="-6.28" cy="-2.04" r="1.05" fill="#253d4e" stroke="#d3e0e8" stroke-width=".3"/><circle cx="-6.48" cy="-2.29" r=".45" fill="#a5b9c8"/>
+<path d="M-27.6-10.5A29.5 29.5 0 0 1 13-26.5" fill="none" stroke="#fff" stroke-width=".85" stroke-opacity=".83" stroke-linecap="round"/>
+<path d="M28.6 7.8A29.6 29.6 0 0 1-15.7 25.1" fill="none" stroke="#e2edf3" stroke-width=".55" stroke-opacity=".55"/>
+<path d="M27.7-6.7 29-7" stroke="#ccd9e1" stroke-width="1.3"/>
+</symbol>
+<linearGradient id="side-pearl" x1="0" y1=".3" x2="1" y2=".55"><stop stop-color="#8ba0b2"/><stop offset=".07" stop-color="#dce7f0"/><stop offset=".18" stop-color="#f9fcff"/><stop offset=".48" stop-color="#fff"/><stop offset=".7" stop-color="#eef4fa"/><stop offset=".86" stop-color="#cad7e4"/><stop offset="1" stop-color="#8c9fb2"/></linearGradient><linearGradient id="side-edge"><stop stop-color="#233848"/><stop offset=".25" stop-color="#d6e3ed"/><stop offset=".53" stop-color="#fff"/><stop offset=".7" stop-color="#98afc1"/><stop offset="1" stop-color="#3c566a"/></linearGradient><linearGradient id="side-glass" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#132532"/><stop offset=".25" stop-color="#213b4e"/><stop offset=".6" stop-color="#3c5365"/><stop offset="1" stop-color="#101e29"/></linearGradient><linearGradient id="side-lens" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffb8bd"/><stop offset=".27" stop-color="#e0374e"/><stop offset=".6" stop-color="#a40925"/><stop offset=".8" stop-color="#f5616e"/><stop offset="1" stop-color="#4e1b2f"/></linearGradient><linearGradient id="side-handle"><stop stop-color="#334b5d"/><stop offset=".18" stop-color="#e3ecf4"/><stop offset=".46" stop-color="#fff"/><stop offset=".7" stop-color="#b1c3d1"/><stop offset="1" stop-color="#526e85"/></linearGradient><filter id="side-shadow" x="-.5" y="-.2" width="2" height="1.5"><feDropShadow dx="-6" dy="17" stdDeviation="10" flood-color="#285075" flood-opacity=".24"/></filter><linearGradient id="top-pearl" x1="0" y1="0" x2="1" y2=".12"><stop stop-color="#8093a5"/><stop offset=".035" stop-color="#dae4ef"/><stop offset=".105" stop-color="#ffffff"/><stop offset=".3" stop-color="#f4f7fc"/><stop offset=".63" stop-color="#ffffff"/><stop offset=".88" stop-color="#d3dfec"/><stop offset=".95" stop-color="#fbfdff"/><stop offset="1" stop-color="#71849a"/></linearGradient>
+<linearGradient id="top-hood" x1="0" y1="0" x2="1" y2=".36"><stop stop-color="#b7c7d7"/><stop offset=".08" stop-color="#f9fcff"/><stop offset=".28" stop-color="#ffffff"/><stop offset=".66" stop-color="#f9fbff"/><stop offset=".9" stop-color="#dee7f3"/><stop offset="1" stop-color="#9eafc2"/></linearGradient>
+<linearGradient id="top-roof" x1="0" y1=".1" x2="1" y2=".25"><stop stop-color="#aebfd0"/><stop offset=".06" stop-color="#f5f9fe"/><stop offset=".24" stop-color="#ffffff"/><stop offset=".72" stop-color="#fefeff"/><stop offset=".93" stop-color="#dbe5f1"/><stop offset="1" stop-color="#9eb0c4"/></linearGradient>
+<linearGradient id="top-deck" x1="0" y1="0" x2=".25" y2="1"><stop stop-color="#b9c8d9"/><stop offset=".15" stop-color="#ffffff"/><stop offset=".59" stop-color="#f6f9fd"/><stop offset=".82" stop-color="#cedbe9"/><stop offset="1" stop-color="#9cafc3"/></linearGradient>
+<linearGradient id="top-windshield" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#111d28"/><stop offset=".07" stop-color="#263748"/><stop offset=".31" stop-color="#394b59"/><stop offset=".6" stop-color="#223342"/><stop offset="1" stop-color="#101b25"/></linearGradient>
+<linearGradient id="top-sunroof" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#526576"/><stop offset=".28" stop-color="#2e4050"/><stop offset=".65" stop-color="#182631"/><stop offset="1" stop-color="#354958"/></linearGradient>
+<linearGradient id="top-sideglass" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0b1520"/><stop offset=".45" stop-color="#405568"/><stop offset=".78" stop-color="#1a2c3b"/><stop offset="1" stop-color="#09141d"/></linearGradient>
+<linearGradient id="top-chrome" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#263b4e"/><stop offset=".2" stop-color="#ccd9e7"/><stop offset=".39" stop-color="#ffffff"/><stop offset=".55" stop-color="#667f96"/><stop offset=".73" stop-color="#f8fcff"/><stop offset="1" stop-color="#5a7189"/></linearGradient>
+<linearGradient id="top-tail" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#3e1021"/><stop offset=".22" stop-color="#f84b62"/><stop offset=".45" stop-color="#ffbac2"/><stop offset=".49" stop-color="#f82a43"/><stop offset=".74" stop-color="#9e0924"/><stop offset="1" stop-color="#350c1b"/></linearGradient>
+<linearGradient id="top-specular" x1="0" y1="0" x2="1" y2=".15"><stop stop-color="#ffffff" stop-opacity="0"/><stop offset=".47" stop-color="#ffffff" stop-opacity=".56"/><stop offset=".58" stop-color="#ffffff" stop-opacity=".88"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+<linearGradient id="top-glass-reflection" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#dae9f5" stop-opacity=".36"/><stop offset=".4" stop-color="#b9d4eb" stop-opacity=".12"/><stop offset="1" stop-color="#b6d2e9" stop-opacity="0"/></linearGradient>
+<linearGradient id="top-edge-shade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#36506b" stop-opacity="0"/><stop offset=".76" stop-color="#3b5570" stop-opacity=".1"/><stop offset="1" stop-color="#2f455d" stop-opacity=".44"/></linearGradient>
+<filter id="top-contact" x="-35%" y="-10%" width="170%" height="130%"><feGaussianBlur stdDeviation="9"/></filter>
+<clipPath id="top-front-glass-clip"><path d="M278 319Q361 280 446 319L433 404Q363 390 292 404Z"/></clipPath>
+<clipPath id="top-rear-glass-clip"><path d="M290 577Q362 589 435 577L447 650Q368 677 278 650Z"/></clipPath>
+<clipPath id="top-roof-glass-clip"><rect x="310" y="425" width="105" height="91" rx="13"/></clipPath>
+
+<linearGradient id="fr-pearl" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#ecf2f9"/><stop offset=".17" stop-color="#ffffff"/><stop offset=".45" stop-color="#f6f8fc"/><stop offset=".61" stop-color="#d6e0ec"/><stop offset=".79" stop-color="#f9fbfe"/><stop offset="1" stop-color="#8b9cae"/></linearGradient>
+<linearGradient id="fr-hood" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f4f7fc"/><stop offset=".46" stop-color="#fff"/><stop offset=".9" stop-color="#d7e1ec"/><stop offset="1" stop-color="#a8b9cb"/></linearGradient>
+<linearGradient id="fr-side" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#74899c"/><stop offset=".13" stop-color="#dfe8f1"/><stop offset=".27" stop-color="#fff"/><stop offset=".49" stop-color="#e5ebf4"/><stop offset=".78" stop-color="#fff"/><stop offset="1" stop-color="#71869a"/></linearGradient>
+<linearGradient id="fr-blackglass" x1="0" y1="0" x2=".25" y2="1"><stop stop-color="#637385"/><stop offset=".15" stop-color="#344453"/><stop offset=".56" stop-color="#1d2b39"/><stop offset="1" stop-color="#0c1923"/></linearGradient>
+<linearGradient id="fr-chrome" x1="0" y1="0" x2=".14" y2="1"><stop stop-color="#fff"/><stop offset=".2" stop-color="#cbd6df"/><stop offset=".35" stop-color="#f7fcff"/><stop offset=".46" stop-color="#566773"/><stop offset=".55" stop-color="#ecf3f8"/><stop offset=".72" stop-color="#c7d4de"/><stop offset="1" stop-color="#374b5b"/></linearGradient>
+<linearGradient id="fr-tire" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#060d14"/><stop offset=".22" stop-color="#34414c"/><stop offset=".44" stop-color="#151f29"/><stop offset=".8" stop-color="#263541"/><stop offset="1" stop-color="#060c12"/></linearGradient>
+<linearGradient id="fr-lamp" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e7f2ff"/><stop offset=".18" stop-color="#738b9e"/><stop offset=".45" stop-color="#1c2c3b"/><stop offset=".7" stop-color="#172634"/><stop offset="1" stop-color="#d8e7f4"/></linearGradient>
+<radialGradient id="fr-lens"><stop stop-color="#cbe2f6"/><stop offset=".2" stop-color="#748fa5"/><stop offset=".39" stop-color="#263e52"/><stop offset=".66" stop-color="#091521"/><stop offset=".82" stop-color="#4e6d89"/><stop offset=".91" stop-color="#b6cadd"/><stop offset="1" stop-color="#162936"/></radialGradient>
+<linearGradient id="fr-red" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f798a2"/><stop offset=".13" stop-color="#a70927"/><stop offset=".35" stop-color="#f53648"/><stop offset=".52" stop-color="#c9142d"/><stop offset=".71" stop-color="#f75560"/><stop offset="1" stop-color="#4b1022"/></linearGradient>
+<linearGradient id="fr-highlight" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#fff" stop-opacity=".75"/><stop offset=".52" stop-color="#fff" stop-opacity=".09"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="fr-shadow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#152c41" stop-opacity="0"/><stop offset="1" stop-color="#152c41" stop-opacity=".35"/></linearGradient>
+<clipPath id="fr-grille-clip"><path d="M63 103Q126 95 189 103L179 128Q126 137 73 128Z"/></clipPath>
+<clipPath id="fr-windshield-clip"><path d="M48 27Q126 19 204 27L222 73Q126 69 30 73Z"/></clipPath></defs><circle cx="590" cy="565" r="442" fill="none" stroke="white" stroke-width="2"/><circle cx="590" cy="565" r="323" fill="none" stroke="#d5e8fa" stroke-width="2"/><g id="car-scene"><g id="geometry" transform="translate(220 120)"><g id="vehicle-details"><g id="premium-side-left" class="vehicle-side" data-side="left" transform=""><path d="M82 153C118 151 142 169 150 206L163 296C190 328 206 377 212 443L214 495C211 548 196 601 176 634L173 685Q159 731 122 735L82 720Q57 703 47 670L48 212Q45 181 59 158Z" fill="url(#side-pearl)" stroke="#586f83" stroke-width="1.2" filter="url(#side-shadow)"/>
+<path d="M158 301Q199 330 211 435L213 493Q211 568 176 625L157 594Z" fill="#172b3b" stroke="#e7f0f6" stroke-width="4"/>
+<path d="M160 326Q195 350 205 444L161 440Z" fill="url(#side-glass)" stroke="#708797" stroke-width="1"/>
+<path d="M161 472L207 480Q207 548 180 590L161 581Z" fill="url(#side-glass)" stroke="#708797" stroke-width="1"/>
+<path d="M165 333Q181 350 188 385L197 442L182 440Q175 374 165 348Z M166 483L181 487Q181 536 168 568Z" fill="#c9dfef" opacity=".13"/>
+<path d="M205 484Q204 551 177 600" fill="none" stroke="#7290a5" opacity=".7" stroke-width="2"/>
+<path d="M161 302Q202 343 214 445L215 497Q210 573 177 627" fill="none" stroke="#fff" stroke-width="2.2"/>
+<path d="M166 329Q175 345 181 368M176 615L169 628" fill="none" stroke="#a7bdce" stroke-width="2"/><g class="part" data-code="10" data-base="side-pearl" tabindex="0" role="button" aria-label="10 프론트펜더"><title>프론트펜더</title><path id="p10" class="surface" d="M82 153C118 151 142 169 150 206Q161 249 160 298L177 330L158 326H71L69 302C127 302 130 218 80 207L53 209L54 181Q54 162 82 153Z" fill="url(#side-pearl)" stroke="#7d91a4" stroke-width=".85"/><g pointer-events="none"><path d="M60 193Q71 163 107 169Q136 174 148 215L157 294L164 311" fill="none" stroke="#fff" stroke-width="3"/><path d="M58 206C132 185 143 299 69 310" fill="none" stroke="#a1b3c1" stroke-width="3"/><path d="M81 157L119 169L115 189L67 183Z" fill="#d4e4f0" stroke="#7c97ac" stroke-width=".8"/><path d="M78 161L112 171L109 181L72 176Z" fill="#f9fdff"/><path d="M145 234L150 282" stroke="#a9bece" fill="none" stroke-width="2"/></g></g><g class="part" data-code="06" data-base="side-pearl" tabindex="0" role="button" aria-label="06 프론트도어"><title>프론트도어</title><path id="p06" class="surface" d="M72 328L157 328L158 448Q120 451 72 455Z" fill="url(#side-pearl)" stroke="#7d91a4" stroke-width=".85"/><g pointer-events="none"><path d="M79 333L79 448M84 335L143 335" stroke="#fff" stroke-width="2"/><path d="M89 333L91 443" stroke="#8a9db1" stroke-width=".7" opacity=".45"/><path d="M98 340Q134 338 147 352L150 421Q113 411 96 435Z" fill="#fff" opacity=".2"/><ellipse cx="140" cy="421" rx="6" ry="18" fill="#6f899d" opacity=".15"/><rect x="138" y="404" width="7" height="32" rx="3.5" fill="url(#side-handle)" stroke="#6b8293" stroke-width=".8"/><path d="M140 407V430" stroke="#fff" stroke-width="1.5"/></g></g><g class="part" data-code="08" data-base="side-pearl" tabindex="0" role="button" aria-label="08 리어도어"><title>리어도어</title><path id="p08" class="surface" d="M72 459Q115 455 158 454L158 591L141 586L72 527Z" fill="url(#side-pearl)" stroke="#7d91a4" stroke-width=".85"/><g pointer-events="none"><path d="M79 464V523L142 579" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M89 461V519L143 567" fill="none" stroke="#9aaec0" stroke-width=".65" opacity=".6"/><path d="M98 463L150 462V554L98 523Z" fill="#fff" opacity=".2"/><ellipse cx="140" cy="550" rx="6" ry="18" fill="#6f899d" opacity=".15"/><rect x="138" y="534" width="7" height="32" rx="3.5" fill="url(#side-handle)" stroke="#6b8293" stroke-width=".8"/><path d="M140 537V559" stroke="#fff" stroke-width="1.5"/></g></g><g class="part" data-code="12" data-base="side-pearl" tabindex="0" role="button" aria-label="12 리어펜더"><title>리어펜더</title><path id="p12" class="surface" d="M71 531L140 591L174 605L191 577L205 570Q195 608 173 637V681Q160 727 122 735L81 720Q62 708 53 686L52 644C128 649 132 546 60 551L61 531Z" fill="url(#side-pearl)" stroke="#7d91a4" stroke-width=".85"/><g pointer-events="none"><path d="M53 549C134 529 147 650 57 652" fill="none" stroke="#b2c3d1" stroke-width="3"/><path d="M67 650Q77 694 115 721Q149 719 165 679" fill="none" stroke="#fff" stroke-width="3"/><path d="M111 643L147 637L141 676L103 680Z" fill="#fff" opacity=".34"/><path d="M90 693L113 708L121 732L104 726L91 713Z" fill="url(#side-lens)" stroke="#783649" stroke-width=".8"/><path d="M96 698L108 708L115 724" fill="none" stroke="#ffb9bd" stroke-width="1.8"/><path d="M64 697L79 713L103 730L99 736L78 726L58 708Z" fill="#314959"/><path d="M67 700L82 715L98 726" fill="none" stroke="#92a7b8" stroke-width="2"/></g></g><g class="part" data-code="25" data-base="side-edge" tabindex="0" role="button" aria-label="25 사이드스텝"><title>사이드스텝</title><path id="p25" class="surface" d="M59 328H69V533L60 540L56 523V339Z" fill="url(#side-edge)" stroke="#7d91a4" stroke-width=".85"/><path d="M61 334V520" fill="none" stroke="#fff" stroke-width="2" pointer-events="none"/></g><g class="part" data-code="27" data-base="side-glass" tabindex="0" role="button" aria-label="27 센터필러"><title>센터필러</title><path id="p27" class="surface" d="M160 448L210 457L211 475L160 467Z" fill="url(#side-glass)" stroke="#7d91a4" stroke-width=".85"/><path d="M163 452L207 461" stroke="#b1c5d5" stroke-width="1.5" pointer-events="none"/></g><path d="M163 304Q151 296 151 316L157 334L172 341L177 333Z" fill="url(#side-pearl)" stroke="#70879a" stroke-width="1"/><path d="M155 306L154 319L171 333" fill="none" stroke="#fff" stroke-width="2"/><path d="M68 315L67 534" stroke="#7790a3" stroke-width="1.1" fill="none"/><use href="#premium-wheel" x="29" y="211" width="88" height="88"/><use href="#premium-wheel" x="29" y="554" width="88" height="88"/></g><g id="premium-side-right" class="vehicle-side" data-side="right" transform="translate(726 7) scale(-1 1)"><path d="M82 153C118 151 142 169 150 206L163 296C190 328 206 377 212 443L214 495C211 548 196 601 176 634L173 685Q159 731 122 735L82 720Q57 703 47 670L48 212Q45 181 59 158Z" fill="url(#side-pearl)" stroke="#586f83" stroke-width="1.2" filter="url(#side-shadow)"/>
+<path d="M158 301Q199 330 211 435L213 493Q211 568 176 625L157 594Z" fill="#172b3b" stroke="#e7f0f6" stroke-width="4"/>
+<path d="M160 326Q195 350 205 444L161 440Z" fill="url(#side-glass)" stroke="#708797" stroke-width="1"/>
+<path d="M161 472L207 480Q207 548 180 590L161 581Z" fill="url(#side-glass)" stroke="#708797" stroke-width="1"/>
+<path d="M165 333Q181 350 188 385L197 442L182 440Q175 374 165 348Z M166 483L181 487Q181 536 168 568Z" fill="#c9dfef" opacity=".13"/>
+<path d="M205 484Q204 551 177 600" fill="none" stroke="#7290a5" opacity=".7" stroke-width="2"/>
+<path d="M161 302Q202 343 214 445L215 497Q210 573 177 627" fill="none" stroke="#fff" stroke-width="2.2"/>
+<path d="M166 329Q175 345 181 368M176 615L169 628" fill="none" stroke="#a7bdce" stroke-width="2"/><g class="part" data-code="11" data-base="side-pearl" tabindex="0" role="button" aria-label="11 프론트펜더"><title>프론트펜더</title><path id="p11" class="surface" d="M82 153C118 151 142 169 150 206Q161 249 160 298L177 330L158 326H71L69 302C127 302 130 218 80 207L53 209L54 181Q54 162 82 153Z" fill="url(#side-pearl)" stroke="#7d91a4" stroke-width=".85"/><g pointer-events="none"><path d="M60 193Q71 163 107 169Q136 174 148 215L157 294L164 311" fill="none" stroke="#fff" stroke-width="3"/><path d="M58 206C132 185 143 299 69 310" fill="none" stroke="#a1b3c1" stroke-width="3"/><path d="M81 157L119 169L115 189L67 183Z" fill="#d4e4f0" stroke="#7c97ac" stroke-width=".8"/><path d="M78 161L112 171L109 181L72 176Z" fill="#f9fdff"/><path d="M145 234L150 282" stroke="#a9bece" fill="none" stroke-width="2"/></g></g><g class="part" data-code="07" data-base="side-pearl" tabindex="0" role="button" aria-label="07 프론트도어"><title>프론트도어</title><path id="p07" class="surface" d="M72 328L157 328L158 448Q120 451 72 455Z" fill="url(#side-pearl)" stroke="#7d91a4" stroke-width=".85"/><g pointer-events="none"><path d="M79 333L79 448M84 335L143 335" stroke="#fff" stroke-width="2"/><path d="M89 333L91 443" stroke="#8a9db1" stroke-width=".7" opacity=".45"/><path d="M98 340Q134 338 147 352L150 421Q113 411 96 435Z" fill="#fff" opacity=".2"/><ellipse cx="140" cy="421" rx="6" ry="18" fill="#6f899d" opacity=".15"/><rect x="138" y="404" width="7" height="32" rx="3.5" fill="url(#side-handle)" stroke="#6b8293" stroke-width=".8"/><path d="M140 407V430" stroke="#fff" stroke-width="1.5"/></g></g><g class="part" data-code="09" data-base="side-pearl" tabindex="0" role="button" aria-label="09 리어도어"><title>리어도어</title><path id="p09" class="surface" d="M72 459Q115 455 158 454L158 591L141 586L72 527Z" fill="url(#side-pearl)" stroke="#7d91a4" stroke-width=".85"/><g pointer-events="none"><path d="M79 464V523L142 579" fill="none" stroke="#fff" stroke-width="2.2"/><path d="M89 461V519L143 567" fill="none" stroke="#9aaec0" stroke-width=".65" opacity=".6"/><path d="M98 463L150 462V554L98 523Z" fill="#fff" opacity=".2"/><ellipse cx="140" cy="550" rx="6" ry="18" fill="#6f899d" opacity=".15"/><rect x="138" y="534" width="7" height="32" rx="3.5" fill="url(#side-handle)" stroke="#6b8293" stroke-width=".8"/><path d="M140 537V559" stroke="#fff" stroke-width="1.5"/></g></g><g class="part" data-code="13" data-base="side-pearl" tabindex="0" role="button" aria-label="13 리어펜더"><title>리어펜더</title><path id="p13" class="surface" d="M71 531L140 591L174 605L191 577L205 570Q195 608 173 637V681Q160 727 122 735L81 720Q62 708 53 686L52 644C128 649 132 546 60 551L61 531Z" fill="url(#side-pearl)" stroke="#7d91a4" stroke-width=".85"/><g pointer-events="none"><path d="M53 549C134 529 147 650 57 652" fill="none" stroke="#b2c3d1" stroke-width="3"/><path d="M67 650Q77 694 115 721Q149 719 165 679" fill="none" stroke="#fff" stroke-width="3"/><path d="M111 643L147 637L141 676L103 680Z" fill="#fff" opacity=".34"/><path d="M90 693L113 708L121 732L104 726L91 713Z" fill="url(#side-lens)" stroke="#783649" stroke-width=".8"/><path d="M96 698L108 708L115 724" fill="none" stroke="#ffb9bd" stroke-width="1.8"/><path d="M64 697L79 713L103 730L99 736L78 726L58 708Z" fill="#314959"/><path d="M67 700L82 715L98 726" fill="none" stroke="#92a7b8" stroke-width="2"/></g></g><g class="part" data-code="26" data-base="side-edge" tabindex="0" role="button" aria-label="26 사이드스텝"><title>사이드스텝</title><path id="p26" class="surface" d="M59 328H69V533L60 540L56 523V339Z" fill="url(#side-edge)" stroke="#7d91a4" stroke-width=".85"/><path d="M61 334V520" fill="none" stroke="#fff" stroke-width="2" pointer-events="none"/></g><g class="part" data-code="28" data-base="side-glass" tabindex="0" role="button" aria-label="28 센터필러"><title>센터필러</title><path id="p28" class="surface" d="M160 448L210 457L211 475L160 467Z" fill="url(#side-glass)" stroke="#7d91a4" stroke-width=".85"/><path d="M163 452L207 461" stroke="#b1c5d5" stroke-width="1.5" pointer-events="none"/></g><path d="M163 304Q151 296 151 316L157 334L172 341L177 333Z" fill="url(#side-pearl)" stroke="#70879a" stroke-width="1"/><path d="M155 306L154 319L171 333" fill="none" stroke="#fff" stroke-width="2"/><path d="M68 315L67 534" stroke="#7790a3" stroke-width="1.1" fill="none"/><use href="#premium-wheel" x="29" y="211" width="88" height="88"/><use href="#premium-wheel" x="29" y="554" width="88" height="88"/></g>
+<g id="top-vehicle" stroke-linejoin="round">
+ <!-- The body is modelled as a continuous pearl-painted shell, with independent repair surfaces above it. -->
+ <path d="M258 217Q265 158 334 151H396Q469 159 479 223L488 372L482 665Q473 732 404 741H320Q251 732 243 665L240 370Z" fill="#224867" opacity=".28" filter="url(#top-contact)" transform="translate(5 12)" pointer-events="none"/>
+ <g fill="#111e2a" stroke="#09121b" stroke-width="1.2" pointer-events="none"><path d="M243 231Q236 231 236 244L236 283Q237 293 244 293Z"/><path d="M480 231Q488 231 488 244L489 283Q487 293 481 293Z"/><path d="M241 612Q235 612 235 625V673Q237 683 244 683Z"/><path d="M481 611Q489 611 489 625V673Q487 683 480 683Z"/></g>
+ <path d="M248 232Q249 181 287 158Q313 144 363 146Q413 144 440 158Q478 181 480 232L486 381L481 650Q479 704 447 722Q420 737 363 735Q308 737 280 722Q247 704 246 650L240 381Z" fill="url(#top-pearl)" stroke="#6f8298" stroke-width="1.3"/>
+ <path d="M252 232Q254 184 291 162Q323 150 362 150Q404 150 436 162Q473 184 476 232" fill="none" stroke="#ffffff" stroke-width="2.4" pointer-events="none"/>
+ <path d="M247 271Q241 389 245 532L249 653Q249 689 267 708L263 653L258 427Z" fill="#8fa4ba" opacity=".66" pointer-events="none"/>
+ <path d="M480 272Q487 389 481 532L477 653Q477 689 459 708L463 653L468 427Z" fill="#8b9fb5" opacity=".55" pointer-events="none"/>
+ <path d="M251 278L252 466L257 650Q258 687 273 703" fill="none" stroke="#ffffff" stroke-width="3" opacity=".88" pointer-events="none"/>
+ <path d="M475 278L475 466L469 651Q468 687 454 703" fill="none" stroke="#fafdff" stroke-width="2.5" opacity=".9" pointer-events="none"/>
+ <!-- Narrow side glazing and pillars establish the roof's raised plane. -->
+ <g pointer-events="none"><path d="M276 323Q287 370 286 415L278 563Q273 602 264 620L263 420Q261 365 266 340Z" fill="url(#top-sideglass)" stroke="#1b2937" stroke-width="2"/><path d="M449 323Q438 371 440 415L447 563Q454 602 462 620L464 420Q466 365 460 340Z" fill="url(#top-sideglass)" stroke="#1b2937" stroke-width="2"/>
+ <path d="M271 342Q280 371 279 415L273 550L268 584L268 418Z" fill="#7891a7" opacity=".31"/><path d="M455 342Q446 371 447 415L452 550L458 584L458 418Z" fill="#7c94ac" opacity=".24"/>
+ <path d="M284 406L272 548M440 406L454 548" stroke="#e6f1f9" stroke-width="1.2" opacity=".35"/>
+ <path d="M264 471L282 467L281 482L264 487Z M445 467L463 471V487L445 482Z" fill="#111e2a"/>
+ <path d="M261 397L259 530L263 639M465 397L467 530L463 639" fill="none" stroke="#72899e" stroke-width=".9"/>
+ <path d="M260 480L261 584M466 480L465 584" stroke="#ffffff" stroke-width="1.4"/>
+ <path d="M265 631Q280 606 289 572M462 631Q447 606 438 572" fill="none" stroke="#839bb1" stroke-width="1.2"/>
+ <path d="M270 625Q286 598 293 572M457 625Q441 598 434 572" fill="none" stroke="#ffffff" stroke-width="3.2"/>
+ <g stroke="#6c8298" stroke-width=".7" fill="url(#top-chrome)"><rect x="248" y="427" width="4" height="24" rx="2"/><rect x="250" y="555" width="4" height="24" rx="2"/><rect x="475" y="427" width="4" height="24" rx="2"/><rect x="473" y="555" width="4" height="24" rx="2"/></g></g>
+ <g class="part" data-code="03" data-base="top-hood" tabindex="0" role="button" aria-label="03 보닛"><title>03 보닛</title><path id="p03" class="surface" d="M269 185Q278 160 311 154Q362 145 414 154Q447 160 457 185L469 305L446 320Q364 288 278 320L256 305Z" fill="url(#top-hood)" stroke="#8799ac" stroke-width=".95"/>
+ <g pointer-events="none"><path d="M310 156Q288 206 278 300L296 296Q306 215 331 152Z" fill="#ffffff" opacity=".62"/><path d="M406 152Q430 212 446 311L454 311Q451 240 435 162Z" fill="#bbccde" opacity=".38"/><path d="M302 158Q285 218 277 299" fill="none" stroke="#ffffff" stroke-width="2.6"/><path d="M424 158Q440 218 448 300" fill="none" stroke="#7f97af" stroke-width=".7" opacity=".66"/><path d="M426 159Q442 218 450 300" fill="none" stroke="#ffffff" stroke-width="1.8" opacity=".9"/><path d="M277 300Q362 276 448 300" fill="none" stroke="#c5d2e1" stroke-width="1.5"/><path d="M299 166Q357 154 423 165" fill="none" stroke="#ffffff" stroke-width="1.9"/><path d="M332 160L318 280L367 283L387 155Z" fill="url(#top-specular)" opacity=".48"/></g></g>
+ <!-- Slim headlamp lenses visible from above. -->
+ <g pointer-events="none"><path d="M261 199Q268 176 288 165L281 180L269 211L259 222Z" fill="#455b70" stroke="#687d92" stroke-width=".8"/><path d="M465 199Q458 176 438 165L445 180L457 211L467 222Z" fill="#455b70" stroke="#687d92" stroke-width=".8"/><path d="M264 197Q270 181 282 173L275 190L264 211Z M462 197Q456 181 444 173L451 190L462 211Z" fill="#e1effa"/><path d="M262 212L275 187M464 212L451 187" stroke="#ffffff" stroke-width="2.2"/><path d="M283 151Q363 141 442 154" stroke="#bfcede" stroke-width=".6" fill="none"/>
+ <path d="M273 317Q363 278 452 317L437 411Q362 395 287 411Z" fill="#101b26" stroke="#7b8d9f" stroke-width=".9"/></g>
+ <g class="part" data-code="14" data-base="top-windshield" tabindex="0" role="button" aria-label="14 앞유리"><title>14 앞유리</title><path id="p14" class="surface" d="M278 319Q361 280 446 319L433 404Q363 390 292 404Z" fill="url(#top-windshield)" stroke="#0e1a25" stroke-width="1.2"/>
+ <g clip-path="url(#top-front-glass-clip)" pointer-events="none"><path d="M285 340Q363 313 441 340L437 368Q363 341 291 368Z" fill="#121f2a" opacity=".6"/>
+ <g fill="#71808b" opacity=".14" stroke="#a0b1bc" stroke-width=".8"><path d="M305 394L305 365Q306 354 315 354H331Q340 354 341 365L345 401Z"/><path d="M381 402L385 365Q386 354 395 354H411Q420 354 421 365L421 394Z"/><rect x="312" y="352" width="24" height="12" rx="5"/><rect x="390" y="352" width="24" height="12" rx="5"/></g>
+ <ellipse cx="323" cy="372" rx="15" ry="12" fill="none" stroke="#a2b4c1" stroke-width="2" opacity=".13"/><path d="M311 373L323 378L335 373M323 378V382" fill="none" stroke="#a2b4c1" stroke-width="1.5" opacity=".11"/>
+ <path d="M278 316Q338 289 393 303L334 406L288 410Z" fill="url(#top-glass-reflection)"/><path d="M301 315L337 304L295 402L288 403Z" fill="#e8f4ff" opacity=".065"/><path d="M415 310L437 316L424 400L398 398Z" fill="#b7d5eb" opacity=".09"/>
+ <path d="M285 326Q362 294 440 326" fill="none" stroke="#d4e5f1" stroke-width="1" opacity=".33"/><path d="M305 331Q365 311 432 329" fill="none" stroke="#e6f2fb" stroke-width="8" opacity=".035"/><path d="M292 396Q346 386 382 392M371 392Q406 390 432 398" fill="none" stroke="#060f17" stroke-width="2.4"/><path d="M298 394Q346 385 381 391M375 390Q405 389 430 396" fill="none" stroke="#70889a" stroke-width=".6" opacity=".6"/><rect x="354" y="315" width="18" height="7" rx="2.5" fill="#111e29" opacity=".85"/></g></g>
+ <g class="part" data-code="16" data-base="top-roof" tabindex="0" role="button" aria-label="16 루프"><title>16 루프</title><path id="p16" class="surface" d="M291 405Q362 389 434 405L439 578Q363 593 286 578Z" fill="url(#top-roof)" stroke="#7c90a5" stroke-width="1.1"/>
+ <g pointer-events="none"><path d="M295 411L291 568Q297 577 306 578L305 413Z" fill="#ffffff" opacity=".77"/><path d="M427 410L432 570Q427 578 420 579L419 413Z" fill="#b8c9dc" opacity=".33"/><path d="M298 410L295 564M428 410L433 566" fill="none" stroke="#ffffff" stroke-width="1.7"/><path d="M295 575Q363 587 434 575" stroke="#ffffff" stroke-width="1.7" fill="none"/><path d="M320 408L319 419M406 409L408 419" stroke="#ffffff" stroke-width="3" opacity=".65"/><path d="M324 526L314 572L369 581L389 523Z" fill="url(#top-specular)" opacity=".16"/></g></g>
+ <g class="part" data-code="15" data-base="top-sunroof" tabindex="0" role="button" aria-label="15 선루프"><title>15 선루프</title><rect x="307.5" y="422.5" width="110" height="96" rx="15" fill="#141e28"/><rect id="p15" class="surface" x="310" y="425" width="105" height="91" rx="13" fill="url(#top-sunroof)" stroke="#60778c" stroke-width=".9"/>
+ <g clip-path="url(#top-roof-glass-clip)" pointer-events="none"><path d="M312 433Q342 422 367 428L344 516H311Z" fill="url(#top-glass-reflection)" opacity=".6"/><path d="M399 425H408L405 516H388Z" fill="#a7c7e1" opacity=".065"/><path d="M324 510L326 485Q327 477 335 477H346Q354 477 355 485L356 516M371 516L372 485Q373 477 381 477H392Q400 477 401 485L403 510" fill="#8397a7" opacity=".075"/><path d="M314 438V502Q314 510 322 511" fill="none" stroke="#b7ccdd" stroke-width="1.3" opacity=".2"/><path d="M319 429H400" stroke="#c4d8e7" stroke-width="1" opacity=".15"/></g></g>
+ <path d="M287 573Q363 588 439 573L451 652Q368 682 274 652Z" fill="#172330" stroke="#72889e" stroke-width=".7" pointer-events="none"/>
+ <g class="part" data-code="19" data-base="top-windshield" tabindex="0" role="button" aria-label="19 리어유리"><title>19 리어유리</title><path id="p19" class="surface" d="M290 577Q362 589 435 577L447 650Q368 677 278 650Z" fill="url(#top-windshield)" stroke="#14202c" stroke-width="1.2"/>
+ <g clip-path="url(#top-rear-glass-clip)" pointer-events="none"><path d="M295 639Q363 621 436 639L441 653Q367 671 284 653Z" fill="#60717f" opacity=".12"/><g fill="#879aaa" opacity=".10"><path d="M304 639V623Q304 618 310 618H330Q336 618 336 623V637Z"/><path d="M388 637V623Q388 618 394 618H414Q420 618 420 623V639Z"/><path d="M350 634V624Q350 620 355 620H373Q378 620 378 624V634Z"/></g>
+ <path d="M302 576L346 583L318 663L283 652Z" fill="url(#top-glass-reflection)" opacity=".65"/><path d="M404 580L423 578L441 650L415 657Z" fill="#91b4cf" opacity=".1"/>
+ <g fill="none" stroke="#7890a3" stroke-width=".6" opacity=".2"><path d="M289 593Q362 605 437 593M287 604Q362 617 439 604M285 616Q362 629 441 616M283 628Q362 641 443 628M281 640Q362 654 445 640"/></g><path d="M291 580Q363 592 434 580" stroke="#b4c9d9" stroke-width="1" fill="none" opacity=".38"/><path d="M341 650Q363 654 385 651" fill="none" stroke="#98132e" stroke-width="2.5" opacity=".75"/></g></g>
+ <g class="part" data-code="05" data-base="top-deck" tabindex="0" role="button" aria-label="05 백도어"><title>05 백도어</title><path id="p05" class="surface" d="M277 653Q363 680 449 653L458 695Q440 715 405 717H321Q286 715 269 695Z" fill="url(#top-deck)" stroke="#7e92a8" stroke-width="1"/>
+ <g pointer-events="none"><path d="M282 658Q362 683 443 658L449 683Q363 705 276 682Z" fill="#ffffff" opacity=".28"/><path d="M281 659Q363 684 444 659" fill="none" stroke="#ffffff" stroke-width="2.2"/><path d="M277 689Q362 715 450 689" fill="none" stroke="#c1cfde" stroke-width="1.1"/><path d="M281 692Q363 716 447 692" fill="none" stroke="#ffffff" stroke-width="1.7"/><path d="M332 703Q363 708 395 703" fill="none" stroke="#7a8e9f" stroke-width=".65"/><ellipse cx="363" cy="706" rx="4.1" ry="2.4" fill="url(#top-chrome)"/></g></g>
+ <!-- Rear quarter lights wrap around the curved body, with a dark bezel and separate LED guide. -->
+ <g pointer-events="none"><path d="M252 675Q260 698 279 704L313 714L311 721Q274 714 259 704Z" fill="url(#top-tail)" stroke="#522032" stroke-width="1"/><path d="M475 675Q467 698 448 704L414 714L416 721Q453 714 468 704Z" fill="url(#top-tail)" stroke="#522032" stroke-width="1"/><path d="M256 685Q264 699 281 705L308 713M471 685Q464 699 446 705L419 713" stroke="#ff8092" stroke-width="2" fill="none"/><path d="M258 690Q266 703 282 708L307 715M469 690Q461 703 445 708L420 715" stroke="#ff243f" stroke-width="1.5" fill="none"/>
+ <path d="M266 711Q306 736 363 732Q420 736 460 711L453 723Q421 739 363 737Q306 739 273 723Z" fill="url(#top-edge-shade)"/>
+ <path d="M274 719Q312 733 363 732Q414 733 452 719" stroke="#ffffff" stroke-width="2" fill="none" opacity=".7"/><path d="M297 730Q361 739 427 730" stroke="#314658" stroke-width="2.4" fill="none" opacity=".65"/>
+ <!-- Mirror stalk, black lower housing, chrome lip and pearl-painted cap. -->
+ <path d="M251 357L242 360L239 370L250 366Z M476 357L485 360L488 370L477 366Z" fill="#192a3a"/>
+ <path d="M242 351Q229 353 219 362L220 374Q232 377 245 366L248 359Z" fill="#263b4e" stroke="#172c3d" stroke-width="1"/>
+ <path d="M241 350Q228 352 219 361L220 369Q233 370 244 362L247 356Z" fill="url(#top-pearl)" stroke="#6c8297" stroke-width=".8"/>
+ <path d="M221 369Q233 369 244 361" fill="none" stroke="#f3fbff" stroke-width="1.8"/><path d="M223 359Q232 354 240 354" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+ <path d="M485 351Q498 353 508 362L507 374Q495 377 482 366L479 359Z" fill="#263b4e" stroke="#172c3d" stroke-width="1"/>
+ <path d="M486 350Q499 352 508 361L507 369Q494 370 483 362L480 356Z" fill="url(#top-pearl)" stroke="#6c8297" stroke-width=".8"/>
+ <path d="M506 369Q494 369 483 361" fill="none" stroke="#e3eff8" stroke-width="1.8"/><path d="M504 359Q495 354 487 354" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+ </g>
+</g>
+<g id="front-elevation" transform="translate(236 -84)" filter="url(#shadow)">
+<!-- Deep tread and sidewall contours read as rubber at illustration scale. -->
+<g fill="url(#fr-tire)" stroke="#14202b" stroke-width=".8"><path d="M5 134Q5 127 11 128H30V173Q30 182 23 183H9Q3 181 3 174Z"/><path d="M222 129H243Q249 129 249 136L250 175Q250 182 243 183H229Q223 182 222 175Z"/></g>
+<g stroke="#65727e" stroke-width=".7" opacity=".5" fill="none"><path d="M7 150L8 179"/><path d="M11 150L12 179"/><path d="M15 150L16 179"/><path d="M19 150L20 179"/><path d="M24 150L25 179"/><path d="M227 150L228 179"/><path d="M231 150L232 179"/><path d="M235 150L236 179"/><path d="M240 150L241 179"/><path d="M245 150L246 179"/></g>
+<!-- Shell, pillars and roof use distinct paint planes. -->
+<path d="M5 128L12 82L23 52Q35 21 46 15Q123 4 204 15Q218 20 230 52L242 82L248 129L241 159Q127 179 11 159Z" fill="url(#fr-side)" stroke="#506578" stroke-width=".9"/>
+<path d="M45 15Q126 5 207 16L216 30Q125 20 37 31Z" fill="url(#fr-hood)" stroke="#90a0b5" stroke-width=".75"/>
+<path d="M43 17Q121 8 203 17" fill="none" stroke="#fff" stroke-width="2.3"/>
+<path d="M46 26Q126 18 206 26L226 74Q126 70 26 74Z" fill="#0c1823" stroke="#8b9bab" stroke-width="1.1"/>
+<path d="M48 27Q126 19 204 27L222 73Q126 69 30 73Z" fill="url(#fr-blackglass)"/>
+<g clip-path="url(#fr-windshield-clip)" pointer-events="none">
+<path d="M65 71L68 52Q70 44 80 44H88Q100 43 104 56L105 71M149 71L151 52Q153 44 163 44H174Q185 46 186 59L188 72" fill="#233544" stroke="#667785" stroke-opacity=".22"/>
+<path d="M77 45V40Q76 37 81 36H89Q94 37 93 42V46M161 45V40Q160 37 165 36H173Q178 37 177 42V46" fill="#243440"/>
+<path d="M159 74C158 52 188 52 190 75" fill="none" stroke="#0d1823" stroke-width="4"/>
+<path d="M156 71Q167 60 180 63" stroke="#8194a2" stroke-width=".8" opacity=".27" fill="none"/>
+<path d="M39 29L119 20L58 74H29Z" fill="url(#fr-highlight)" opacity=".27"/>
+<path d="M133 22L185 23L120 72H75Z" fill="url(#fr-highlight)" opacity=".13"/>
+<path d="M33 69Q126 62 220 69L223 77H29Z" fill="#12212d"/>
+<path d="M44 68L96 66M159 66L212 69" fill="none" stroke="#4c606f" stroke-width="1.1"/>
+<path d="M127 24V35M117 36H135" stroke="#192a36" stroke-width="3"/>
+</g>
+<path d="M34 30L20 77L28 80L48 27M205 26L225 79L234 80L216 30" fill="url(#fr-hood)" stroke="#708398" stroke-width=".65"/>
+<!-- Wing mirrors: body, black lower shell, specular chrome edge. -->
+<g stroke="#243747" stroke-width=".8"><path d="M23 69L15 60L-13 58Q-21 60-20 67L-18 75L10 79L22 78Z" fill="#142733"/><path d="M16 61L-12 58Q-20 60-19 65L-17 69L12 71Z" fill="url(#fr-side)"/><path d="M229 69L239 60L265 58Q273 60 272 67L270 75L242 79L230 78Z" fill="#142733"/><path d="M239 61L265 58Q273 60 271 66L268 69L241 71Z" fill="url(#fr-side)"/></g>
+<path d="M-16 67L11 70M243 70L268 67" stroke="#fff" stroke-width=".65" fill="none"/>
+<!-- Hood curvature follows the windshield shoulder and grille. -->
+<path d="M24 78Q126 68 228 78L242 105L210 119H44L10 104Z" fill="url(#fr-hood)" stroke="#91a2b4" stroke-width=".8"/>
+<path d="M31 79Q62 93 70 102L53 102L24 85ZM221 79Q190 93 182 102L199 102L228 85Z" fill="#a8bace" opacity=".31"/>
+<path d="M32 80Q60 87 76 99M220 80Q192 87 176 99" fill="none" stroke="#fff" stroke-width="2"/>
+<path d="M65 76Q124 71 186 76L169 97Q125 93 82 97Z" fill="#fff" opacity=".68"/>
+<path d="M47 104Q126 95 205 104" stroke="#7e94a9" stroke-width=".8" fill="none"/>
+<g class="part" data-code="01" data-base="fr-pearl" tabindex="0" role="button" aria-label="01 프론트범퍼"><title>01 프론트범퍼</title>
+<path id="p01" class="surface" d="M9 102Q36 104 55 115L73 130Q126 141 179 130L197 115Q220 104 243 102L249 133L249 152Q242 166 223 168H28Q8 168 2 152L3 132Z" fill="url(#fr-pearl)" stroke="#6e8397" stroke-width=".85"/>
+<g pointer-events="none"><path d="M7 119Q24 124 46 123L64 143L52 154L28 155L6 146Z M245 119Q228 124 206 123L188 143L200 154L224 155L246 146Z" fill="#879baa" opacity=".28"/>
+<path d="M4 148L26 158L55 158L66 148H187L199 158H227L247 148L242 159Q232 168 218 167H32Q14 168 7 158Z" fill="url(#fr-shadow)"/>
+<path d="M13 117L45 121L60 141L54 147L15 147L9 142Z" fill="#10212d" stroke="#4a5c6b" stroke-width="1.5"/><path d="M207 121L239 117L243 142L237 147H198L192 141Z" fill="#10212d" stroke="#4a5c6b" stroke-width="1.5"/>
+<path d="M18 120L42 123L50 131L15 128ZM210 123L234 120L237 128L203 131Z" fill="#364a5a"/>
+<path d="M14 142L54 143M16 146L50 146M198 143L238 142M202 146L235 146" stroke="#637a8a" stroke-width=".8"/>
+<circle cx="29" cy="134" r="7" fill="url(#fr-lens)" stroke="#a6b9c9" stroke-width="1.1"/><circle cx="223" cy="134" r="7" fill="url(#fr-lens)" stroke="#a6b9c9" stroke-width="1.1"/>
+<path d="M59 151L68 142H183L193 151L192 160H60Z" fill="#132532"/><path d="M64 152H188M65 156H187" stroke="#566b7c" stroke-width=".7"/>
+<path d="M18 160Q126 171 236 160L232 164Q126 174 22 164Z" fill="#132533"/>
+<path d="M14 156L32 159H54M198 159H222L240 154" stroke="#fff" stroke-width="1.7" fill="none"/>
+<rect x="89" y="136" width="74" height="19" rx="2.2" fill="#ced9e4" stroke="#5f7488" stroke-width=".8"/><rect x="91" y="137" width="70" height="16" rx="1" fill="url(#fr-hood)"/><path d="M95 140H157" stroke="white" stroke-width=".6"/>
+<circle cx="70" cy="138" r="1.5" fill="none" stroke="#9cabbc" stroke-width=".6"/><circle cx="184" cy="138" r="1.5" fill="none" stroke="#9cabbc" stroke-width=".6"/>
+</g></g>
+<!-- Functional radiator grille retains code 20 and transparent lattice. -->
+<g class="part" data-code="20" data-base="fr-blackglass" tabindex="0" role="button" aria-label="20 라디에이터 그릴"><title>20 라디에이터 그릴</title>
+<path d="M58 101Q126 91 194 101L182 131Q126 141 70 131Z" fill="url(#fr-chrome)" stroke="#3d5062" stroke-width=".7"/>
+<path id="p20" class="surface" d="M63 103Q126 95 189 103L179 128Q126 137 73 128Z" fill="url(#fr-blackglass)" stroke="#192c3c" stroke-width="1"/>
+<g pointer-events="none" clip-path="url(#fr-grille-clip)"><path d="M64 98L67 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M64 98L67 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M75 98L78 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M75 98L78 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M86 98L89 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M86 98L89 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M97 98L100 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M97 98L100 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M108 98L111 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M108 98L111 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M119 98L122 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M119 98L122 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M130 98L133 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M130 98L133 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M141 98L144 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M141 98L144 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M152 98L155 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M152 98L155 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M163 98L166 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M163 98L166 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M174 98L177 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M174 98L177 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M185 98L188 136" fill="none" stroke="#0a141e" stroke-width="3"/><path d="M185 98L188 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M58 102Q126 107 194 102" fill="none" stroke="#0c1923" stroke-width="2.7"/><path d="M58 102Q126 107 194 102" fill="none" stroke="url(#fr-chrome)" stroke-width=".9"/><path d="M58 110Q126 115 194 110" fill="none" stroke="#0c1923" stroke-width="2.7"/><path d="M58 110Q126 115 194 110" fill="none" stroke="url(#fr-chrome)" stroke-width=".9"/><path d="M58 118Q126 123 194 118" fill="none" stroke="#0c1923" stroke-width="2.7"/><path d="M58 118Q126 123 194 118" fill="none" stroke="url(#fr-chrome)" stroke-width=".9"/><path d="M58 126Q126 131 194 126" fill="none" stroke="#0c1923" stroke-width="2.7"/><path d="M58 126Q126 131 194 126" fill="none" stroke="url(#fr-chrome)" stroke-width=".9"/></g>
+<path d="M63 102Q126 94 189 102M73 130Q126 139 179 130" stroke="#fff" stroke-width=".75" fill="none" opacity=".9" pointer-events="none"/>
+<ellipse cx="126" cy="110" rx="8" ry="9" fill="url(#fr-chrome)" stroke="#273e50" stroke-width=".6" pointer-events="none"/><ellipse cx="126" cy="110" rx="5.5" ry="6.5" fill="#244562" stroke="#e0edf9" stroke-width=".7" pointer-events="none"/><path d="M122 108L126 104L130 108L126 116Z" fill="none" stroke="#a8c7e0" stroke-width=".9" pointer-events="none"/>
+</g>
+<g class="part" data-code="21" data-base="fr-lamp" tabindex="0" role="button" aria-label="21 헤드램프"><title>21 헤드램프</title><path d="M11 90Q28 90 49 100L58 116L10 109Z" fill="#374e60" stroke="#9fb4c7" stroke-width="1.2"/><path id="p21" class="surface" d="M13 93Q32 94 47 102L54 112L13 106Z" fill="url(#fr-lamp)" stroke="#bdcbd8" stroke-width=".8"/><g pointer-events="none"><ellipse cx="24" cy="101" rx="6.8" ry="7.2" fill="url(#fr-lens)" stroke="#bdd0df" stroke-width="1"/><ellipse cx="40" cy="105" rx="5.2" ry="5.4" fill="url(#fr-lens)" stroke="#a1b7c7" stroke-width=".8"/><path d="M14 105L51 111" stroke="#e5f5ff" stroke-width="1.6"/><path d="M15 94L43 101" stroke="#fff" stroke-opacity=".7" stroke-width=".75"/><path d="M22 97L25 96M38 102L41 101" stroke="#edfaff" stroke-width="1.5"/><path d="M11 93L10 104" stroke="#f3c475" stroke-width="1.1"/></g></g><g class="part" data-code="22" data-base="fr-lamp" tabindex="0" role="button" aria-label="22 헤드램프" transform="translate(252 0) scale(-1 1)"><title>22 헤드램프</title><path d="M11 90Q28 90 49 100L58 116L10 109Z" fill="#374e60" stroke="#9fb4c7" stroke-width="1.2"/><path id="p22" class="surface" d="M13 93Q32 94 47 102L54 112L13 106Z" fill="url(#fr-lamp)" stroke="#bdcbd8" stroke-width=".8"/><g pointer-events="none"><ellipse cx="24" cy="101" rx="6.8" ry="7.2" fill="url(#fr-lens)" stroke="#bdd0df" stroke-width="1"/><ellipse cx="40" cy="105" rx="5.2" ry="5.4" fill="url(#fr-lens)" stroke="#a1b7c7" stroke-width=".8"/><path d="M14 105L51 111" stroke="#e5f5ff" stroke-width="1.6"/><path d="M15 94L43 101" stroke="#fff" stroke-opacity=".7" stroke-width=".75"/><path d="M22 97L25 96M38 102L41 101" stroke="#edfaff" stroke-width="1.5"/><path d="M11 93L10 104" stroke="#f3c475" stroke-width="1.1"/></g></g>
+</g>
+
+<g id="rear-elevation" transform="translate(236 782)" filter="url(#shadow)">
+<g fill="url(#fr-tire)" stroke="#13202b" stroke-width=".8"><path d="M6 82H31L30 123Q30 131 23 131H11Q4 130 4 124Z"/><path d="M221 82H246L248 124Q248 131 241 132H229Q222 131 222 124Z"/></g><g stroke="#6b7883" stroke-width=".6" opacity=".5"><path d="M8 107L8 129"/><path d="M12 107L12 129"/><path d="M17 107L17 129"/><path d="M22 107L22 129"/><path d="M27 107L27 129"/><path d="M225 107L225 129"/><path d="M230 107L230 129"/><path d="M235 107L235 129"/><path d="M240 107L240 129"/><path d="M244 107L244 129"/></g>
+<path d="M10 17L23 13Q40 7 52 7L200 7Q218 9 230 15L241 17L248 41L250 99Q246 114 231 117H22Q6 114 2 100L3 39Z" fill="url(#fr-side)" stroke="#61788e" stroke-width=".9"/>
+<path d="M46 8Q126 2 206 8L218 25Q126 31 34 25Z" fill="url(#fr-blackglass)" stroke="#768b9f" stroke-width=".6"/>
+<path d="M45 12Q124 7 207 12M39 18Q128 14 212 19" stroke="#91a2b3" opacity=".18" stroke-width=".7" fill="none"/>
+<path d="M24 12L40 9L28 26L13 26ZM213 9L229 12L239 26L224 26Z" fill="url(#fr-hood)" stroke="#8195a8" stroke-width=".5"/>
+<g class="part" data-code="04" data-base="fr-hood" tabindex="0" role="button" aria-label="04 트렁크리드"><title>04 트렁크리드</title>
+<path id="p04" class="surface" d="M15 22Q126 32 237 22L232 76Q126 89 20 76Z" fill="url(#fr-hood)" stroke="#8094a7" stroke-width=".9"/>
+<g pointer-events="none"><path d="M17 23Q126 35 235 23L234 28Q126 40 18 28Z" fill="#748ea2" opacity=".38"/>
+<path d="M18 22Q126 32 234 22" stroke="#fff" stroke-width="2" fill="none"/>
+<path d="M65 42Q126 37 187 42L182 72H71Z" fill="#afbfce" opacity=".31"/><path d="M68 42Q126 39 185 42L179 47H74Z" fill="#637a8e" opacity=".4"/>
+<rect x="79" y="43" width="95" height="28" rx="2.4" fill="#778c9f"/><rect x="81" y="44" width="91" height="25" rx="1.6" fill="url(#fr-pearl)" stroke="#f6f9ff" stroke-width=".7"/><path d="M87 46H166" stroke="#fff" stroke-width="1"/>
+<path d="M28 76Q126 88 224 76" stroke="#fff" stroke-width="1.5" fill="none"/>
+<path d="M72 39H180" stroke="url(#fr-chrome)" stroke-width="2.3"/><ellipse cx="126" cy="34" rx="4" ry="4.2" fill="url(#fr-chrome)" stroke="#667f93" stroke-width=".5"/><path d="M124 34L126 31L128 34L126 37Z" fill="#3d5b74"/>
+<path d="M28 69H43M210 69H225" stroke="#7a8c9f" stroke-width="1.4"/><path d="M28 68H43M210 68H225" stroke="#fff" stroke-width=".6"/>
+</g></g>
+<g class="part" data-code="02" data-base="fr-pearl" tabindex="0" role="button" aria-label="02 리어범퍼"><title>02 리어범퍼</title>
+<path id="p02" class="surface" d="M4 77Q126 94 248 77L250 98Q247 114 228 116H26Q6 114 2 98Z" fill="url(#fr-pearl)" stroke="#6e8498" stroke-width=".85"/>
+<g pointer-events="none"><path d="M8 80Q126 96 245 80" fill="none" stroke="#fff" stroke-width="1.3" opacity=".8"/>
+<path d="M5 94L26 103Q126 115 227 103L248 94L245 105Q239 116 225 116H27Q12 116 7 105Z" fill="url(#fr-shadow)"/>
+<path d="M24 108Q126 121 228 108L234 115Q126 125 18 115Z" fill="#1d303f" stroke="#677d8d" stroke-width=".75"/>
+<path d="M58 112L61 117M88 115L89 121M163 115L162 121M194 112L191 118" stroke="#536879" stroke-width="1.5"/>
+<path d="M12 95L42 98L41 101L12 99Z M210 98L240 95V99L211 101Z" fill="#a82b3a" stroke="#681929" stroke-width=".6"/>
+<path d="M14 96L40 99M212 99L238 96" stroke="#ffadac" stroke-width=".5"/>
+<path d="M28 113Q40 111 51 115L49 120H29Z M203 115Q214 111 226 113L225 120H205Z" fill="url(#fr-chrome)" stroke="#1b2e3e" stroke-width=".6"/><path d="M31 114L48 115L46 118H32Z M207 115L223 114L222 118H209Z" fill="#172834"/>
+<g fill="none" stroke="#9cacbc" stroke-width=".7"><circle cx="54" cy="94" r="1.8"/><circle cx="90" cy="97" r="1.8"/><circle cx="162" cy="97" r="1.8"/><circle cx="199" cy="94" r="1.8"/></g>
+<path d="M16 106L30 109M223 109L238 106" stroke="#f6fbff" stroke-width="1.1" fill="none"/>
+</g></g>
+<g class="part" data-code="23" data-base="fr-red" tabindex="0" role="button" aria-label="23 리어컴비네이션"><title>23 리어컴비네이션</title><path d="M9 39L67 43L67 64L11 59Z" fill="#2f3844" stroke="#b7c4d0" stroke-width="1.2"/><path id="p23" class="surface" d="M12 42L64 46V60L14 56Z" fill="url(#fr-red)" stroke="#761d31" stroke-width=".7"/><g pointer-events="none"><path d="M15 45L61 48V52L16 49Z" fill="#e1ebf0" stroke="#7f93a3" stroke-width=".5"/><path d="M18 45V50M23 46V50M29 46V51M35 47V51M41 47V52M47 48V52M53 48V53M59 48V53" stroke="#97aabc" stroke-width=".5"/><path d="M16 53L60 56" stroke="#ff8184" stroke-width="1.8"/><path d="M17 55L59 58" stroke="#f24554" stroke-width="1.4"/><path d="M47 44V61" stroke="#5b182a" stroke-width=".8"/><path d="M13 42L64 46" stroke="#ffafaf" stroke-width=".7"/><path d="M14 42L15 56" stroke="#ec7784" stroke-width="1"/></g></g><g class="part" data-code="24" data-base="fr-red" tabindex="0" role="button" aria-label="24 리어컴비네이션" transform="translate(252 0) scale(-1 1)"><title>24 리어컴비네이션</title><path d="M9 39L67 43L67 64L11 59Z" fill="#2f3844" stroke="#b7c4d0" stroke-width="1.2"/><path id="p24" class="surface" d="M12 42L64 46V60L14 56Z" fill="url(#fr-red)" stroke="#761d31" stroke-width=".7"/><g pointer-events="none"><path d="M15 45L61 48V52L16 49Z" fill="#e1ebf0" stroke="#7f93a3" stroke-width=".5"/><path d="M18 45V50M23 46V50M29 46V51M35 47V51M41 47V52M47 48V52M53 48V53M59 48V53" stroke="#97aabc" stroke-width=".5"/><path d="M16 53L60 56" stroke="#ff8184" stroke-width="1.8"/><path d="M17 55L59 58" stroke="#f24554" stroke-width="1.4"/><path d="M47 44V61" stroke="#5b182a" stroke-width=".8"/><path d="M13 42L64 46" stroke="#ffafaf" stroke-width=".7"/><path d="M14 42L15 56" stroke="#ec7784" stroke-width="1"/></g></g>
+</g>
+</g></g><g id="labels" pointer-events="none"></g></g></svg><span class="view-label front-label">앞면</span><span class="view-label rear-label">뒷면</span><span class="view-label left-label">좌측면</span><span class="view-label right-label">우측면</span><section class="detail-card" aria-label="선택한 부위 상세"><div id="detail-icon" class="detail-icon"></div><div id="selection" aria-live="polite"></div></section><span id="count"></span><div id="repair-list"></div></main><section class="data-panel"><details><summary>수리 코드 입력</summary><form id="data-form"><label>r502-20 · 탈착<input id="detach-input" value="07, 10, 20, 26"></label><label>r502-21 · 도장<input id="paint-input" value="02, 10, 26"></label><button class="apply" type="submit">도면에 적용</button></form><div id="input-message" aria-live="polite"></div><p class="data-note">교환·기타는 참고 범례입니다. 현재 데이터는 도장·탈착을 표시합니다. 17·18번 슬라이딩도어는 승용차 도면에서 제외됩니다.</p></details></section><script>
+const embeddedMode=new URLSearchParams(location.search).has('embed');
+if(embeddedMode){
+  document.body.classList.add('embed');
+  document.documentElement.classList.add('embed-document');
+  document.querySelector('.car-svg').setAttribute('viewBox','190 0 760 1070');
+}
+'use strict';
+const PART_NAMES = {"01": "프론트범퍼", "02": "리어범퍼", "03": "보닛", "04": "트렁크리드", "05": "백도어", "06": "프론트도어(좌)", "07": "프론트도어(우)", "08": "리어도어(좌)", "09": "리어도어(우)", "10": "프론트펜더(좌)", "11": "프론트펜더(우)", "12": "리어펜더(좌)", "13": "리어펜더(우)", "14": "앞유리", "15": "선루프", "16": "루프", "17": "슬라이딩도어(좌)", "18": "슬라이딩도어(우)", "19": "리어유리", "20": "라디에이터 그릴", "21": "헤드램프(좌)", "22": "헤드램프(우)", "23": "리어컴비네이션(좌)", "24": "리어컴비네이션(우)", "25": "사이드스텝(좌)", "26": "사이드스텝(우)", "27": "센터필러(좌)", "28": "센터필러(우)"};
+const LABEL_POSITIONS = {"01": [360, 116], "02": [359, 824], "03": [362, 227], "04": [362, 779], "05": [363, 700], "06": [113, 382], "07": [610, 392], "08": [113, 499], "09": [610, 509], "10": [135, 240], "11": [591, 248], "12": [137, 654], "13": [590, 662], "14": [362, 345], "15": [363, 457], "16": [362, 533], "19": [362, 621], "20": [363, 69], "21": [273, 77], "22": [455, 77], "23": [274, 780], "24": [451, 780], "25": [40, 429], "26": [690, 437], "27": [184, 463], "28": [541, 472]};
+Object.assign(LABEL_POSITIONS,{'01':[362,57],'20':[362,14],'21':[264,8],'22':[461,8],'02':[362,879],'04':[362,839],'23':[274,832],'24':[450,832],'26':[680,489],'10':[153,267],'07':[616,410]});
+const NS='http://www.w3.org/2000/svg';
+const carSvg=document.querySelector('.car-svg');
+let currentData={detach:new Set(),paint:new Set()};
+function node(tag,attrs,text){const el=document.createElementNS(NS,tag);Object.entries(attrs||{}).forEach(([k,v])=>el.setAttribute(k,v));if(text!==undefined)el.textContent=text;return el;}
+function normalize(value){const list=Array.isArray(value)?value:String(value??'').split(/[\s,]+/);return [...new Set(list.filter(v=>String(v).trim()!=='').map(v=>String(v).trim().padStart(2,'0')))];}
+function state(code){const d=currentData.detach.has(code),p=currentData.paint.has(code);return d&&p?'both':d?'detach':p?'paint':null;}
+function stateText(code){return ({both:'도장 + 탈착',detach:'탈착',paint:'도장'})[state(code)]||'수리 이력 없음';}
+function selectPart(code){carSvg.querySelectorAll('.part').forEach(p=>p.classList.toggle('selected',p.dataset.code===code));document.getElementById('selection').innerHTML='<strong>'+PART_NAMES[code]+'</strong><span class="detail-state">'+stateText(code)+'</span><span>부위 코드 '+code+' · '+(state(code)?'해당 외판 패널의 수리 이력이 있습니다.':'해당 부위에 등록된 수리 이력이 없습니다.')+'</span>';const boxes={front:'225 -74 280 265',rear:'232 790 260 137',left:'55 320 158 286',right:'513 327 158 286',top:'232 280 264 350'};const side=['01','20','21','22'].includes(code)?'front':['02','04','23','24'].includes(code)?'rear':['06','08','10','12','25','27'].includes(code)?'left':['07','09','11','13','26','28'].includes(code)?'right':'top';document.getElementById('detail-icon').innerHTML='<svg viewBox="'+boxes[side]+'" aria-hidden="true"><use href="#vehicle-details"/></svg>';}
+function icon(type){return '<svg aria-hidden="true" viewBox="0 0 24 24"><use href="#'+type+'-icon"/></svg>';}
+// Public API: setRepairData({'r502-20':['07','10','20','26'],'r502-21':['02','10','26']}).
+// Original sample.html format is also accepted: setRepairData('107 110 120 126 202 210 226').
+// Every call replaces the previous state; an empty object clears the diagram.
+window.setRepairData=function(data={}){
+ if(typeof data==='string'){const legacy=data.trim().split(/\s+/).filter(Boolean);if(legacy.some(v=>! /^[12]\d{2}$/.test(v)))throw new Error('기존 코드 형식은 107 202처럼 입력하세요.');data={'r502-20':legacy.filter(v=>v[0]==='1').map(v=>v.slice(1)),'r502-21':legacy.filter(v=>v[0]==='2').map(v=>v.slice(1))};}
+ if(!data||typeof data!=='object')throw new Error('수리 코드 객체를 전달하세요.');
+ const detach=normalize(data['r502-20']),paint=normalize(data['r502-21']);
+ const all=[...new Set([...detach,...paint])];const invalid=all.filter(c=>!PART_NAMES[c]);if(invalid.length)throw new Error('알 수 없는 부위 코드: '+invalid.join(', '));
+ const unsupported=all.filter(c=>c==='17'||c==='18');
+ currentData={detach:new Set(detach.filter(c=>LABEL_POSITIONS[c])),paint:new Set(paint.filter(c=>LABEL_POSITIONS[c]))};
+ const labels=document.getElementById('labels');labels.replaceChildren();
+ carSvg.querySelectorAll('.part').forEach(part=>{const code=part.dataset.code;const s=state(code);part.dataset.state=s||'none';part.querySelector('.surface').setAttribute('fill','url(#'+(s||part.dataset.base)+')');part.querySelector('title').textContent=code+' '+PART_NAMES[code]+' · '+stateText(code);part.setAttribute('aria-label',part.querySelector('title').textContent);});
+ Object.entries(LABEL_POSITIONS).forEach(([code,[x,y]])=>{
+  // Text and badges remain upright above the axonometric panel plane.
+  const px=x+220,py=y+120;
+  const s=state(code);const group=node('g',{transform:`translate(${px} ${py})`,'data-label-code':code});
+  if(!s){group.append(node('text',{'text-anchor':'middle',y:4,fill:'#45647c','font-size':10,'font-weight':650,class:'code-label'},code));}
+  if(s){const types=[...(currentData.detach.has(code)?['detach']:[]),...(currentData.paint.has(code)?['paint']:[])];types.forEach((type,i)=>{const cx=(i-(types.length-1)/2)*46;group.append(node('circle',{cx,cy:0,r:22,fill:type==='detach'?'#087cfa':'#f12949',stroke:'white','stroke-width':3,filter:'url(#shadow)'}));group.append(node('use',{href:'#'+type+'-icon',x:cx-11,y:-11,width:22,height:22,color:'white','data-operation':type}));});}
+  labels.append(group);
+ });
+ carSvg.querySelectorAll('.repair-hatch').forEach(el=>el.remove());carSvg.querySelectorAll('.part[data-state=both]').forEach(part=>{const overlay=part.querySelector('.surface').cloneNode(true);overlay.removeAttribute('id');overlay.setAttribute('class','repair-hatch');overlay.setAttribute('fill','url(#both-stripes)');overlay.setAttribute('stroke','none');overlay.setAttribute('pointer-events','none');part.append(overlay);});
+ const affected=all.filter(c=>LABEL_POSITIONS[c]).sort();document.getElementById('count').textContent=affected.length;
+ document.getElementById('repair-list').innerHTML=affected.map(code=>'<button type="button" class="row" data-select="'+code+'"><span class="code">'+code+'</span><span><strong>'+PART_NAMES[code]+'</strong><span class="status">'+(currentData.detach.has(code)?'<span>'+icon('detach')+'탈착</span>':'')+(currentData.paint.has(code)?'<span>'+icon('paint')+'도장</span>':'')+'</span></span></button>').join('')||'<p>외판 수리 이력이 없습니다.</p>';
+ document.getElementById('detach-input').value=detach.join(', ');document.getElementById('paint-input').value=paint.join(', ');
+ document.getElementById('input-message').textContent=unsupported.length?'승용차에 없는 슬라이딩도어 코드 '+unsupported.join(', ')+'는 도면에서 제외했습니다.':'';
+ const selected=carSvg.querySelector('.part.selected');if(selected)selectPart(selected.dataset.code);
+ return {applied:affected,unsupported};
+};
+carSvg.querySelectorAll('.part').forEach(part=>{part.addEventListener('click',()=>selectPart(part.dataset.code));part.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectPart(part.dataset.code);}});});
+document.getElementById('repair-list').addEventListener('click',e=>{const row=e.target.closest('[data-select]');if(row)selectPart(row.dataset.select);});
+document.getElementById('data-form').addEventListener('submit',e=>{e.preventDefault();try{setRepairData({'r502-20':document.getElementById('detach-input').value,'r502-21':document.getElementById('paint-input').value});}catch(error){document.getElementById('input-message').textContent=error.message;}});
+setRepairData({'r502-20':['07','10','20','26'],'r502-21':['02','10','26']});
+
+selectPart('07');
+if(embeddedMode){
+ const reportSize=()=>parent.postMessage({type:'car-diagram-height',height:Math.ceil(document.querySelector('.stage').getBoundingClientRect().height)},'*');
+ new ResizeObserver(reportSize).observe(document.querySelector('.stage'));
+ reportSize();
+}
+
+</script></body></html>
