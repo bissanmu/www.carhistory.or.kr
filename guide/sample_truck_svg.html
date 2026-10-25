@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>트럭 외판패널 전개도 · 카히스토리</title><style>*{box-sizing:border-box} :root{color-scheme:light;--ink:#183b63;--muted:#71849a;--blue:#177ee9;--line:#dce7f2}body{margin:0;background:#f1f6fb;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #71b4ff;outline-offset:3px}button{touch-action:manipulation}button:disabled{cursor:default}.stage{max-width:1240px;margin:0 auto;padding:42px 32px 28px}.page-header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:28px}.eyebrow{font-size:11px;font-weight:750;letter-spacing:2px;color:#587694;margin-bottom:10px}.page-header h1{font-size:30px;letter-spacing:-1.2px;margin:0 0 10px;font-weight:750}.page-header p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}.vehicle-type{padding:9px 14px;border-radius:20px;border:1px solid #ccdeef;background:#e8f2fc;white-space:nowrap;font-size:12px;font-weight:700;color:#47729a}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}.diagram-card{overflow:hidden;border:1px solid #dbe7f2;border-radius:24px;background:radial-gradient(ellipse at 50% 44%,#c7e5fc 0,#e1f0fe 50%,#f2f8ff 85%);position:relative}.diagram-toolbar{display:flex;align-items:center;justify-content:space-between;padding:20px 22px 5px;gap:12px;font-size:12px;color:#5e7a98}.diagram-toolbar strong{font-weight:700;color:#315b82}.toggle-label{display:flex;align-items:center;gap:6px;cursor:pointer}.toggle-label input{accent-color:#187ee8;width:15px;height:15px;margin:0}.car-svg{display:block;width:100%;height:auto;max-height:1040px}.direction-label{font-size:10px;fill:#7c96af;color:#7c96af;font-weight:650;letter-spacing:1.7px}.part{cursor:pointer;outline:none}.panel-depth{filter:url(#part-contact)}.surface{transition:fill .15s,stroke .15s;vector-effect:non-scaling-stroke}.part:hover .surface{stroke:#268bf0;stroke-width:1.8}.part.selected .surface,.part:focus-visible .surface{stroke:#0878ed;stroke-width:2.5}.part:focus-visible .part-badge rect{stroke:#0c6ed2;stroke-width:3}.part-badge{transition:opacity .15s}.part-badge rect{fill:#fff;stroke:#b2c6db;stroke-width:1}.part-badge text{fill:#315e8b;font-size:12px;font-weight:750;pointer-events:none}.part.selected .part-badge rect{fill:#167ee8;stroke:#fff;stroke-width:2}.part.selected .part-badge text{fill:#fff}.part[data-state="detach"] .part-badge rect{stroke:#1687f0;stroke-width:2}.part[data-state="paint"] .part-badge rect{stroke:#e76473;stroke-width:2}.part[data-state="both"] .part-badge rect{stroke:#c99e32;stroke-width:2}.state-marks{display:none;pointer-events:none}.detach-dot{fill:#1784ed;stroke:#fff;stroke-width:1.4;display:none}.paint-dot{fill:#e65e74;stroke:#fff;stroke-width:1.4;display:none}.part[data-state="detach"] .state-marks,.part[data-state="paint"] .state-marks,.part[data-state="both"] .state-marks{display:block}.part[data-state="detach"] .detach-dot,.part[data-state="both"] .detach-dot,.part[data-state="paint"] .paint-dot,.part[data-state="both"] .paint-dot{display:block}.hide-codes .part-badge{opacity:0}.hide-codes .part:hover .part-badge,.hide-codes .part.selected .part-badge,.hide-codes .part:focus-visible .part-badge,.hide-codes .part[data-state="detach"] .part-badge,.hide-codes .part[data-state="paint"] .part-badge,.hide-codes .part[data-state="both"] .part-badge{opacity:1}.diagram-foot{margin:0 20px;padding:14px 0 18px;border-top:1px solid #dbe7f2;color:#8094a8;font-size:11px;text-align:center;line-height:1.7}.sidebar{display:grid;gap:16px}.panel{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.panel h2{font-size:14px;margin:0;font-weight:750}.selection-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.section-kicker{font-size:11px;color:#7d92a8;letter-spacing:.5px}.detail-main{display:flex;align-items:center;gap:14px}.detail-number{display:grid;place-items:center;width:64px;height:70px;background:linear-gradient(140deg,#eaf4ff,#d3e7fc);color:#1878d4;border:1px solid #cee2f7;border-radius:16px;font-size:25px;font-weight:750;flex-shrink:0}.detail-name{font-size:18px;letter-spacing:-.6px;line-height:1.35;margin:0 0 8px;overflow-wrap:anywhere}.detail-state{font-size:12px;color:#7c8da1}.detail-state[data-state="detach"]{color:#147fdd}.detail-state[data-state="paint"]{color:#d55167}.detail-state[data-state="both"]{color:#997819}.detail-description{color:#8292a4;line-height:1.7;font-size:12px;margin:16px 0 0}.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:19px;padding-top:17px;border-top:1px solid #e9eff6;font-size:11px;color:#677f96}.legend span{display:flex;align-items:center;gap:6px}.swatch{width:12px;height:12px;border-radius:4px;background:#9bcfff;border:1px solid #4d9bdf}.swatch.paint{background:#f8b5b5;border-color:#e17e8a}.swatch.both{background:repeating-linear-gradient(125deg,#f2d474 0 3px,#fff2bf 3px 6px);border-color:#c7a448}.find-panel{padding:20px 22px}.field-title{display:block;font-size:12px;font-weight:700;margin-bottom:10px}.input-row{display:flex;gap:8px}.input-row input{width:100%;min-width:0;border:1px solid #ceddeb;border-radius:9px;padding:10px 12px;background:#fbfdff;font-size:13px;color:#274e75}.primary{background:#187ce0;color:#fff;border:1px solid #187ce0;border-radius:9px;padding:10px 14px;font-size:12px;font-weight:650;white-space:nowrap}.helper{color:#8598ab;font-size:11px;margin:9px 0 0;line-height:1.6}.message{font-size:12px;line-height:1.7;color:#597c9f;margin-top:8px}.message:empty{display:none}.message.error{color:#bc4157}.codes-panel{padding:20px 14px 14px}.codes-heading{display:flex;align-items:center;justify-content:space-between;padding:0 8px 14px;gap:8px}.codes-heading span{font-size:10px;color:#8799ab}.code-list{display:grid;grid-template-columns:1fr 1fr;gap:4px}.code-item{display:flex;align-items:center;gap:7px;background:#fff;border:1px solid transparent;border-radius:8px;padding:8px 5px;text-align:left;color:#5e7690;min-width:0;position:relative;min-height:36px}.code-item .code-number{flex-shrink:0;font-size:10px;font-weight:750;min-width:23px;height:22px;border-radius:6px;background:#f0f5fa;display:grid;place-items:center;color:#6c88a2}.code-item .code-name{font-size:10.5px;line-height:1.4;letter-spacing:-.35px;overflow-wrap:anywhere}.code-item .code-state{font-size:8px;line-height:1.3;display:block}.code-copy{min-width:0;display:block}.code-item .code-name{display:block}.code-item[data-state="none"] .code-state{display:none}.code-item:hover{background:#f5f9ff}.code-item.selected{background:#eaf4ff;border-color:#c9e1fa;color:#126cc2}.code-item.selected .code-number{background:#187ce0;color:#fff}.code-item[data-state="detach"] .code-number{box-shadow:inset 0 -3px #1784ed}.code-item[data-state="paint"] .code-number{box-shadow:inset 0 -3px #e65e74}.code-item[data-state="both"] .code-number{box-shadow:inset 0 -3px #dbb84c}.data-panel{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px}.data-header{display:flex;align-items:center;justify-content:space-between;gap:16px}.data-header h2{margin:0;font-size:15px}.data-header p{margin:7px 0 0;font-size:12px;color:#8295a9}.data-actions{display:flex;gap:6px}.text-button{background:#f1f6fc;color:#53799e;border:1px solid #e2ebf5;border-radius:8px;padding:8px 11px;font-size:11px;white-space:nowrap}.data-form{display:grid;grid-template-columns:1fr 1fr auto;gap:14px;margin-top:20px;align-items:end}.data-form label{font-size:12px;font-weight:650;color:#55708c}.data-form input{display:block;width:100%;border:1px solid #d2e0ed;border-radius:9px;padding:11px 12px;font-size:13px;color:#2f5477;margin-top:8px;background:#fbfdff}.data-form .primary{padding:11px 22px}.repair-summary{margin-top:16px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;font-size:11px;color:#7d91a6}.repair-summary strong{color:#277cc9;font-size:13px}#repair-list{display:flex;gap:6px;flex-wrap:wrap}#repair-list .code-number{font-weight:750;margin-right:5px}#repair-list .code-copy{display:inline}#repair-list .code-state{margin-left:5px;font-size:9px}#repair-list button{border:1px solid #d9e6f4;border-radius:6px;background:#f5f9fe;padding:5px 8px;color:#4c6f91;font-size:10px}#repair-list p{margin:0;font-size:11px;color:#8b9caf}.page-foot{display:flex;justify-content:space-between;gap:12px;margin:18px 4px 0;color:#94a6b7;font-size:10px;line-height:1.8}.api-guide{font-size:11px;color:#7b90a5;margin-top:16px}.api-guide summary{cursor:pointer;display:inline-block}.api-guide pre{overflow:auto;border-radius:10px;background:#f4f8fc;padding:14px;font-size:11px;line-height:1.8;color:#52718e}.api-guide p{line-height:1.8}.embed-document,.embed{margin:0;background:transparent}.embed .stage{padding:0;max-width:none}.embed .page-header,.embed .find-panel,.embed .codes-panel,.embed .data-panel,.embed .page-foot,.embed .diagram-toolbar{display:none}.embed .workspace{display:flex;flex-direction:column;gap:16px}.embed .diagram-card{width:100%;border:0;background:transparent;border-radius:0}.embed .car-svg{max-height:none}.embed .diagram-foot{display:none}.embed .sidebar{width:100%}.embed .selection-panel{width:100%}.embed .detail-main{gap:18px}.embed .legend{font-size:13px}.embed .detail-description{font-size:13px}
+@media(min-width:1450px){.stage{max-width:1320px}.workspace{grid-template-columns:minmax(0,1fr) 360px}.code-item .code-name{font-size:11px}}
+@media(max-width:850px){.stage{padding:26px 18px}.workspace{grid-template-columns:minmax(0,1fr) 290px;gap:16px}.panel{padding:18px}.codes-panel{padding:18px 9px 10px}.code-list{grid-template-columns:1fr}.code-item{min-height:31px;padding:5px}.code-item .code-name{font-size:11px}.car-svg{min-width:0}.page-header h1{font-size:26px}.diagram-toolbar{padding:18px 14px 6px;font-size:11px}.diagram-foot{margin:0 12px}}
+@media(max-width:650px){.stage{padding:22px 14px}.page-header{margin-bottom:20px;align-items:flex-start}.page-header h1{font-size:25px}.page-header p{font-size:12px}.eyebrow{font-size:9px}.vehicle-type{font-size:10px;padding:7px 10px}.workspace{grid-template-columns:1fr;gap:14px}.diagram-card{border-radius:20px}.diagram-toolbar{padding:17px 18px 8px}.car-svg{max-height:none}.sidebar{gap:12px}.selection-heading{margin-bottom:16px}.detail-number{width:55px;height:60px;font-size:23px}.detail-description{margin-top:12px}.legend{margin-top:14px;padding-top:14px}.code-list{grid-template-columns:1fr 1fr;gap:5px}.code-item .code-name{font-size:11px}.code-item{min-height:36px}.codes-panel{padding:18px 12px}.data-panel{padding:18px;margin-top:16px}.data-header{align-items:flex-start}.data-header h2{font-size:14px}.data-header p{font-size:11px}.data-actions{gap:4px}.text-button{padding:7px 8px;font-size:10px}.data-form{grid-template-columns:1fr;gap:14px}.data-form .primary{width:100%}.page-foot{flex-direction:column;gap:2px}.embed .stage{padding:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}@media print{body{background:white}.stage{padding:0}.workspace{grid-template-columns:1fr 280px}.find-panel,.data-panel,.page-foot,.diagram-toolbar{display:none}.code-list{grid-template-columns:1fr 1fr}.code-item{padding:4px}.panel{break-inside:avoid}.diagram-card{background:#f5f9fd}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+/* Material lighting and the live, lower-left inspection lens. */
+.part-badge{filter:drop-shadow(0 2px 3px #264b6d22)}
+.state-marks .detach-dot,.state-marks .paint-dot{stroke:none}
+.state-marks circle{stroke:white;stroke-width:1.8}
+.detach-dot circle{fill:#087dff}.paint-dot circle{fill:#f42c59}
+.state-marks use{color:white;fill:none;stroke:none}
+.swatch{background:#60bdff;border-color:#2587d3}.swatch.paint{background:#fc8e9f;border-color:#df5372}.swatch.both{background:repeating-linear-gradient(125deg,#f8d148 0 3px,#fff2b7 3px 6px)}
+.inspection-dock{display:flex;align-items:center;gap:24px;padding:6px 20px 20px}
+.magnifier{display:flex;align-items:center;gap:16px;padding:14px;width:370px;max-width:100%;min-height:160px;background:#ffffffed;border:1px solid #d4e5f5;border-radius:19px;box-shadow:0 10px 28px #36679514;flex-shrink:0}
+.magnifier-lens{width:166px;aspect-ratio:1.3;position:relative;overflow:hidden;flex-shrink:0;border-radius:13px;background:radial-gradient(ellipse at 40% 35%,#f5fbff,#c2def5);box-shadow:inset 0 0 0 1px #bed5e9}
+.magnifier-svg{display:block;width:100%;height:100%;pointer-events:none}
+.preview-selected .preview-surface{stroke:#0a7bee;stroke-width:1.8;vector-effect:non-scaling-stroke}
+.preview-part:not(.preview-selected){opacity:.65}
+.magnifier-copy{min-width:0;display:flex;flex-direction:column;gap:9px}
+.magnifier-kicker{color:#6285a6;font-size:10px;letter-spacing:.5px;font-weight:650}
+#magnifier-name{font-size:15px;line-height:1.45;letter-spacing:-.5px;overflow-wrap:anywhere}
+#magnifier-code{color:#8ba0b5;font-size:11px}
+#magnifier-state{font-size:11px;line-height:1.5}
+#magnifier-empty{position:absolute;inset:22px 13px;font-size:11px;line-height:1.7;color:#6f90ad;text-align:center}
+#magnifier-empty[hidden]{display:none}
+.lens-symbol{position:absolute;left:7px;bottom:7px;width:24px;height:24px;display:grid;place-items:center;background:#ffffffd9;border:1px solid #b9d8ee;border-radius:8px}
+.lens-symbol svg{width:17px;height:17px;fill:none;stroke:#388acc;stroke-width:1.8;stroke-linecap:round}
+.lens-corner{position:absolute;width:14px;height:14px;border-color:#499ee0;opacity:.55;pointer-events:none}
+.top-left{left:7px;top:7px;border-left:1.5px solid;border-top:1.5px solid;border-radius:4px 0 0}
+.bottom-right{right:7px;bottom:7px;border-right:1.5px solid;border-bottom:1.5px solid;border-radius:0 0 4px}
+.inspect-hint{font-size:11px;line-height:1.9;color:#7e9ab4;margin:0}
+.embed .inspection-dock{padding:4px 12px 16px}
+@media(max-width:1000px){.inspect-hint{display:none}.magnifier{width:100%}.inspection-dock{padding:6px 14px 16px}.magnifier-lens{width:44%;max-width:166px}.magnifier-copy{gap:7px}#magnifier-name{font-size:13px}}
+@media(max-width:650px){.inspection-dock{padding:4px 14px 14px}.magnifier{padding:12px;gap:13px;min-height:140px}.magnifier-lens{width:44%;max-width:none}.magnifier-copy{gap:7px}#magnifier-name{font-size:14px}#magnifier-state{font-size:10px}.magnifier-kicker{font-size:9px}}
+</style></head>
+<body><main class="stage">
+<header class="page-header"><div><div class="eyebrow">CARHISTORY · BODY PANEL GUIDE</div><h1>트럭 외판패널</h1><p>부위 번호를 입력하거나 패널을 선택해 위치와 수리 이력을 확인하세요.</p></div><span class="vehicle-type">소형화물 · 더블캡</span></header>
+<div class="workspace">
+<section class="diagram-card" aria-label="트럭 전개도"><div class="diagram-toolbar"><strong>2.5D 외판패널 전개도</strong><label class="toggle-label"><input id="toggle-codes" type="checkbox" checked>부위 번호 표시</label></div>
+<svg id="truck-svg" class="car-svg" viewBox="0 0 760 1030" xmlns="http://www.w3.org/2000/svg" role="group" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">소형화물 트럭 외판패널 전개도</title><desc id="diagram-desc">전방은 위, 후방은 아래입니다. 더블캡과 적재함의 01부터 30까지 각 부위를 선택할 수 있습니다. 좌우는 제공된 트럭 전개도의 배치를 따릅니다.</desc>
+<defs>
+<linearGradient id="panel-edge" x1="0" y1="0" x2=".3" y2="1"><stop stop-color="#a2c5df"/><stop offset=".35" stop-color="#749bbb"/><stop offset=".72" stop-color="#547c9e"/><stop offset="1" stop-color="#325b7b"/></linearGradient>
+<linearGradient id="well-shadow" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#183d5d" stop-opacity=".65"/><stop offset=".22" stop-color="#315b7c" stop-opacity=".28"/><stop offset=".72" stop-color="#2e5271" stop-opacity="0"/></linearGradient>
+<linearGradient id="glass-glint" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d7f2ff" stop-opacity=".57"/><stop offset=".4" stop-color="#a7daff" stop-opacity=".1"/><stop offset="1" stop-color="#d8f1ff" stop-opacity="0"/></linearGradient>
+<filter id="part-contact" x="-50%" y="-70%" width="200%" height="260%"><feDropShadow dx="2" dy="6" stdDeviation="4" flood-color="#28536e" flood-opacity=".22"/></filter>
+<symbol id="detach-tool" viewBox="0 0 24 24"><path d="M14 4a6 6 0 0 0-7 7L2 16a3 3 0 0 0 5 5l6-6a6 6 0 0 0 7-8l-4 4-3-3 4-4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+<symbol id="paint-tool" viewBox="0 0 24 24"><rect x="2" y="3" width="15" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17 6h4v8H11v7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></symbol>
+<linearGradient id="metal" x1="0" y1=".1" x2="1" y2=".35"><stop offset="0" stop-color="#557b9b"/><stop offset=".055" stop-color="#b0d3eb"/><stop offset=".17" stop-color="#fff"/><stop offset=".34" stop-color="#e2f1fc"/><stop offset=".62" stop-color="#faffff"/><stop offset=".82" stop-color="#b8d6ec"/><stop offset=".94" stop-color="#e9f6ff"/><stop offset="1" stop-color="#617f9b"/></linearGradient>
+<linearGradient id="side-metal" x1="0" y1="0" x2="1" y2=".18"><stop offset="0" stop-color="#577a99"/><stop offset=".07" stop-color="#c1ddec"/><stop offset=".24" stop-color="#fff"/><stop offset=".43" stop-color="#e4f3fd"/><stop offset=".7" stop-color="#d3e8f8"/><stop offset=".9" stop-color="#96b9d6"/><stop offset="1" stop-color="#4e7799"/></linearGradient>
+<linearGradient id="bed" x1="0" y1="0" x2="1" y2=".3"><stop offset="0" stop-color="#6c94b5"/><stop offset=".08" stop-color="#b7d6ef"/><stop offset=".24" stop-color="#d9ebfa"/><stop offset=".65" stop-color="#b4cfe5"/><stop offset=".9" stop-color="#d2e8f8"/><stop offset="1" stop-color="#6285a6"/></linearGradient>
+<linearGradient id="glass" x1="0" y1="0" x2=".6" y2="1"><stop offset="0" stop-color="#2f6c93"/><stop offset=".15" stop-color="#719db9"/><stop offset=".36" stop-color="#284e6c"/><stop offset=".65" stop-color="#122f48"/><stop offset="1" stop-color="#071d31"/></linearGradient>
+<linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".42" stop-color="#a3b5c7"/><stop offset=".5" stop-color="#eff8ff"/><stop offset="1" stop-color="#5e778e"/></linearGradient>
+<linearGradient id="lamp" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#fff"/><stop offset=".33" stop-color="#e1effd"/><stop offset=".55" stop-color="#8aa8c0"/><stop offset=".72" stop-color="#f9fdff"/><stop offset="1" stop-color="#b8cce0"/></linearGradient>
+<linearGradient id="tail" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f8a4ac"/><stop offset=".28" stop-color="#d75967"/><stop offset=".6" stop-color="#9f2e42"/><stop offset="1" stop-color="#701d33"/></linearGradient>
+<linearGradient id="rubber" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3a4b5a"/><stop offset=".45" stop-color="#15212b"/><stop offset="1" stop-color="#080f17"/></linearGradient>
+<radialGradient id="rim"><stop stop-color="#b0c3d4"/><stop offset=".38" stop-color="#eaf4fc"/><stop offset=".52" stop-color="#899eb0"/><stop offset=".78" stop-color="#dce8f1"/><stop offset="1" stop-color="#667c90"/></radialGradient>
+<linearGradient id="detach" x1="0" y1="0" x2="1" y2=".4"><stop offset="0" stop-color="#147abf"/><stop offset=".12" stop-color="#b1e4ff"/><stop offset=".32" stop-color="#83d1ff"/><stop offset=".62" stop-color="#51b5fc"/><stop offset=".88" stop-color="#2792e0"/><stop offset="1" stop-color="#126aaa"/></linearGradient>
+<linearGradient id="paint" x1="0" y1="0" x2="1" y2=".6"><stop offset="0" stop-color="#c34763"/><stop offset=".1" stop-color="#ffcfcb"/><stop offset=".31" stop-color="#ff9eaa"/><stop offset=".63" stop-color="#f8758d"/><stop offset=".9" stop-color="#df4b6a"/><stop offset="1" stop-color="#ab3253"/></linearGradient>
+<linearGradient id="both" x1="0" y1="0" x2="1" y2=".6"><stop offset="0" stop-color="#c49528"/><stop offset=".1" stop-color="#fff2a5"/><stop offset=".3" stop-color="#ffe275"/><stop offset=".6" stop-color="#f5ce4c"/><stop offset=".88" stop-color="#ddb02e"/><stop offset="1" stop-color="#aa801c"/></linearGradient>
+<pattern id="both-stripes" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="4" height="10" fill="#fff" opacity=".4"/></pattern>
+<pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#c6d7e8" opacity=".45"/></pattern>
+<filter id="shadow" x="-35%" y="-15%" width="170%" height="145%"><feDropShadow dx="5" dy="13" stdDeviation="8" flood-color="#285674" flood-opacity=".29"/></filter>
+<symbol id="wheel" viewBox="-42 -42 84 84"><circle cy="3" r="38" fill="#142332" opacity=".15"/><circle r="36" fill="url(#rubber)" stroke="#344857" stroke-width="1.5"/><circle r="32" fill="none" stroke="#51616e" stroke-width="1"/><circle r="28" fill="#091520" stroke="#698194" stroke-width="1"/><circle r="25" fill="url(#rim)" stroke="#d5e4ef" stroke-width="1.5"/><circle r="18" fill="#3d5569"/><circle r="14" fill="url(#rim)"/>
+<g transform="rotate(0)"><ellipse cy="-19" rx="3.5" ry="4" fill="#203545"/><circle cy="-9" r="1.8" fill="#415c73" stroke="#e9f4fc" stroke-width=".7"/></g><g transform="rotate(60)"><ellipse cy="-19" rx="3.5" ry="4" fill="#203545"/><circle cy="-9" r="1.8" fill="#415c73" stroke="#e9f4fc" stroke-width=".7"/></g><g transform="rotate(120)"><ellipse cy="-19" rx="3.5" ry="4" fill="#203545"/><circle cy="-9" r="1.8" fill="#415c73" stroke="#e9f4fc" stroke-width=".7"/></g><g transform="rotate(180)"><ellipse cy="-19" rx="3.5" ry="4" fill="#203545"/><circle cy="-9" r="1.8" fill="#415c73" stroke="#e9f4fc" stroke-width=".7"/></g><g transform="rotate(240)"><ellipse cy="-19" rx="3.5" ry="4" fill="#203545"/><circle cy="-9" r="1.8" fill="#415c73" stroke="#e9f4fc" stroke-width=".7"/></g><g transform="rotate(300)"><ellipse cy="-19" rx="3.5" ry="4" fill="#203545"/><circle cy="-9" r="1.8" fill="#415c73" stroke="#e9f4fc" stroke-width=".7"/></g><circle r="6" fill="url(#chrome)" stroke="#577086"/><path d="M-25-19A31 31 0 0 1 22-22" fill="none" stroke="#80909c" opacity=".6"/></symbol>
+</defs>
+<ellipse cx="380" cy="553" rx="330" ry="449" fill="none" stroke="white" stroke-width="2"/>
+<ellipse cx="380" cy="553" rx="298" ry="420" fill="none" stroke="#dce8f4"/>
+
+<g class="direction-label"><path d="M376 26l4-6 4 6" fill="none" stroke="currentColor"/><text x="380" y="15" text-anchor="middle">전방 FRONT</text><text x="380" y="1012" text-anchor="middle">후방 REAR</text><text x="110" y="226" text-anchor="middle">좌측 L</text><text x="650" y="226" text-anchor="middle">우측 R</text></g>
+<g id="vehicle-details" transform="matrix(1 -.045 .075 .955 -35 42)">
+<g class="part" id="part-01" data-code="01" data-base="metal" role="button" tabindex="0" aria-pressed="false" aria-label="01 프론트범퍼"><title>01 프론트범퍼</title><path class="panel-depth" d="M274 53Q380 44 486 53L488 73Q486 83 475 83H285Q274 83 272 73Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M274 53Q380 44 486 53L488 73Q486 83 475 83H285Q274 83 272 73Z" fill="url(#metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M282 57Q380 50 478 57" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path class="" d="M284 75H476" fill="none" stroke="#748da3" stroke-width="2" stroke-linejoin="round"/><rect x="344" y="73" width="72" height="5" rx="2" fill="#354c61" stroke="none" stroke-width="1"/></g>
+<g class="part-badge" transform="translate(380 66) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">01</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-18" data-code="18" data-base="metal" role="button" tabindex="0" aria-pressed="false" aria-label="18 후드"><title>18 후드</title><path class="panel-depth" d="M327 103H433L445 134H315Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M327 103H433L445 134H315Z" fill="url(#metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M331 107H429M324 129H436" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(380 117) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">18</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-02" data-code="02" data-base="lamp" role="button" tabindex="0" aria-pressed="false" aria-label="02 헤드램프(좌)"><title>02 헤드램프(좌)</title><path class="panel-depth" d="M264 104h38q6 0 6 6v16q0 7-7 7h-37q-6 0-6-7v-16q0-6 6-6Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M264 104h38q6 0 6 6v16q0 7-7 7h-37q-6 0-6-7v-16q0-6 6-6Z" fill="url(#lamp)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M266 108v21m8-21v21m8-21v21m8-21v21" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(280 117) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">02</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-03" data-code="03" data-base="lamp" role="button" tabindex="0" aria-pressed="false" aria-label="03 헤드램프(우)"><title>03 헤드램프(우)</title><path class="panel-depth" d="M450 104h38q6 0 6 6v16q0 7-7 7h-37q-6 0-6-7v-16q0-6 6-6Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M450 104h38q6 0 6 6v16q0 7-7 7h-37q-6 0-6-7v-16q0-6 6-6Z" fill="url(#lamp)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M452 108v21m8-21v21m8-21v21m8-21v21" fill="none" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(466 117) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">03</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-19" data-code="19" data-base="metal" role="button" tabindex="0" aria-pressed="false" aria-label="19 프론트패널"><title>19 프론트패널</title><path class="panel-depth" d="M301 153H459L473 174V195H287V174Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M301 153H459L473 174V195H287V174Z" fill="url(#metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><rect x="313" y="180" width="134" height="9" rx="3" fill="#30495f" stroke="#8ea7bb" stroke-width="1"/><path class="" d="M321 184H439" fill="none" stroke="#adc2d3" stroke-width="2" stroke-linejoin="round"/><path class="" d="M305 157H455" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(380 168) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">19</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g id="cab-top" filter="url(#shadow)"><path d="M293 250Q380 220 467 250L478 280V506Q380 527 282 506V280Z" transform="translate(4 10)" fill="url(#panel-edge)" stroke="#446c8d"/><path d="M293 250Q380 220 467 250L478 280V506Q380 527 282 506V280Z" fill="url(#metal)" stroke="#899fb5" stroke-width="1.5"/>
+<path d="M299 253Q380 231 461 253L466 272Q380 250 294 272Z" fill="url(#metal)" stroke="#a3b6c7"/>
+<path d="M296 284Q380 262 464 284L450 329H310Z" fill="url(#glass)" stroke="#7e96ac" stroke-width="2"/>
+<path d="M302 286Q380 267 458 286L453 298Q380 283 307 300Z" fill="#cee8f8" opacity=".23"/>
+<path d="M304 286Q326 279 355 278L334 326H315Z" fill="url(#glass-glint)"/>
+<path d="M375 277H414L397 326H359Z" fill="url(#glass-glint)" opacity=".42"/>
+<path d="M313 320l45-7m44 0 45 7" stroke="#0e2334" stroke-width="2" stroke-linecap="round"/>
+<path d="M307 340H453V498Q380 509 307 498Z" fill="url(#metal)" stroke="#b2c5d5"/>
+<path d="M291 342H300V493L290 496ZM460 342H469V496L460 493Z" fill="url(#glass)" stroke="#a9becf"/>
+<path class="" d="M325 352V487" fill="none" stroke="#b3c6d7" stroke-width="2" stroke-linejoin="round"/><path class="" d="M327 353V487" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path class="" d="M347 352V487" fill="none" stroke="#b3c6d7" stroke-width="2" stroke-linejoin="round"/><path class="" d="M349 353V487" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path class="" d="M369 352V487" fill="none" stroke="#b3c6d7" stroke-width="2" stroke-linejoin="round"/><path class="" d="M371 353V487" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path class="" d="M391 352V487" fill="none" stroke="#b3c6d7" stroke-width="2" stroke-linejoin="round"/><path class="" d="M393 353V487" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path class="" d="M413 352V487" fill="none" stroke="#b3c6d7" stroke-width="2" stroke-linejoin="round"/><path class="" d="M415 353V487" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path class="" d="M435 352V487" fill="none" stroke="#b3c6d7" stroke-width="2" stroke-linejoin="round"/><path class="" d="M437 353V487" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M310 344V494Q380 506 450 494" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M456 344V500" fill="none" stroke="#426d8e" stroke-opacity=".35" stroke-width="3"/><text x="380" y="426" text-anchor="middle" fill="#90a3b8" font-size="11" letter-spacing="3">DOUBLE CAB</text></g><g><g filter="url(#shadow)"><path class="" d="M117 246H167Q214 269 246 323V501Q245 515 230 520H131L116 502V390Q162 377 153 335Q149 311 117 303Z" fill="url(#side-metal)" stroke="#8b9fb2" stroke-width="1.5" stroke-linejoin="round"/><g class="part" id="part-06" data-code="06" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="06 코너패널(좌)"><title>06 코너패널(좌)</title><path class="panel-depth" d="M159 249L181 254L208 278L187 284L157 267Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M159 249L181 254L208 278L187 284L157 267Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M162 252L180 258L199 276" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(191 256) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">06</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-29" data-code="29" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="29 프론트스텝(좌)"><title>29 프론트스텝(좌)</title><path class="panel-depth" d="M114 245H144L156 253V275H111V253Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M114 245H144L156 253V275H111V253Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M119 267H150M120 271H150" fill="none" stroke="#6a8297" stroke-width="1.5" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(107 262) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">29</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-12" data-code="12" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="12 프론트도어(좌)"><title>12 프론트도어(좌)</title><path class="panel-depth" d="M151 279H184Q217 294 239 328V389H153L144 370Q160 345 147 319V292Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M151 279H184Q217 294 239 328V389H153L144 370Q160 345 147 319V292Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M188 287Q218 307 233 331V375H191Z" fill="url(#glass)" stroke="#647e94" stroke-width="1.2" stroke-linejoin="round"/><path class="" d="M195 302Q216 316 226 334V346L196 325Z" fill="url(#glass-glint)" stroke="none" stroke-width="0" stroke-linejoin="round"/><path class="" d="M155 287L156 315M159 377H181" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="163" y="378" width="19" height="5" rx="2" fill="url(#chrome)" stroke="#869db2" stroke-width="1"/></g>
+<g class="part-badge" transform="translate(179 353) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">12</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-27" data-code="27" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="27 센터필러(좌)"><title>27 센터필러(좌)</title><path class="panel-depth" d="M146 398H244V410H145Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M146 398H244V410H145Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M150 400H240" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(247 404) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">27</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-14" data-code="14" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="14 리어도어(좌)"><title>14 리어도어(좌)</title><path class="panel-depth" d="M148 418H240V498H147L140 488V430Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M148 418H240V498H147L140 488V430Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M191 424H233V490H191Z" fill="url(#glass)" stroke="#6d879d" stroke-width="1.1" stroke-linejoin="round"/><path class="" d="M196 428H228V446L196 439Z" fill="url(#glass-glint)" stroke="none" stroke-width="0" stroke-linejoin="round"/><rect x="162" y="487" width="20" height="5" rx="2" fill="url(#chrome)" stroke="#869db2" stroke-width="1"/><path class="" d="M147 434V481M153 422H184" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(179 461) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">14</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-08" data-code="08" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="08 리어필러(좌)"><title>08 리어필러(좌)</title><path class="panel-depth" d="M139 508H243L240 520H140L132 515Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M139 508H243L240 520H140L132 515Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M144 511H236" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(244 521) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">08</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-25" data-code="25" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="25 사이드스텝(좌)"><title>25 사이드스텝(좌)</title><path class="panel-depth" d="M116 422H131V495L139 508V521H121L112 504Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M116 422H131V495L139 508V521H121L112 504Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M121 431V493L128 503" fill="none" stroke="#617b92" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(100 466) "><path class="badge-leader" d="M16 0H23" fill="none" stroke="#879db5" stroke-width="1.2" stroke-linejoin="round"/><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">25</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g></g><use href="#wheel" x="71" y="306" width="84" height="84"/><g class="part" id="part-16" data-code="16" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="16 사이드미러(좌)"><title>16 사이드미러(좌)</title><path class="panel-depth" d="M255 281Q249 282 248 291V307Q250 311 256 308L267 301V287Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M255 281Q249 282 248 291V307Q250 311 256 308L267 301V287Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M253 286L262 288V299L253 304Z" fill="url(#glass)" stroke="#728a9f" stroke-width="1" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(259 307) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">16</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><path class="" d="M266 289L280 301" fill="none" stroke="#849cb1" stroke-width="4" stroke-linejoin="round"/></g><g transform="translate(760 0) scale(-1 1)"><g filter="url(#shadow)"><path class="" d="M117 246H167Q214 269 246 323V501Q245 515 230 520H131L116 502V390Q162 377 153 335Q149 311 117 303Z" fill="url(#side-metal)" stroke="#8b9fb2" stroke-width="1.5" stroke-linejoin="round"/><g class="part" id="part-07" data-code="07" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="07 코너패널(우)"><title>07 코너패널(우)</title><path class="panel-depth" d="M159 249L181 254L208 278L187 284L157 267Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M159 249L181 254L208 278L187 284L157 267Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M162 252L180 258L199 276" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(191 256) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">07</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-30" data-code="30" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="30 프론트스텝(우)"><title>30 프론트스텝(우)</title><path class="panel-depth" d="M114 245H144L156 253V275H111V253Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M114 245H144L156 253V275H111V253Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M119 267H150M120 271H150" fill="none" stroke="#6a8297" stroke-width="1.5" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(107 262) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">30</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-13" data-code="13" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="13 프론트도어(우)"><title>13 프론트도어(우)</title><path class="panel-depth" d="M151 279H184Q217 294 239 328V389H153L144 370Q160 345 147 319V292Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M151 279H184Q217 294 239 328V389H153L144 370Q160 345 147 319V292Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M188 287Q218 307 233 331V375H191Z" fill="url(#glass)" stroke="#647e94" stroke-width="1.2" stroke-linejoin="round"/><path class="" d="M195 302Q216 316 226 334V346L196 325Z" fill="url(#glass-glint)" stroke="none" stroke-width="0" stroke-linejoin="round"/><path class="" d="M155 287L156 315M159 377H181" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><rect x="163" y="378" width="19" height="5" rx="2" fill="url(#chrome)" stroke="#869db2" stroke-width="1"/></g>
+<g class="part-badge" transform="translate(179 353) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">13</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-28" data-code="28" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="28 센터필러(우)"><title>28 센터필러(우)</title><path class="panel-depth" d="M146 398H244V410H145Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M146 398H244V410H145Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M150 400H240" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(247 404) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">28</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-15" data-code="15" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="15 리어도어(우)"><title>15 리어도어(우)</title><path class="panel-depth" d="M148 418H240V498H147L140 488V430Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M148 418H240V498H147L140 488V430Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M191 424H233V490H191Z" fill="url(#glass)" stroke="#6d879d" stroke-width="1.1" stroke-linejoin="round"/><path class="" d="M196 428H228V446L196 439Z" fill="url(#glass-glint)" stroke="none" stroke-width="0" stroke-linejoin="round"/><rect x="162" y="487" width="20" height="5" rx="2" fill="url(#chrome)" stroke="#869db2" stroke-width="1"/><path class="" d="M147 434V481M153 422H184" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(179 461) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">15</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-09" data-code="09" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="09 리어필러(우)"><title>09 리어필러(우)</title><path class="panel-depth" d="M139 508H243L240 520H140L132 515Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M139 508H243L240 520H140L132 515Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M144 511H236" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(244 521) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">09</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-26" data-code="26" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="26 사이드스텝(우)"><title>26 사이드스텝(우)</title><path class="panel-depth" d="M116 422H131V495L139 508V521H121L112 504Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M116 422H131V495L139 508V521H121L112 504Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M121 431V493L128 503" fill="none" stroke="#617b92" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(100 466) scale(-1 1)"><path class="badge-leader" d="M16 0H23" fill="none" stroke="#879db5" stroke-width="1.2" stroke-linejoin="round"/><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">26</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g></g><use href="#wheel" x="71" y="306" width="84" height="84"/><g class="part" id="part-17" data-code="17" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="17 사이드미러(우)"><title>17 사이드미러(우)</title><path class="panel-depth" d="M255 281Q249 282 248 291V307Q250 311 256 308L267 301V287Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M255 281Q249 282 248 291V307Q250 311 256 308L267 301V287Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M253 286L262 288V299L253 304Z" fill="url(#glass)" stroke="#728a9f" stroke-width="1" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(259 307) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">17</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><path class="" d="M266 289L280 301" fill="none" stroke="#849cb1" stroke-width="4" stroke-linejoin="round"/></g><g class="part" id="part-21" data-code="21" data-base="metal" role="button" tabindex="0" aria-pressed="false" aria-label="21 적재함문(앞)"><title>21 적재함문(앞)</title><path class="panel-depth" d="M282 533H478V553H282Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M282 533H478V553H282Z" fill="url(#metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M290 538H470M290 548H470" fill="none" stroke="#8ca4b9" stroke-width="1.5" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(380 541) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">21</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g filter="url(#shadow)"><g class="part" id="part-20" data-code="20" data-base="bed" role="button" tabindex="0" aria-pressed="false" aria-label="20 적재함(전체)"><title>20 적재함(전체)</title><path class="panel-depth" d="M292 564H468Q478 564 478 574V866Q478 877 468 877H292Q282 877 282 866V574Q282 564 292 564Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M292 564H468Q478 564 478 574V866Q478 877 468 877H292Q282 877 282 866V574Q282 564 292 564Z" fill="url(#bed)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M289 572H472L460 586H304L303 853L464 854L472 870H289Z" fill="url(#well-shadow)" stroke="none" stroke-width="1.2" stroke-linejoin="round"/><path class="" d="M472 572V869L460 854V586Z" fill="#305a7a22" stroke="none" stroke-width="1.2" stroke-linejoin="round"/><rect x="303" y="586" width="157" height="268" rx="4" fill="none" stroke="#6c94b4" stroke-width="1.3"/><path class="" d="M308 588V850" fill="none" stroke="#557b9b" stroke-width="2.4" stroke-linejoin="round"/><path class="" d="M310 588V850" fill="none" stroke="#f9fdff" stroke-width="2.6" stroke-linejoin="round"/><path class="" d="M324 588V850" fill="none" stroke="#557b9b" stroke-width="2.4" stroke-linejoin="round"/><path class="" d="M326 588V850" fill="none" stroke="#f9fdff" stroke-width="2.6" stroke-linejoin="round"/><path class="" d="M340 588V850" fill="none" stroke="#557b9b" stroke-width="2.4" stroke-linejoin="round"/><path class="" d="M342 588V850" fill="none" stroke="#f9fdff" stroke-width="2.6" stroke-linejoin="round"/><path class="" d="M356 588V850" fill="none" stroke="#557b9b" stroke-width="2.4" stroke-linejoin="round"/><path class="" d="M358 588V850" fill="none" stroke="#f9fdff" stroke-width="2.6" stroke-linejoin="round"/><path class="" d="M372 588V850" fill="none" stroke="#557b9b" stroke-width="2.4" stroke-linejoin="round"/><path class="" d="M374 588V850" fill="none" stroke="#f9fdff" stroke-width="2.6" stroke-linejoin="round"/><path class="" d="M388 588V850" fill="none" stroke="#557b9b" stroke-width="2.4" stroke-linejoin="round"/><path class="" d="M390 588V850" fill="none" stroke="#f9fdff" stroke-width="2.6" stroke-linejoin="round"/><path class="" d="M404 588V850" fill="none" stroke="#557b9b" stroke-width="2.4" stroke-linejoin="round"/><path class="" d="M406 588V850" fill="none" stroke="#f9fdff" stroke-width="2.6" stroke-linejoin="round"/><path class="" d="M420 588V850" fill="none" stroke="#557b9b" stroke-width="2.4" stroke-linejoin="round"/><path class="" d="M422 588V850" fill="none" stroke="#f9fdff" stroke-width="2.6" stroke-linejoin="round"/><path class="" d="M436 588V850" fill="none" stroke="#557b9b" stroke-width="2.4" stroke-linejoin="round"/><path class="" d="M438 588V850" fill="none" stroke="#f9fdff" stroke-width="2.6" stroke-linejoin="round"/><path class="" d="M452 588V850" fill="none" stroke="#557b9b" stroke-width="2.4" stroke-linejoin="round"/><path class="" d="M454 588V850" fill="none" stroke="#f9fdff" stroke-width="2.6" stroke-linejoin="round"/><path class="" d="M286 570H474M288 871H472" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(380 716) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">20</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g></g><g><path class="" d="M126 555H151V865H130V813L117 802V744L130 722V599L121 592Z" fill="url(#metal)" stroke="#92a9bd" stroke-width="1.2" stroke-linejoin="round"/><path class="" d="M119 676H145V708H115V687ZM121 805H146V838H126Z" fill="#3b5266" stroke="#304759" stroke-width="1.2" stroke-linejoin="round"/><path class="" d="M122 553H216V564H122ZM132 866H217V878H132Z" fill="url(#chrome)" stroke="#7e95ab" stroke-width="1.2" stroke-linejoin="round"/><g filter="url(#shadow)"><g class="part" id="part-23" data-code="23" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="23 적재함문(좌)"><title>23 적재함문(좌)</title><path class="panel-depth" d="M151 560H216V876H151Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M151 560H216V876H151Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><rect x="158" y="569" width="51" height="297" rx="2" fill="none" stroke="#98afc4" stroke-width="1.3"/><rect x="161" y="591" width="49" height="6" rx="1" fill="url(#chrome)" stroke="#96adc1" stroke-width="0.8"/><rect x="161" y="656" width="49" height="6" rx="1" fill="url(#chrome)" stroke="#96adc1" stroke-width="0.8"/><rect x="161" y="721" width="49" height="6" rx="1" fill="url(#chrome)" stroke="#96adc1" stroke-width="0.8"/><rect x="161" y="786" width="49" height="6" rx="1" fill="url(#chrome)" stroke="#96adc1" stroke-width="0.8"/><rect x="161" y="851" width="49" height="6" rx="1" fill="url(#chrome)" stroke="#96adc1" stroke-width="0.8"/><path class="" d="M155 565H211V872" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><path class="" d="M161 572V861M205 572V861" fill="none" stroke="#486e8f" stroke-width="1.5" stroke-linejoin="round"/><path class="" d="M165 572V861" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(184 726) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">23</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g></g><use href="#wheel" x="71" y="727" width="84" height="84"/></g><g transform="translate(760 0) scale(-1 1)"><path class="" d="M126 555H151V865H130V813L117 802V744L130 722V599L121 592Z" fill="url(#metal)" stroke="#92a9bd" stroke-width="1.2" stroke-linejoin="round"/><path class="" d="M119 676H145V708H115V687ZM121 805H146V838H126Z" fill="#3b5266" stroke="#304759" stroke-width="1.2" stroke-linejoin="round"/><path class="" d="M122 553H216V564H122ZM132 866H217V878H132Z" fill="url(#chrome)" stroke="#7e95ab" stroke-width="1.2" stroke-linejoin="round"/><g filter="url(#shadow)"><g class="part" id="part-24" data-code="24" data-base="side-metal" role="button" tabindex="0" aria-pressed="false" aria-label="24 적재함문(우)"><title>24 적재함문(우)</title><path class="panel-depth" d="M151 560H216V876H151Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M151 560H216V876H151Z" fill="url(#side-metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><rect x="158" y="569" width="51" height="297" rx="2" fill="none" stroke="#98afc4" stroke-width="1.3"/><rect x="161" y="591" width="49" height="6" rx="1" fill="url(#chrome)" stroke="#96adc1" stroke-width="0.8"/><rect x="161" y="656" width="49" height="6" rx="1" fill="url(#chrome)" stroke="#96adc1" stroke-width="0.8"/><rect x="161" y="721" width="49" height="6" rx="1" fill="url(#chrome)" stroke="#96adc1" stroke-width="0.8"/><rect x="161" y="786" width="49" height="6" rx="1" fill="url(#chrome)" stroke="#96adc1" stroke-width="0.8"/><rect x="161" y="851" width="49" height="6" rx="1" fill="url(#chrome)" stroke="#96adc1" stroke-width="0.8"/><path class="" d="M155 565H211V872" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><path class="" d="M161 572V861M205 572V861" fill="none" stroke="#486e8f" stroke-width="1.5" stroke-linejoin="round"/><path class="" d="M165 572V861" fill="none" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(184 726) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">24</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g></g><use href="#wheel" x="71" y="727" width="84" height="84"/></g><g class="part" id="part-22" data-code="22" data-base="metal" role="button" tabindex="0" aria-pressed="false" aria-label="22 적재함문(뒤)"><title>22 적재함문(뒤)</title><path class="panel-depth" d="M278 896H482V940H278Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M278 896H482V940H278Z" fill="url(#metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><rect x="286" y="904" width="188" height="28" rx="2" fill="none" stroke="#94acbf" stroke-width="1.5"/><path class="" d="M288 918H472" fill="none" stroke="#8ea6bb" stroke-width="2" stroke-linejoin="round"/><rect x="296" y="934" width="15" height="7" rx="1" fill="url(#chrome)" stroke="#8097aa" stroke-width="1"/><rect x="449" y="934" width="15" height="7" rx="1" fill="url(#chrome)" stroke="#8097aa" stroke-width="1"/></g>
+<g class="part-badge" transform="translate(380 917) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">22</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-10" data-code="10" data-base="metal" role="button" tabindex="0" aria-pressed="false" aria-label="10 리어컴비패널(좌)"><title>10 리어컴비패널(좌)</title><path class="panel-depth" d="M282 955H340V971L311 983H282Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M282 955H340V971L311 983H282Z" fill="url(#metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M287 959H334" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(306 968) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">10</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-11" data-code="11" data-base="metal" role="button" tabindex="0" aria-pressed="false" aria-label="11 리어컴비패널(우)"><title>11 리어컴비패널(우)</title><path class="panel-depth" d="M420 955H478V983H449L420 971Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M420 955H478V983H449L420 971Z" fill="url(#metal)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M426 959H473" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></g>
+<g class="part-badge" transform="translate(454 968) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">11</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-04" data-code="04" data-base="tail" role="button" tabindex="0" aria-pressed="false" aria-label="04 리어컴비네이션램프(좌)"><title>04 리어컴비네이션램프(좌)</title><path class="panel-depth" d="M211 956H267Q272 956 272 962V972Q272 978 266 978H211Q207 978 207 972V962Q207 956 211 956Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M211 956H267Q272 956 272 962V972Q272 978 266 978H211Q207 978 207 972V962Q207 956 211 956Z" fill="url(#tail)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M213 960H265M213 974H265" fill="none" stroke="#ffd2d6" stroke-width="1.6" stroke-linejoin="round"/><rect x="215" y="961" width="9" height="12" rx="1" fill="#f3c57c" stroke="none" stroke-width="1"/></g>
+<g class="part-badge" transform="translate(238 967) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">04</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-05" data-code="05" data-base="tail" role="button" tabindex="0" aria-pressed="false" aria-label="05 리어컴비네이션램프(우)"><title>05 리어컴비네이션램프(우)</title><path class="panel-depth" d="M493 956H549Q554 956 554 962V972Q554 978 548 978H493Q489 978 489 972V962Q489 956 493 956Z" transform="translate(3 6)" fill="url(#panel-edge)" stroke="#5c7a94" stroke-width="1" stroke-linejoin="round" pointer-events="none"/><path class="surface" d="M493 956H549Q554 956 554 962V972Q554 978 548 978H493Q489 978 489 972V962Q489 956 493 956Z" fill="url(#tail)" stroke="#6b8da9" stroke-width="1.1" stroke-linejoin="round"/>
+<g class="panel-detail" pointer-events="none"><path class="" d="M495 960H547M495 974H547" fill="none" stroke="#ffd2d6" stroke-width="1.6" stroke-linejoin="round"/><rect x="497" y="961" width="9" height="12" rx="1" fill="#f3c57c" stroke="none" stroke-width="1"/></g>
+<g class="part-badge" transform="translate(520 967) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">05</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g></g></svg>
+<div class="inspection-dock"><section id="magnifier" class="magnifier" aria-label="선택 부위 확대" aria-live="polite"><div class="magnifier-lens"><svg id="magnifier-svg" class="magnifier-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 100" role="img" aria-label="선택 부위 확대도"></svg><p id="magnifier-empty" hidden>부위를 선택하면 확대해서 볼 수 있습니다.</p><span class="lens-corner top-left"></span><span class="lens-corner bottom-right"></span><span class="lens-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="5.5"/><path d="m14 14 5 5M10 7v6M7 10h6"/></svg></span></div><div class="magnifier-copy"><div class="magnifier-kicker">선택 부위 확대</div><strong id="magnifier-name">적재함(전체)</strong><span id="magnifier-state" class="detail-state">도장 + 탈착</span><span id="magnifier-code">부위 20</span></div></section><p class="inspect-hint">패널을 클릭하면<br>해당 부위를 확대해 보여드립니다.</p></div>
+<p class="diagram-foot">PDF 코드표 기준 · 30개 부위　 /　 전방 ↑ · 후방 ↓</p></section>
+<aside class="sidebar" aria-label="부위 상세 및 코드표">
+<section class="panel selection-panel" aria-label="선택한 부위"><div class="selection-heading"><h2>선택한 부위</h2><span id="detail-code" class="section-kicker">부위 코드 20</span></div><div id="selection" class="detail-main" aria-live="polite"><div class="detail-number" id="detail-icon" aria-hidden="true">20</div><div><h3 id="detail-name" class="detail-name">적재함(전체)</h3><span id="detail-state" class="detail-state">입력된 수리 이력 없음</span></div></div><p id="detail-description" class="detail-description">트럭 중앙 뒤쪽의 적재 공간입니다.</p><div class="legend" aria-label="수리 유형 범례"><span><i class="swatch"></i>탈착</span><span><i class="swatch paint"></i>도장</span><span><i class="swatch both"></i>도장 + 탈착</span></div></section>
+<section class="panel find-panel"><form id="find-form"><label class="field-title" for="find-input">부위 번호로 찾기</label><div class="input-row"><input id="find-input" type="text" autocomplete="off" placeholder="예: 12, 20, 29" aria-describedby="find-help selection-message"><button class="primary" type="submit">찾기</button></div><p class="helper" id="find-help">01–30 · 여러 번호는 쉼표 또는 공백으로 구분</p><div id="selection-message" class="message" role="status"></div></form></section>
+<section class="panel codes-panel"><div class="codes-heading"><h2>부위 코드표</h2><span>01–30 · 클릭하여 확인</span></div><div id="code-list" class="code-list"></div></section>
+</aside></div>
+<section class="data-panel" aria-labelledby="data-title"><div class="data-header"><div><h2 id="data-title">수리 이력 표시</h2><p>탈착·도장 부위 번호를 입력하면 해당 패널에 표시됩니다.</p></div><div class="data-actions"><button id="demo-data" class="text-button" type="button">예시 적용</button><button id="clear-data" class="text-button" type="button">초기화</button></div></div>
+<form id="data-form" class="data-form"><label for="detach-input">탈착 <span class="section-kicker">r502-20</span><input id="detach-input" type="text" autocomplete="off" placeholder="예: 12, 20, 29"></label><label for="paint-input">도장 <span class="section-kicker">r502-21</span><input id="paint-input" type="text" autocomplete="off" placeholder="예: 18, 20, 30"></label><button type="submit" class="primary">전개도에 적용</button></form><div id="input-message" class="message" role="status"></div><div class="repair-summary"><span>표시된 수리 부위 <strong id="count">0</strong>개</span><div id="repair-list"></div></div>
+<details class="api-guide"><summary>개발 연동 안내</summary><p>기존 승용차 샘플과 같은 입력 형식을 사용하며, 부위 번호는 트럭 코드표의 01–30을 따릅니다.</p><pre><code>// 탈착 / 도장 (동시에 포함되면 도장 + 탈착)
+setRepairData({'r502-20': ['12', '20', '29'], 'r502-21': ['18', '20', '30']});
+setRepairData('112 120 129 218 220 230'); // 기존 3자리 코드 형식
+setRepairData({});                       // 수리 이력 초기화
+setSelectedParts(['12', '20', '29']);     // 수리 이력과 별도로 부위 식별
+selectPart('30');                        // 한 부위 선택
+// 보고서 삽입: sample_truck_svg.html?embed=1</code></pre></details></section>
+<footer class="page-foot"><span>기준: 전개도_트럭.pdf · 코드표10 외판패널 (2/2)</span><span>표시된 형태는 부위 식별을 위한 개념도입니다.</span></footer>
+</main><script>
+(() => {
+  'use strict';
+
+  // Source: 전개도_트럭.pdf, 코드표 10 — 소형화물 01–30.
+  const PART_NAMES = Object.freeze({
+    '01': '프론트범퍼',
+    '02': '헤드램프(좌)',
+    '03': '헤드램프(우)',
+    '04': '리어컴비네이션램프(좌)',
+    '05': '리어컴비네이션램프(우)',
+    '06': '코너패널(좌)',
+    '07': '코너패널(우)',
+    '08': '리어필러(좌)',
+    '09': '리어필러(우)',
+    '10': '리어컴비패널(좌)',
+    '11': '리어컴비패널(우)',
+    '12': '프론트도어(좌)',
+    '13': '프론트도어(우)',
+    '14': '리어도어(좌)',
+    '15': '리어도어(우)',
+    '16': '사이드미러(좌)',
+    '17': '사이드미러(우)',
+    '18': '후드',
+    '19': '프론트패널',
+    '20': '적재함(전체)',
+    '21': '적재함문(앞)',
+    '22': '적재함문(뒤)',
+    '23': '적재함문(좌)',
+    '24': '적재함문(우)',
+    '25': '사이드스텝(좌)',
+    '26': '사이드스텝(우)',
+    '27': '센터필러(좌)',
+    '28': '센터필러(우)',
+    '29': '프론트스텝(좌)',
+    '30': '프론트스텝(우)'
+  });
+  const CODES = Object.keys(PART_NAMES).sort();
+  const svg = document.getElementById('truck-svg');
+  const parts = Array.from(svg.querySelectorAll('.part[data-code]'));
+  const byId = id => document.getElementById(id);
+  const write = (id, text) => { byId(id).textContent = text; };
+  let repairData = { detach: new Set(), paint: new Set() };
+  let selectedCodes = new Set();
+  let detailCode = null;
+
+  function normalize(value) {
+    if (value === undefined || (typeof value === 'string' && !value.trim())) return [];
+    let entries;
+    if (Array.isArray(value)) entries = value;
+    else if (typeof value === 'string') entries = value.trim().split(/[\s,]+/).filter(Boolean);
+    else if (typeof value === 'number') entries = [value];
+    else throw new Error('부위 번호를 01부터 30까지의 숫자 또는 번호 목록으로 입력하세요.');
+    const result = [];
+    for (const entry of entries) {
+      const validNumber = typeof entry === 'number' && Number.isInteger(entry) && entry >= 1 && entry <= 30;
+      const validString = typeof entry === 'string' && /^(?:0?[1-9]|[12]\d|30)$/.test(entry.trim());
+      if (!validNumber && !validString) {
+        const label = typeof entry === 'string' || typeof entry === 'number'
+          ? String(entry).slice(0, 36) : '잘못된 값';
+        throw new Error('알 수 없는 부위 코드: ' + label + '. 01부터 30까지 입력하세요.');
+      }
+      const code = String(Number(entry)).padStart(2, '0');
+      if (!result.includes(code)) result.push(code);
+    }
+    return result;
+  }
+
+  function state(code) {
+    const detach = repairData.detach.has(code);
+    const paint = repairData.paint.has(code);
+    return detach && paint ? 'both' : detach ? 'detach' : paint ? 'paint' : 'none';
+  }
+
+  function stateText(code) {
+    return { both: '도장 + 탈착', detach: '탈착', paint: '도장', none: '입력된 수리 이력 없음' }[state(code)];
+  }
+
+  function textElement(tag, className, text) {
+    const element = document.createElement(tag);
+    element.className = className;
+    element.textContent = text;
+    return element;
+  }
+
+  function makeCodeButton(code, className) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = className;
+    button.dataset.code = code;
+    button.dataset.select = code;
+    const copy = textElement('span', 'code-copy', '');
+    copy.append(
+      textElement('span', 'code-name', PART_NAMES[code]),
+      textElement('small', 'code-state', stateText(code))
+    );
+    button.append(textElement('span', 'code-number', code), copy);
+    return button;
+  }
+
+  function renderMagnifier() {
+    const preview = byId('magnifier-svg');
+    const magnifier = byId('magnifier');
+    if (!preview || !magnifier) return;
+    const empty = byId('magnifier-empty');
+    preview.replaceChildren();
+    magnifier.classList.toggle('is-empty', !detailCode);
+    magnifier.dataset.state = detailCode ? state(detailCode) : 'none';
+    preview.style.display = detailCode ? '' : 'none';
+    empty.hidden = Boolean(detailCode);
+    empty.textContent = '부위를 선택하면 확대해서 볼 수 있습니다.';
+    write('magnifier-code', detailCode ? '부위 ' + detailCode : '부위 확대');
+    write('magnifier-name', detailCode ? PART_NAMES[detailCode] : '확인할 부위를 선택하세요');
+    write('magnifier-state', detailCode ? stateText(detailCode) : '선택한 부위 없음');
+    byId('magnifier-state').dataset.state = detailCode ? state(detailCode) : 'none';
+    preview.setAttribute('role', 'img');
+    preview.setAttribute('aria-label', detailCode
+      ? detailCode + ' ' + PART_NAMES[detailCode] + ' 확대도 · ' + stateText(detailCode)
+      : '선택한 부위 없음');
+    if (!detailCode) {
+      delete preview.dataset.code;
+      return;
+    }
+    preview.dataset.code = detailCode;
+
+    const source = byId('vehicle-details');
+    const selectedPart = parts.find(part => part.dataset.code === detailCode);
+    const rootMatrix = svg.getCTM();
+    if (!source || !selectedPart || !rootMatrix) return;
+    const rootInverse = rootMatrix.inverse();
+    const points = [];
+    // Every surface can have its own transform; map its four corners to the
+    // main SVG's user coordinates so mirrored and projected views crop correctly.
+    selectedPart.querySelectorAll('.surface').forEach(surface => {
+      const matrix = surface.getCTM();
+      if (!matrix) return;
+      const bounds = surface.getBBox();
+      const relative = rootInverse.multiply(matrix);
+      for (const [x, y] of [
+        [bounds.x, bounds.y],
+        [bounds.x + bounds.width, bounds.y],
+        [bounds.x, bounds.y + bounds.height],
+        [bounds.x + bounds.width, bounds.y + bounds.height]
+      ]) {
+        const point = svg.createSVGPoint();
+        point.x = x;
+        point.y = y;
+        points.push(point.matrixTransform(relative));
+      }
+    });
+    if (!points.length) return;
+    const left = Math.min(...points.map(point => point.x));
+    const right = Math.max(...points.map(point => point.x));
+    const top = Math.min(...points.map(point => point.y));
+    const bottom = Math.max(...points.map(point => point.y));
+    const aspect = 1.3;
+    // Keep a true close-up: tall or wide panels show their central detail
+    // instead of shrinking their entire geometry into the preview.
+    const height = Math.min(100, Math.max(60,
+      (bottom - top) * 1.2, (right - left) * 1.2 / aspect));
+    const width = height * aspect;
+    const x = (left + right - width) / 2;
+    const y = (top + bottom - height) / 2;
+    preview.setAttribute('viewBox', [x, y, width, height].map(value => value.toFixed(2)).join(' '));
+    preview.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+    const clone = source.cloneNode(true);
+    clone.querySelectorAll('.part-badge, title, desc').forEach(element => element.remove());
+    for (const element of [clone, ...clone.querySelectorAll('*')]) {
+      element.removeAttribute('id');
+      element.removeAttribute('tabindex');
+      element.removeAttribute('role');
+      element.removeAttribute('aria-pressed');
+      element.removeAttribute('aria-label');
+      element.setAttribute('pointer-events', 'none');
+      element.classList.remove('selected');
+      if (element.classList.contains('part')) {
+        element.classList.replace('part', 'preview-part');
+        if (element.dataset.code === detailCode) element.classList.add('selected', 'preview-selected');
+      }
+      if (element.classList.contains('surface')) element.classList.replace('surface', 'preview-surface');
+      if (element.classList.contains('repair-hatch')) element.classList.replace('repair-hatch', 'preview-hatch');
+    }
+    // Retain the source group's transform plus any transforms on its ancestors.
+    const wrapper = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    const parentMatrix = source.parentElement.getCTM();
+    if (parentMatrix) {
+      const matrix = rootInverse.multiply(parentMatrix);
+      wrapper.setAttribute('transform', 'matrix(' + [matrix.a, matrix.b, matrix.c, matrix.d, matrix.e, matrix.f].join(' ') + ')');
+    }
+    wrapper.setAttribute('aria-hidden', 'true');
+    wrapper.setAttribute('pointer-events', 'none');
+    wrapper.append(clone);
+    preview.append(wrapper);
+  }
+
+  function renderDetail() {
+    if (!detailCode) {
+      write('detail-code', '부위 선택');
+      write('detail-name', '확인할 부위를 선택하세요');
+      write('detail-state', '선택한 부위 없음');
+      write('detail-description', '전개도 또는 코드표에서 부위를 선택하거나 번호를 입력하세요.');
+      write('detail-icon', '—');
+      byId('detail-state').dataset.state = 'none';
+      renderMagnifier();
+      return;
+    }
+    write('detail-code', '부위 코드 ' + detailCode);
+    write('detail-name', PART_NAMES[detailCode]);
+    write('detail-state', stateText(detailCode));
+    write('detail-icon', detailCode);
+    byId('detail-state').dataset.state = state(detailCode);
+    write('detail-description', state(detailCode) === 'none'
+      ? '현재 입력한 수리 코드에는 이 부위가 포함되어 있지 않습니다.'
+      : '입력된 수리 유형은 ' + stateText(detailCode) + '입니다. 해당 패널을 전개도에 표시했습니다.');
+    renderMagnifier();
+  }
+
+  function renderSelection() {
+    byId('selection-message').classList.remove('error');
+    for (const element of [...parts, ...byId('code-list').querySelectorAll('.code-item'), ...byId('repair-list').querySelectorAll('[data-select]')]) {
+      const selected = selectedCodes.has(element.dataset.code);
+      element.classList.toggle('selected', selected);
+      element.setAttribute('aria-pressed', String(selected));
+    }
+    byId('find-input').value = [...selectedCodes].join(', ');
+    write('selection-message', selectedCodes.size
+      ? selectedCodes.size + '개 부위를 표시했습니다: ' + [...selectedCodes].join(', ')
+      : '부위 번호를 입력하거나 전개도에서 선택하세요.');
+    renderDetail();
+  }
+
+  function renderRepairData() {
+    svg.querySelectorAll('.repair-hatch').forEach(element => element.remove());
+    for (const part of parts) {
+      const code = part.dataset.code;
+      const repairState = state(code);
+      part.dataset.state = repairState;
+      const label = code + ' ' + PART_NAMES[code] + ' · ' + stateText(code);
+      part.setAttribute('aria-label', label);
+      const title = part.querySelector('title');
+      if (title) title.textContent = label;
+      part.querySelectorAll('.part-badge').forEach(badge => { badge.dataset.state = repairState; });
+      part.querySelectorAll('.surface').forEach(surface => {
+        surface.setAttribute('fill', 'url(#' + (repairState === 'none' ? part.dataset.base : repairState) + ')');
+        if (repairState === 'both') {
+          const hatch = surface.cloneNode(true);
+          hatch.removeAttribute('id');
+          hatch.removeAttribute('tabindex');
+          hatch.removeAttribute('role');
+          hatch.setAttribute('class', 'repair-hatch');
+          hatch.setAttribute('fill', 'url(#both-stripes)');
+          hatch.setAttribute('stroke', 'none');
+          hatch.setAttribute('pointer-events', 'none');
+          hatch.setAttribute('aria-hidden', 'true');
+          surface.after(hatch);
+        }
+      });
+    }
+    for (const button of byId('code-list').querySelectorAll('.code-item')) {
+      const code = button.dataset.code;
+      button.dataset.state = state(code);
+      button.setAttribute('aria-label', code + ' ' + PART_NAMES[code] + ' · ' + stateText(code));
+      button.querySelector('.code-state').textContent = stateText(code);
+    }
+    const applied = CODES.filter(code => state(code) !== 'none');
+    write('count', String(applied.length));
+    const repairList = byId('repair-list');
+    repairList.replaceChildren();
+    if (!applied.length) {
+      repairList.append(textElement('p', 'empty-state', '입력된 수리 코드가 없습니다.'));
+    } else {
+      applied.forEach(code => {
+        const button = makeCodeButton(code, 'repair-row row');
+        button.dataset.state = state(code);
+        button.setAttribute('aria-label', code + ' ' + PART_NAMES[code] + ' · ' + stateText(code));
+        repairList.append(button);
+      });
+    }
+    renderSelection();
+    return applied;
+  }
+
+  // Same public contract as sample_svg.html. Every call replaces repair data.
+  // setRepairData({'r502-20': ['12', '20'], 'r502-21': ['18', '20']});
+  // setRepairData('112 120 218 220'); setRepairData({});
+  window.setRepairData = function setRepairData(data = {}) {
+    if (typeof data === 'string') {
+      const legacy = data.trim() ? data.trim().split(/\s+/) : [];
+      if (legacy.some(code => !/^[12](?:0[1-9]|[12]\d|30)$/.test(code))) {
+        throw new Error('기존 수리 코드는 112 220처럼 입력하세요. 첫 자리는 탈착 1 또는 도장 2, 부위 번호는 01부터 30까지입니다.');
+      }
+      data = {
+        'r502-20': legacy.filter(code => code[0] === '1').map(code => code.slice(1)),
+        'r502-21': legacy.filter(code => code[0] === '2').map(code => code.slice(1))
+      };
+    }
+    if (!data || typeof data !== 'object' || Array.isArray(data)) {
+      throw new Error('r502-20(탈착), r502-21(도장)을 포함한 수리 코드 객체를 전달하세요.');
+    }
+    // Validate both collections before changing any state or UI.
+    const detach = normalize(data['r502-20']);
+    const paint = normalize(data['r502-21']);
+    repairData = { detach: new Set(detach), paint: new Set(paint) };
+    byId('detach-input').value = detach.join(', ');
+    byId('paint-input').value = paint.join(', ');
+    byId('input-message').classList.remove('error');
+    write('input-message', '');
+    return { applied: renderRepairData(), unsupported: [] };
+  };
+
+  // Neutral part selection is independent of paint/detach status.
+  window.setSelectedParts = function setSelectedParts(value) {
+    const codes = normalize(value);
+    selectedCodes = new Set(codes);
+    detailCode = codes[0] || null;
+    renderSelection();
+    return [...selectedCodes];
+  };
+
+  window.selectPart = function selectPart(value) {
+    const codes = normalize(value);
+    if (codes.length !== 1) throw new Error('상세 정보를 확인할 부위 번호 한 개를 입력하세요.');
+    return window.setSelectedParts(codes)[0];
+  };
+
+  byId('code-list').replaceChildren(...CODES.map(code => makeCodeButton(code, 'code-item')));
+  for (const part of parts) {
+    part.setAttribute('role', 'button');
+    part.setAttribute('tabindex', '0');
+    // Badge rectangles extend the hit area for narrow panels; decoration stays passive.
+    part.querySelectorAll('*').forEach(element => {
+      const hitArea = element.classList.contains('surface') ||
+        (element.tagName.toLowerCase() === 'rect' && element.closest('.part-badge'));
+      element.setAttribute('pointer-events', hitArea ? 'visiblePainted' : 'none');
+    });
+    part.addEventListener('click', () => window.selectPart(part.dataset.code));
+    part.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        window.selectPart(part.dataset.code);
+      }
+    });
+  }
+
+  for (const id of ['code-list', 'repair-list']) {
+    byId(id).addEventListener('click', event => {
+      const button = event.target.closest('[data-select]');
+      if (button && byId(id).contains(button)) window.selectPart(button.dataset.select);
+    });
+  }
+  byId('find-form').addEventListener('submit', event => {
+    event.preventDefault();
+    try {
+      window.setSelectedParts(byId('find-input').value);
+    } catch (error) {
+      byId('selection-message').classList.add('error');
+      write('selection-message', error.message);
+    }
+  });
+  byId('data-form').addEventListener('submit', event => {
+    event.preventDefault();
+    try {
+      const result = window.setRepairData({
+        'r502-20': byId('detach-input').value,
+        'r502-21': byId('paint-input').value
+      });
+      write('input-message', result.applied.length + '개 부위의 수리 코드를 적용했습니다.');
+    } catch (error) {
+      byId('input-message').classList.add('error');
+      write('input-message', error.message);
+    }
+  });
+  byId('clear-data').addEventListener('click', () => {
+    window.setRepairData({});
+    window.setSelectedParts([]);
+    write('input-message', '수리 코드와 부위 선택을 초기화했습니다.');
+  });
+  byId('demo-data').addEventListener('click', () => {
+    window.setRepairData({ 'r502-20': ['12', '20', '29'], 'r502-21': ['18', '20', '30'] });
+    window.selectPart('12');
+    write('input-message', '예시 수리 코드입니다. 실제 차량의 수리 이력이 아닙니다.');
+  });
+  function updateCodeVisibility() {
+    const visible = byId('toggle-codes').checked;
+    svg.classList.toggle('hide-codes', !visible);
+  }
+  byId('toggle-codes').addEventListener('change', updateCodeVisibility);
+
+  window.setRepairData({ 'r502-20': ['12', '20', '29'], 'r502-21': ['18', '20', '30'] });
+  window.selectPart('12');
+  write('input-message', '예시 수리 코드입니다. 실제 차량의 수리 이력이 아닙니다.');
+  updateCodeVisibility();
+
+  if (new URLSearchParams(location.search).has('embed')) {
+    document.body.classList.add('embed');
+    document.documentElement.classList.add('embed-document');
+    const stage = document.querySelector('.stage');
+    let lastHeight = 0;
+    const reportSize = () => {
+      const height = Math.ceil(stage.getBoundingClientRect().height);
+      if (height > 0 && height !== lastHeight) {
+        lastHeight = height;
+        parent.postMessage({ type: 'car-diagram-height', height }, '*');
+      }
+    };
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(reportSize).observe(stage);
+    window.addEventListener('resize', reportSize);
+    reportSize();
+  }
+})();
+
+</script></body></html>
