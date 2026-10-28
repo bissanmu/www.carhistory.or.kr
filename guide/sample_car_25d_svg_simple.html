@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>승용차 외판패널 전개도 · 카히스토리</title><style>*{box-sizing:border-box} :root{color-scheme:light;--ink:#3a3a3a;--muted:#828282;--blue:#1f1f1f;--line:#e6e6e6}body{margin:0;background:#f5f5f5;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #6b6b6b;outline-offset:3px}button{touch-action:manipulation}button:disabled{cursor:default}.stage{max-width:1240px;margin:0 auto;padding:42px 32px 28px}.page-header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:28px}.eyebrow{font-size:11px;font-weight:750;letter-spacing:2px;color:#737373;margin-bottom:10px}.page-header h1{font-size:30px;letter-spacing:-1.2px;margin:0 0 10px;font-weight:750}.page-header p{margin:0;color:var(--muted);font-size:14px;line-height:1.7}.vehicle-type{padding:9px 14px;border-radius:20px;border:1px solid #dcdcdc;background:#f1f1f1;white-space:nowrap;font-size:12px;font-weight:700;color:#6e6e6e}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:start}.diagram-card{overflow:hidden;border:1px solid #e5e5e5;border-radius:24px;background:radial-gradient(ellipse at 50% 44%,#fbfbfb 0,#f3f3f3 55%,#ececec 100%);position:relative}.diagram-toolbar{display:flex;align-items:center;justify-content:space-between;padding:20px 22px 5px;gap:12px;font-size:12px;color:#777777}.diagram-toolbar strong{font-weight:700;color:#585858}.toggle-label{display:flex;align-items:center;gap:6px;cursor:pointer}.toggle-label input{accent-color:#3a3a3a;width:15px;height:15px;margin:0}.car-svg{display:block;width:100%;height:auto;max-height:1040px}.direction-label{font-size:10px;fill:#939393;color:#939393;font-weight:650;letter-spacing:1.7px}.part{cursor:pointer;outline:none}.panel-depth{filter:url(#part-contact)}.surface{transition:fill .15s,stroke .15s;vector-effect:non-scaling-stroke}.part[data-state="detach"] .surface{stroke:#1f62bd;stroke-width:1.4}.part[data-state="paint"] .surface{stroke:#bd333a;stroke-width:1.4}.part[data-state="both"] .surface{stroke:#b08500;stroke-width:1.4}.part:hover .surface{stroke:#5a5a5a;stroke-width:1.8}.part.selected .surface,.part:focus-visible .surface{stroke:#1f1f1f;stroke-width:2.5}.part:focus-visible .part-badge rect{stroke:#1f1f1f;stroke-width:3}.part-badge{transition:opacity .15s}.part-badge rect{fill:#ffffff;stroke:#c4c4c4;stroke-width:1}.part-badge text{fill:#5b5b5b;font-size:12px;font-weight:750;pointer-events:none}.part.selected .part-badge rect{fill:#1f1f1f;stroke:#ffffff;stroke-width:2}.part.selected .part-badge text{fill:#ffffff}.part[data-state="detach"] .part-badge rect{stroke:#2f7de1;stroke-width:2}.part[data-state="paint"] .part-badge rect{stroke:#e5484d;stroke-width:2}.part[data-state="both"] .part-badge rect{stroke:#b08500;stroke-width:2}.state-marks{display:none;pointer-events:none}.detach-dot{fill:#2f7de1;stroke:#ffffff;stroke-width:1.4;display:none}.paint-dot{fill:#e5484d;stroke:#ffffff;stroke-width:1.4;display:none}.part[data-state="detach"] .state-marks,.part[data-state="paint"] .state-marks,.part[data-state="both"] .state-marks{display:block}.part[data-state="detach"] .detach-dot,.part[data-state="both"] .detach-dot,.part[data-state="paint"] .paint-dot,.part[data-state="both"] .paint-dot{display:block}.hide-codes .part-badge{opacity:0}.hide-codes .part:hover .part-badge,.hide-codes .part.selected .part-badge,.hide-codes .part:focus-visible .part-badge,.hide-codes .part[data-state="detach"] .part-badge,.hide-codes .part[data-state="paint"] .part-badge,.hide-codes .part[data-state="both"] .part-badge{opacity:1}.diagram-foot{margin:0 20px;padding:14px 0 18px;border-top:1px solid #e5e5e5;color:#929292;font-size:11px;text-align:center;line-height:1.7}.sidebar{display:grid;gap:16px}.panel{background:#ffffff;border:1px solid var(--line);border-radius:20px;padding:22px}.panel h2{font-size:14px;margin:0;font-weight:750}.selection-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.section-kicker{font-size:11px;color:#909090;letter-spacing:.5px}.detail-main{display:flex;align-items:center;gap:14px}.detail-number{display:grid;place-items:center;width:64px;height:70px;background:linear-gradient(140deg,#f3f3f3,#e5e5e5);color:#1f1f1f;border:1px solid #e0e0e0;border-radius:16px;font-size:25px;font-weight:750;flex-shrink:0}.detail-name{font-size:18px;letter-spacing:-.6px;line-height:1.35;margin:0 0 8px;overflow-wrap:anywhere}.detail-state{font-size:12px;color:#8b8b8b}.detail-state[data-state="detach"]{color:#1d63bf}.detail-state[data-state="paint"]{color:#c4353c}.detail-state[data-state="both"]{color:#8a6800}.detail-description{color:#909090;line-height:1.7;font-size:12px;margin:16px 0 0}.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:19px;padding-top:17px;border-top:1px solid #eeeeee;font-size:11px;color:#7c7c7c}.legend span{display:flex;align-items:center;gap:6px}.swatch{width:12px;height:12px;border-radius:4px;background:#2f7de1;border:1px solid #1f62bd}.swatch.paint{background:#e5484d;border-color:#bd333a}.swatch.both{background:repeating-linear-gradient(125deg,#f2b800 0 3px,#ffe7a3 3px 6px);border-color:#b08500}.find-panel{padding:20px 22px}.field-title{display:block;font-size:12px;font-weight:700;margin-bottom:10px}.input-row{display:flex;gap:8px}.input-row input{width:100%;min-width:0;border:1px solid #dbdbdb;border-radius:9px;padding:10px 12px;background:#fdfdfd;font-size:13px;color:#4c4c4c}.primary{background:#1f1f1f;color:#ffffff;border:1px solid #1f1f1f;border-radius:9px;padding:10px 14px;font-size:12px;font-weight:650;white-space:nowrap}.helper{color:#969696;font-size:11px;margin:9px 0 0;line-height:1.6}.message{font-size:12px;line-height:1.7;color:#797979;margin-top:8px}.message:empty{display:none}.message.error{color:#bc4157}.codes-panel{padding:20px 14px 14px}.codes-heading{display:flex;align-items:center;justify-content:space-between;padding:0 8px 14px;gap:8px}.codes-heading span{font-size:10px;color:#979797}.code-list{display:grid;grid-template-columns:1fr 1fr;gap:4px}.code-item{display:flex;align-items:center;gap:7px;background:#ffffff;border:1px solid transparent;border-radius:8px;padding:8px 5px;text-align:left;color:#747474;min-width:0;position:relative;min-height:36px}.code-item .code-number{flex-shrink:0;font-size:10px;font-weight:750;min-width:23px;height:22px;border-radius:6px;background:#f4f4f4;display:grid;place-items:center;color:#858585}.code-item .code-name{font-size:10.5px;line-height:1.4;letter-spacing:-.35px;overflow-wrap:anywhere}.code-item .code-state{font-size:8px;line-height:1.3;display:block}.code-copy{min-width:0;display:block}.code-item .code-name{display:block}.code-item[data-state="none"] .code-state{display:none}.code-item:hover{background:#f9f9f9}.code-item.selected{background:#f3f3f3;border-color:#dedede;color:#1f1f1f}.code-item.selected .code-number{background:#1f1f1f;color:#ffffff}.code-item[data-state="detach"] .code-number{box-shadow:inset 0 -3px #2f7de1}.code-item[data-state="paint"] .code-number{box-shadow:inset 0 -3px #e5484d}.code-item[data-state="both"] .code-number{box-shadow:inset 0 -3px #f2b800}.data-panel{margin-top:24px;background:#ffffff;border:1px solid var(--line);border-radius:20px;padding:22px}.data-header{display:flex;align-items:center;justify-content:space-between;gap:16px}.data-header h2{margin:0;font-size:15px}.data-header p{margin:7px 0 0;font-size:12px;color:#939393}.data-actions{display:flex;gap:6px}.text-button{background:#f5f5f5;color:#767676;border:1px solid #eaeaea;border-radius:8px;padding:8px 11px;font-size:11px;white-space:nowrap}.data-form{display:grid;grid-template-columns:1fr 1fr auto;gap:14px;margin-top:20px;align-items:end}.data-form label{font-size:12px;font-weight:650;color:#6d6d6d}.data-form input{display:block;width:100%;border:1px solid #dedede;border-radius:9px;padding:11px 12px;font-size:13px;color:#515151;margin-top:8px;background:#fdfdfd}.data-form .primary{padding:11px 22px}.repair-summary{margin-top:16px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;font-size:11px;color:#8f8f8f}.repair-summary strong{color:#1f1f1f;font-size:13px}#repair-list{display:flex;gap:6px;flex-wrap:wrap}#repair-list .code-number{font-weight:750;margin-right:5px}#repair-list .code-copy{display:inline}#repair-list .code-state{margin-left:5px;font-size:9px}#repair-list button{border:1px solid #e4e4e4;border-radius:6px;background:#f9f9f9;padding:5px 8px;color:#6c6c6c;font-size:10px}#repair-list p{margin:0;font-size:11px;color:#9a9a9a}.page-foot{display:flex;justify-content:space-between;gap:12px;margin:18px 4px 0;color:#a4a4a4;font-size:10px;line-height:1.8}.api-guide{font-size:11px;color:#8e8e8e;margin-top:16px}.api-guide summary{cursor:pointer;display:inline-block}.api-guide pre{overflow:auto;border-radius:10px;background:#f7f7f7;padding:14px;font-size:11px;line-height:1.8;color:#6e6e6e}.api-guide p{line-height:1.8}.embed-document,.embed{margin:0;background:transparent}.embed .stage{padding:0;max-width:none}.embed .page-header,.embed .find-panel,.embed .codes-panel,.embed .data-panel,.embed .page-foot,.embed .diagram-toolbar{display:none}.embed .workspace{display:flex;flex-direction:column;gap:16px}.embed .diagram-card{width:100%;border:0;background:transparent;border-radius:0}.embed .car-svg{max-height:none}.embed .diagram-foot{display:none}.embed .sidebar{width:100%}.embed .selection-panel{width:100%}.embed .detail-main{gap:18px}.embed .legend{font-size:13px}.embed .detail-description{font-size:13px}
+@media(min-width:1450px){.stage{max-width:1320px}.workspace{grid-template-columns:minmax(0,1fr) 360px}.code-item .code-name{font-size:11px}}
+@media(max-width:850px){.stage{padding:26px 18px}.workspace{grid-template-columns:minmax(0,1fr) 290px;gap:16px}.panel{padding:18px}.codes-panel{padding:18px 9px 10px}.code-list{grid-template-columns:1fr}.code-item{min-height:31px;padding:5px}.code-item .code-name{font-size:11px}.car-svg{min-width:0}.page-header h1{font-size:26px}.diagram-toolbar{padding:18px 14px 6px;font-size:11px}.diagram-foot{margin:0 12px}}
+@media(max-width:650px){.stage{padding:22px 14px}.page-header{margin-bottom:20px;align-items:flex-start}.page-header h1{font-size:25px}.page-header p{font-size:12px}.eyebrow{font-size:9px}.vehicle-type{font-size:10px;padding:7px 10px}.workspace{grid-template-columns:1fr;gap:14px}.diagram-card{border-radius:20px}.diagram-toolbar{padding:17px 18px 8px}.car-svg{max-height:none}.sidebar{gap:12px}.selection-heading{margin-bottom:16px}.detail-number{width:55px;height:60px;font-size:23px}.detail-description{margin-top:12px}.legend{margin-top:14px;padding-top:14px}.code-list{grid-template-columns:1fr 1fr;gap:5px}.code-item .code-name{font-size:11px}.code-item{min-height:36px}.codes-panel{padding:18px 12px}.data-panel{padding:18px;margin-top:16px}.data-header{align-items:flex-start}.data-header h2{font-size:14px}.data-header p{font-size:11px}.data-actions{gap:4px}.text-button{padding:7px 8px;font-size:10px}.data-form{grid-template-columns:1fr;gap:14px}.data-form .primary{width:100%}.page-foot{flex-direction:column;gap:2px}.embed .stage{padding:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}@media print{body{background:white}.stage{padding:0}.workspace{grid-template-columns:1fr 280px}.find-panel,.data-panel,.page-foot,.diagram-toolbar{display:none}.code-list{grid-template-columns:1fr 1fr}.code-item{padding:4px}.panel{break-inside:avoid}.diagram-card{background:#f8f8f8}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+/* Material lighting and the live, lower-left inspection lens. */
+.part-badge{filter:drop-shadow(0 2px 3px #48484822)}
+.state-marks .detach-dot,.state-marks .paint-dot{stroke:none}
+.state-marks circle{stroke:white;stroke-width:1.8}
+.detach-dot circle{fill:#2f7de1}.paint-dot circle{fill:#e5484d}
+.state-marks use{color:white;fill:none;stroke:none}
+.swatch{background:#2f7de1;border-color:#1f62bd}.swatch.paint{background:#e5484d;border-color:#bd333a}.swatch.both{background:repeating-linear-gradient(125deg,#f2b800 0 3px,#ffe7a3 3px 6px)}
+.inspection-dock{display:flex;align-items:center;gap:24px;padding:6px 20px 20px}
+.magnifier{display:flex;align-items:center;gap:16px;padding:14px;width:370px;max-width:100%;min-height:160px;background:#ffffffed;border:1px solid #e3e3e3;border-radius:19px;box-shadow:0 10px 28px #64646414;flex-shrink:0}
+.magnifier-lens{width:166px;aspect-ratio:1.3;position:relative;overflow:hidden;flex-shrink:0;border-radius:13px;background:radial-gradient(ellipse at 40% 35%,#fafafa,#dadada);box-shadow:inset 0 0 0 1px #d2d2d2}
+.magnifier-svg{display:block;width:100%;height:100%;pointer-events:none}
+.preview-selected .preview-surface{stroke:#1f1f1f;stroke-width:1.8;vector-effect:non-scaling-stroke}
+.preview-part:not(.preview-selected){opacity:.65}
+.magnifier-copy{min-width:0;display:flex;flex-direction:column;gap:9px}
+.magnifier-kicker{color:#818181;font-size:10px;letter-spacing:.5px;font-weight:650}
+#magnifier-name{font-size:15px;line-height:1.45;letter-spacing:-.5px;overflow-wrap:anywhere}
+#magnifier-code{color:#9e9e9e;font-size:11px}
+#magnifier-state{font-size:11px;line-height:1.5}
+#magnifier-empty{position:absolute;inset:22px 13px;font-size:11px;line-height:1.7;color:#8c8c8c;text-align:center}
+#magnifier-empty[hidden]{display:none}
+.lens-symbol{position:absolute;left:7px;bottom:7px;width:24px;height:24px;display:grid;place-items:center;background:#ffffffd9;border:1px solid #d4d4d4;border-radius:8px}
+.lens-symbol svg{width:17px;height:17px;fill:none;stroke:#858585;stroke-width:1.8;stroke-linecap:round}
+.lens-corner{position:absolute;width:14px;height:14px;border-color:#989898;opacity:.55;pointer-events:none}
+.top-left{left:7px;top:7px;border-left:1.5px solid;border-top:1.5px solid;border-radius:4px 0 0}
+.bottom-right{right:7px;bottom:7px;border-right:1.5px solid;border-bottom:1.5px solid;border-radius:0 0 4px}
+.inspect-hint{font-size:11px;line-height:1.9;color:#979797;margin:0}
+.embed .inspection-dock{padding:4px 12px 16px}
+@media(max-width:1000px){.inspect-hint{display:none}.magnifier{width:100%}.inspection-dock{padding:6px 14px 16px}.magnifier-lens{width:44%;max-width:166px}.magnifier-copy{gap:7px}#magnifier-name{font-size:13px}}
+@media(max-width:650px){.inspection-dock{padding:4px 14px 14px}.magnifier{padding:12px;gap:13px;min-height:140px}.magnifier-lens{width:44%;max-width:none}.magnifier-copy{gap:7px}#magnifier-name{font-size:14px}#magnifier-state{font-size:10px}.magnifier-kicker{font-size:9px}}
+
+/* Monochrome base: only parts with repair codes carry color. */
+.part-badge rect{fill:#fff;stroke:#c9c9c9}.part-badge text{fill:#6b6b6b}
+.part[data-state="detach"] .part-badge text{fill:#1d63bf}.part[data-state="paint"] .part-badge text{fill:#c4353c}.part[data-state="both"] .part-badge text{fill:#8a6800}
+.part[data-state="detach"] .part-badge rect,.part[data-state="paint"] .part-badge rect,.part[data-state="both"] .part-badge rect{stroke-width:2.5}
+.part.selected .part-badge rect{fill:#1f1f1f;stroke:#fff;stroke-width:2}.part.selected .part-badge text{fill:#fff}
+.part-badge{filter:drop-shadow(0 1px 2px #0000001f)}
+
+/* Hover label: part code and name from the code table, next to the pointer. */
+.part-tooltip{position:absolute;left:0;top:0;z-index:5;display:flex;align-items:center;gap:8px;padding:7px 11px 7px 7px;border-radius:10px;background:#1f1f1fef;color:#fff;font-size:12px;line-height:1.3;white-space:nowrap;pointer-events:none;box-shadow:0 6px 18px #0000002e;opacity:0;transform:translate(-50%,calc(-100% - 14px));transition:opacity .12s}
+.part-tooltip.visible{opacity:1}
+.part-tooltip .tip-code{display:grid;place-items:center;min-width:26px;height:22px;padding:0 5px;border-radius:6px;background:#ffffff26;font-weight:750;font-size:11px}
+.part-tooltip .tip-name{font-weight:650}
+.part-tooltip .tip-state{font-size:10px;color:#cfcfcf;margin-left:2px}
+.part-tooltip .tip-state:empty{display:none}
+.part-tooltip[data-state="detach"] .tip-code{background:#2f7de1}.part-tooltip[data-state="paint"] .tip-code{background:#e5484d}.part-tooltip[data-state="both"] .tip-code{background:#c99a00}
+.part-tooltip.below{transform:translate(-50%,16px)}
+/* RV-only codes stay in the table but are marked as not drawn on the sedan. */
+.code-item.off-diagram .code-name{color:#a3a3a3}
+.code-item.off-diagram .code-number{background:transparent;border:1px dashed #c9c9c9;color:#a3a3a3}
+.code-item.off-diagram[data-state="none"] .code-state{display:block;color:#a3a3a3}
+</style></head>
+<body><main class="stage">
+<header class="page-header"><div><div class="eyebrow">CARHISTORY · BODY PANEL GUIDE</div><h1>승용차 외판패널</h1><p>부위 번호를 입력하거나 패널을 선택해 위치와 수리 이력을 확인하세요.</p></div><span class="vehicle-type">승용 · 세단</span></header>
+<div class="workspace">
+<section class="diagram-card" aria-label="승용차 전개도"><div class="diagram-toolbar"><strong>2.5D 외판패널 전개도</strong><label class="toggle-label"><input id="toggle-codes" type="checkbox">전체 부위 번호 표시</label></div>
+<svg id="vehicle-svg" class="car-svg hide-codes" viewBox="203 0 760 1070" xmlns="http://www.w3.org/2000/svg" role="group" aria-labelledby="diagram-title diagram-desc">
+<title id="diagram-title">승용차 외판패널 전개도</title><desc id="diagram-desc">전방은 위, 후방은 아래입니다. 정면, 후면, 좌우 측면과 상단의 01부터 28까지 외판 부위를 선택할 수 있습니다. 17·18 슬라이딩도어는 RV 전용이라 승용 전개도에는 없습니다.</desc>
+<defs><linearGradient id="detach" x1="0" y1="0" x2="1" y2=".4"><stop offset="0" stop-color="#2766bd"/><stop offset=".1" stop-color="#5b9bee"/><stop offset=".5" stop-color="#4a8fea"/><stop offset=".9" stop-color="#3d84e3"/><stop offset="1" stop-color="#2563b8"/></linearGradient><linearGradient id="paint" x1="0" y1="0" x2="1" y2=".6"><stop offset="0" stop-color="#c23e45"/><stop offset=".1" stop-color="#f08487"/><stop offset=".5" stop-color="#ec6a6f"/><stop offset=".9" stop-color="#e55a60"/><stop offset="1" stop-color="#bd3a41"/></linearGradient><linearGradient id="both" x1="0" y1="0" x2="1" y2=".6"><stop offset="0" stop-color="#c49300"/><stop offset=".1" stop-color="#ffd451"/><stop offset=".5" stop-color="#f8c52a"/><stop offset=".9" stop-color="#f1ba12"/><stop offset="1" stop-color="#bf8f00"/></linearGradient><pattern id="both-stripes" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="4" height="10" fill="#ffffff" opacity=".3"/></pattern><symbol id="detach-tool" viewBox="0 0 24 24"><path d="M14 4a6 6 0 0 0-7 7L2 16a3 3 0 0 0 5 5l6-6a6 6 0 0 0 7-8l-4 4-3-3 4-4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol><symbol id="paint-tool" viewBox="0 0 24 24"><rect x="2" y="3" width="15" height="7" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M17 6h4v8H11v7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></symbol><linearGradient id="metal" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#ffffff"/><stop offset=".48" stop-color="#f3f3f3"/><stop offset="1" stop-color="#d3d3d3"/></linearGradient><linearGradient id="glass" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#e3e3e3"/><stop offset=".48" stop-color="#a8a8a8"/><stop offset="1" stop-color="#878787"/></linearGradient><linearGradient id="lamp" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#ffffff"/><stop offset=".48" stop-color="#f6f6f6"/><stop offset="1" stop-color="#d4d4d4"/></linearGradient><linearGradient id="tail" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#e0e0e0"/><stop offset=".48" stop-color="#bebebe"/><stop offset="1" stop-color="#a4a4a4"/></linearGradient><filter id="shadow" x="-40%" y="-40%" width="180%" height="200%"><feDropShadow dx="3" dy="12" stdDeviation="8" flood-color="#000000" flood-opacity="0.108"/></filter><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#ededed"/></pattern>
+<radialGradient id="pw-rubber" cx="30%" cy="23%" r="77%"><stop stop-color="#878787"/><stop offset=".44" stop-color="#727272"/><stop offset=".76" stop-color="#676767"/><stop offset=".92" stop-color="#606060"/><stop offset="1" stop-color="#777777"/></radialGradient>
+<linearGradient id="pw-depth" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#646464"/><stop offset=".55" stop-color="#777777"/><stop offset="1" stop-color="#5e5e5e"/></linearGradient>
+<linearGradient id="pw-rim" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fcfcfc"/><stop offset=".18" stop-color="#d6d6d6"/><stop offset=".34" stop-color="#ffffff"/><stop offset=".47" stop-color="#afafaf"/><stop offset=".66" stop-color="#d9d9d9"/><stop offset=".79" stop-color="#909090"/><stop offset="1" stop-color="#efefef"/></linearGradient>
+<radialGradient id="pw-cavity" cx="41%" cy="36%" r="66%"><stop stop-color="#969696"/><stop offset=".55" stop-color="#797979"/><stop offset=".85" stop-color="#676767"/><stop offset="1" stop-color="#5d5d5d"/></radialGradient>
+<linearGradient id="pw-disc" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a3a3a3"/><stop offset=".42" stop-color="#cdcdcd"/><stop offset="1" stop-color="#8f8f8f"/></linearGradient>
+<linearGradient id="pw-spoke" x1="0" y1="0" x2="1" y2=".5"><stop stop-color="#fbfbfb"/><stop offset=".28" stop-color="#e3e3e3"/><stop offset=".48" stop-color="#b2b2b2"/><stop offset=".67" stop-color="#efefef"/><stop offset="1" stop-color="#a6a6a6"/></linearGradient>
+<linearGradient id="pw-spoke-edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d2d2d2"/><stop offset=".4" stop-color="#a6a6a6"/><stop offset="1" stop-color="#7c7c7c"/></linearGradient>
+<linearGradient id="pw-hub" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f2f2f2"/><stop offset=".32" stop-color="#d3d3d3"/><stop offset=".65" stop-color="#acacac"/><stop offset="1" stop-color="#858585"/></linearGradient>
+<linearGradient id="pw-caliper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a2a2a2"/><stop offset=".5" stop-color="#8f8f8f"/><stop offset="1" stop-color="#797979"/></linearGradient>
+<path id="pw-spoke-shape" d="M-3.7-6.3 -9.7-25.5 -6.4-28.1 -1.6-14.7 1.7-14.7 5.2-28.2 8.6-26.3 3.6-6.3Z"/>
+<symbol id="premium-wheel" viewBox="-45 -45 90 90">
+<!-- Rubber shoulder, tread barrel and satin sidewall. -->
+<circle cy="3.5" r="40.4" fill="url(#pw-depth)" stroke="#2b2b2b" stroke-width=".8"/>
+<path d="M-37 14Q-27 39 0 41Q28 41 39 12" fill="none" stroke="#4f4f4f" stroke-opacity=".4" stroke-width="1"/>
+<circle r="39.8" fill="url(#pw-rubber)" stroke="#4d4d4d" stroke-width=".75"/>
+<circle r="37.5" fill="none" stroke="#5f5f5f" stroke-opacity=".3" stroke-width=".65"/>
+<circle r="34.5" fill="none" stroke="#2b2b2b" stroke-width=".7"/>
+<circle r="33.3" fill="none" stroke="#737373" stroke-opacity=".21" stroke-width=".4"/>
+
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(0.000)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(6.429)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(12.857)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(19.286)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(25.714)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(32.143)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(38.571)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(45.000)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(51.429)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(57.857)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(64.286)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(70.714)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(77.143)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(83.571)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(90.000)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(96.429)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(102.857)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(109.286)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(115.714)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(122.143)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(128.571)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(135.000)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(141.429)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(147.857)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(154.286)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(160.714)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(167.143)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(173.571)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(180.000)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(186.429)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(192.857)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(199.286)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(205.714)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(212.143)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(218.571)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(225.000)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(231.429)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(237.857)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(244.286)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(250.714)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(257.143)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(263.571)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(270.000)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(276.429)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(282.857)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(289.286)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(295.714)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(302.143)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(308.571)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(315.000)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(321.429)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(327.857)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(334.286)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(340.714)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(347.143)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-1.1-38.1 .2-40.1 1.4-40" transform="rotate(353.571)" fill="none" stroke="#2d2d2d" stroke-width=".62" stroke-linecap="round"/>
+<path d="M-35.7-11.7A37.6 37.6 0 0 1-10.7-36" fill="none" stroke="#bebebe" stroke-opacity=".21" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M-28.1-20.1A34.5 34.5 0 0 1-6-34" fill="none" stroke="#ababab" stroke-opacity=".24" stroke-width=".5"/>
+<!-- Turned alloy lip and recessed brake rotor. -->
+<circle r="30.8" fill="url(#pw-rim)" stroke="#2f2f2f" stroke-width=".9"/>
+<circle r="29" fill="url(#pw-cavity)" stroke="#ebebeb" stroke-opacity=".65" stroke-width=".55"/>
+<circle cx=".6" cy=".8" r="23.6" fill="url(#pw-disc)" stroke="#3e3e3e" stroke-width=".8"/>
+<circle cx=".6" cy=".8" r="22.4" fill="none" stroke="#e7e7e7" stroke-opacity=".22" stroke-width=".3"/>
+<circle cx=".6" cy=".8" r="20.8" fill="none" stroke="#dfdfdf" stroke-opacity=".22" stroke-width=".35"/>
+<circle cx=".6" cy=".8" r="19.2" fill="none" stroke="#2d2d2d" stroke-opacity=".25" stroke-width=".4"/>
+
+<circle cx="20.90" cy="0.80" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="20.21" cy="6.05" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="18.18" cy="10.95" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="14.95" cy="15.15" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="10.75" cy="18.38" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="5.85" cy="20.41" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="0.60" cy="21.10" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-4.65" cy="20.41" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-9.55" cy="18.38" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-13.75" cy="15.15" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-16.98" cy="10.95" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-19.01" cy="6.05" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-19.70" cy="0.80" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-19.01" cy="-4.45" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-16.98" cy="-9.35" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-13.75" cy="-13.55" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-9.55" cy="-16.78" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="-4.65" cy="-18.81" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="0.60" cy="-19.50" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="5.85" cy="-18.81" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="10.75" cy="-16.78" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="14.95" cy="-13.55" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="18.18" cy="-9.35" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="20.21" cy="-4.45" r=".6" fill="#313131" opacity=".74"/>
+<circle cx="16.70" cy="3.35" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="13.27" cy="11.06" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="6.44" cy="16.02" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="-1.95" cy="16.90" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="-9.66" cy="13.47" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="-14.62" cy="6.64" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="-15.50" cy="-1.75" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="-12.07" cy="-9.46" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="-5.24" cy="-14.42" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="3.15" cy="-15.30" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="10.86" cy="-11.87" r=".5" fill="#424242" opacity=".54"/>
+<circle cx="15.82" cy="-5.04" r=".5" fill="#424242" opacity=".54"/>
+<path d="M17.5-14.7Q22-15 23.2-10.7L26.5 2.7Q26.8 6.6 22.8 8.2L17.3 8.6 15.9-12.8Z" fill="url(#pw-caliper)" stroke="#4b4b4b" stroke-width=".6"/>
+<path d="M20-11.5 22.8-.5M19.3-6.7 21.8 4" stroke="#a8a8a8" stroke-opacity=".48" stroke-width=".65"/>
+<circle r="11.6" fill="#878787" stroke="#404040" stroke-width=".5"/>
+<!-- Five split spokes: deep forged edge, brushed front and narrow bright bevel. -->
+
+<g transform="rotate(12)">
+<use href="#pw-spoke-shape" transform="translate(.65 1.1)" fill="#727272"/>
+<use href="#pw-spoke-shape" fill="url(#pw-spoke-edge)" stroke="#404040" stroke-width=".45"/>
+<path d="M-3.1-7.4 -8.8-25.2 -6.8-26.9 -1.4-13.1 2.2-13.4 5.7-27 7.5-25.6 2.9-7.4Z" fill="url(#pw-spoke)"/>
+<path d="M-3.1-8.8 -8.4-24.9 -6.9-26.4M2.2-13.4 5.9-26.9" fill="none" stroke="#fafafa" stroke-width=".5" stroke-opacity=".9"/>
+<path d="M-.5-12.2 1.1-9.4 4.6-23.9" fill="none" stroke="#757575" stroke-width=".55"/>
+</g>
+<g transform="rotate(84)">
+<use href="#pw-spoke-shape" transform="translate(.65 1.1)" fill="#727272"/>
+<use href="#pw-spoke-shape" fill="url(#pw-spoke-edge)" stroke="#404040" stroke-width=".45"/>
+<path d="M-3.1-7.4 -8.8-25.2 -6.8-26.9 -1.4-13.1 2.2-13.4 5.7-27 7.5-25.6 2.9-7.4Z" fill="url(#pw-spoke)"/>
+<path d="M-3.1-8.8 -8.4-24.9 -6.9-26.4M2.2-13.4 5.9-26.9" fill="none" stroke="#fafafa" stroke-width=".5" stroke-opacity=".9"/>
+<path d="M-.5-12.2 1.1-9.4 4.6-23.9" fill="none" stroke="#757575" stroke-width=".55"/>
+</g>
+<g transform="rotate(156)">
+<use href="#pw-spoke-shape" transform="translate(.65 1.1)" fill="#727272"/>
+<use href="#pw-spoke-shape" fill="url(#pw-spoke-edge)" stroke="#404040" stroke-width=".45"/>
+<path d="M-3.1-7.4 -8.8-25.2 -6.8-26.9 -1.4-13.1 2.2-13.4 5.7-27 7.5-25.6 2.9-7.4Z" fill="url(#pw-spoke)"/>
+<path d="M-3.1-8.8 -8.4-24.9 -6.9-26.4M2.2-13.4 5.9-26.9" fill="none" stroke="#fafafa" stroke-width=".5" stroke-opacity=".9"/>
+<path d="M-.5-12.2 1.1-9.4 4.6-23.9" fill="none" stroke="#757575" stroke-width=".55"/>
+</g>
+<g transform="rotate(228)">
+<use href="#pw-spoke-shape" transform="translate(.65 1.1)" fill="#727272"/>
+<use href="#pw-spoke-shape" fill="url(#pw-spoke-edge)" stroke="#404040" stroke-width=".45"/>
+<path d="M-3.1-7.4 -8.8-25.2 -6.8-26.9 -1.4-13.1 2.2-13.4 5.7-27 7.5-25.6 2.9-7.4Z" fill="url(#pw-spoke)"/>
+<path d="M-3.1-8.8 -8.4-24.9 -6.9-26.4M2.2-13.4 5.9-26.9" fill="none" stroke="#fafafa" stroke-width=".5" stroke-opacity=".9"/>
+<path d="M-.5-12.2 1.1-9.4 4.6-23.9" fill="none" stroke="#757575" stroke-width=".55"/>
+</g>
+<g transform="rotate(300)">
+<use href="#pw-spoke-shape" transform="translate(.65 1.1)" fill="#727272"/>
+<use href="#pw-spoke-shape" fill="url(#pw-spoke-edge)" stroke="#404040" stroke-width=".45"/>
+<path d="M-3.1-7.4 -8.8-25.2 -6.8-26.9 -1.4-13.1 2.2-13.4 5.7-27 7.5-25.6 2.9-7.4Z" fill="url(#pw-spoke)"/>
+<path d="M-3.1-8.8 -8.4-24.9 -6.9-26.4M2.2-13.4 5.9-26.9" fill="none" stroke="#fafafa" stroke-width=".5" stroke-opacity=".9"/>
+<path d="M-.5-12.2 1.1-9.4 4.6-23.9" fill="none" stroke="#757575" stroke-width=".55"/>
+</g>
+<circle r="8.3" fill="url(#pw-hub)" stroke="#dadada" stroke-width=".55"/>
+<circle r="4.7" fill="#858585" stroke="#e2e2e2" stroke-width=".7"/>
+<circle r="3.6" fill="url(#pw-hub)" stroke="#919191" stroke-width=".35"/>
+<path d="M-2.5-.6 0-2.3 2.5-.6 0 1.7Z" fill="none" stroke="#e5e5e5" stroke-width=".5"/>
+
+<circle cx="0.00" cy="-6.60" r="1.05" fill="#7d7d7d" stroke="#e1e1e1" stroke-width=".3"/><circle cx="-0.20" cy="-6.85" r=".45" fill="#cfcfcf"/>
+<circle cx="6.28" cy="-2.04" r="1.05" fill="#7d7d7d" stroke="#e1e1e1" stroke-width=".3"/><circle cx="6.08" cy="-2.29" r=".45" fill="#cfcfcf"/>
+<circle cx="3.88" cy="5.34" r="1.05" fill="#7d7d7d" stroke="#e1e1e1" stroke-width=".3"/><circle cx="3.68" cy="5.09" r=".45" fill="#cfcfcf"/>
+<circle cx="-3.88" cy="5.34" r="1.05" fill="#7d7d7d" stroke="#e1e1e1" stroke-width=".3"/><circle cx="-4.08" cy="5.09" r=".45" fill="#cfcfcf"/>
+<circle cx="-6.28" cy="-2.04" r="1.05" fill="#7d7d7d" stroke="#e1e1e1" stroke-width=".3"/><circle cx="-6.48" cy="-2.29" r=".45" fill="#cfcfcf"/>
+<path d="M-27.6-10.5A29.5 29.5 0 0 1 13-26.5" fill="none" stroke="#ffffff" stroke-width=".85" stroke-opacity=".83" stroke-linecap="round"/>
+<path d="M28.6 7.8A29.6 29.6 0 0 1-15.7 25.1" fill="none" stroke="#ebebeb" stroke-width=".55" stroke-opacity=".55"/>
+<path d="M27.7-6.7 29-7" stroke="#dbdbdb" stroke-width="1.3"/>
+</symbol>
+<linearGradient id="side-pearl" x1="0" y1=".3" x2="1" y2=".55"><stop stop-color="#bfbfbf"/><stop offset=".07" stop-color="#efefef"/><stop offset=".18" stop-color="#fefefe"/><stop offset=".48" stop-color="#ffffff"/><stop offset=".7" stop-color="#f8f8f8"/><stop offset=".86" stop-color="#e4e4e4"/><stop offset="1" stop-color="#bfbfbf"/></linearGradient><linearGradient id="side-edge"><stop stop-color="#7a7a7a"/><stop offset=".25" stop-color="#ececec"/><stop offset=".53" stop-color="#ffffff"/><stop offset=".7" stop-color="#c8c8c8"/><stop offset="1" stop-color="#8d8d8d"/></linearGradient><linearGradient id="side-glass" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#6e6e6e"/><stop offset=".25" stop-color="#7b7b7b"/><stop offset=".6" stop-color="#8c8c8c"/><stop offset="1" stop-color="#6a6a6a"/></linearGradient><linearGradient id="side-lens" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e0e0e0"/><stop offset=".27" stop-color="#9f9f9f"/><stop offset=".6" stop-color="#7f7f7f"/><stop offset=".8" stop-color="#b6b6b6"/><stop offset="1" stop-color="#757575"/></linearGradient><linearGradient id="side-handle"><stop stop-color="#868686"/><stop offset=".18" stop-color="#f3f3f3"/><stop offset=".46" stop-color="#ffffff"/><stop offset=".7" stop-color="#d6d6d6"/><stop offset="1" stop-color="#9d9d9d"/></linearGradient><filter id="side-shadow" x="-.5" y="-.2" width="2" height="1.5"><feDropShadow dx="-6" dy="17" stdDeviation="10" flood-color="#000000" flood-opacity="0.144"/></filter><linearGradient id="top-pearl" x1="0" y1="0" x2="1" y2=".12"><stop stop-color="#b7b7b7"/><stop offset=".035" stop-color="#ededed"/><stop offset=".105" stop-color="#ffffff"/><stop offset=".3" stop-color="#fbfbfb"/><stop offset=".63" stop-color="#ffffff"/><stop offset=".88" stop-color="#eaeaea"/><stop offset=".95" stop-color="#ffffff"/><stop offset="1" stop-color="#adadad"/></linearGradient>
+<linearGradient id="top-hood" x1="0" y1="0" x2="1" y2=".36"><stop stop-color="#d9d9d9"/><stop offset=".08" stop-color="#fefefe"/><stop offset=".28" stop-color="#ffffff"/><stop offset=".66" stop-color="#fefefe"/><stop offset=".9" stop-color="#f0f0f0"/><stop offset="1" stop-color="#cacaca"/></linearGradient>
+<linearGradient id="top-roof" x1="0" y1=".1" x2="1" y2=".25"><stop stop-color="#d4d4d4"/><stop offset=".06" stop-color="#fcfcfc"/><stop offset=".24" stop-color="#ffffff"/><stop offset=".72" stop-color="#ffffff"/><stop offset=".93" stop-color="#eeeeee"/><stop offset="1" stop-color="#cacaca"/></linearGradient>
+<linearGradient id="top-deck" x1="0" y1="0" x2=".25" y2="1"><stop stop-color="#dadada"/><stop offset=".15" stop-color="#ffffff"/><stop offset=".59" stop-color="#fcfcfc"/><stop offset=".82" stop-color="#e7e7e7"/><stop offset="1" stop-color="#c9c9c9"/></linearGradient>
+<linearGradient id="top-windshield" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#6a6a6a"/><stop offset=".07" stop-color="#7a7a7a"/><stop offset=".31" stop-color="#878787"/><stop offset=".6" stop-color="#777777"/><stop offset="1" stop-color="#686868"/></linearGradient>
+<linearGradient id="top-sunroof" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#989898"/><stop offset=".28" stop-color="#808080"/><stop offset=".65" stop-color="#6f6f6f"/><stop offset="1" stop-color="#858585"/></linearGradient>
+<linearGradient id="top-sideglass" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#656565"/><stop offset=".45" stop-color="#8d8d8d"/><stop offset=".78" stop-color="#737373"/><stop offset="1" stop-color="#646464"/></linearGradient>
+<linearGradient id="top-chrome" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#7c7c7c"/><stop offset=".2" stop-color="#e6e6e6"/><stop offset=".39" stop-color="#ffffff"/><stop offset=".55" stop-color="#a9a9a9"/><stop offset=".73" stop-color="#fefefe"/><stop offset="1" stop-color="#a0a0a0"/></linearGradient>
+<linearGradient id="top-tail" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#6d6d6d"/><stop offset=".22" stop-color="#adadad"/><stop offset=".45" stop-color="#e1e1e1"/><stop offset=".49" stop-color="#9e9e9e"/><stop offset=".74" stop-color="#7d7d7d"/><stop offset="1" stop-color="#696969"/></linearGradient>
+<linearGradient id="top-specular" x1="0" y1="0" x2="1" y2=".15"><stop stop-color="#ffffff" stop-opacity="0"/><stop offset=".47" stop-color="#ffffff" stop-opacity=".56"/><stop offset=".58" stop-color="#ffffff" stop-opacity=".88"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+<linearGradient id="top-glass-reflection" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#e8e8e8" stop-opacity=".36"/><stop offset=".4" stop-color="#d3d3d3" stop-opacity=".12"/><stop offset="1" stop-color="#d0d0d0" stop-opacity="0"/></linearGradient>
+<linearGradient id="top-edge-shade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#505050" stop-opacity="0"/><stop offset=".76" stop-color="#555555" stop-opacity=".1"/><stop offset="1" stop-color="#464646" stop-opacity=".44"/></linearGradient>
+<filter id="top-contact" x="-35%" y="-10%" width="170%" height="130%"><feGaussianBlur stdDeviation="9"/></filter>
+<clipPath id="top-front-glass-clip"><path d="M278 319Q361 280 446 319L433 404Q363 390 292 404Z"/></clipPath>
+<clipPath id="top-rear-glass-clip"><path d="M290 577Q362 589 435 577L447 650Q368 677 278 650Z"/></clipPath>
+<clipPath id="top-roof-glass-clip"><rect x="310" y="425" width="105" height="91" rx="13"/></clipPath>
+
+<linearGradient id="fr-pearl" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#f7f7f7"/><stop offset=".17" stop-color="#ffffff"/><stop offset=".45" stop-color="#fcfcfc"/><stop offset=".61" stop-color="#ebebeb"/><stop offset=".79" stop-color="#fdfdfd"/><stop offset="1" stop-color="#bdbdbd"/></linearGradient>
+<linearGradient id="fr-hood" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fbfbfb"/><stop offset=".46" stop-color="#ffffff"/><stop offset=".9" stop-color="#ebebeb"/><stop offset="1" stop-color="#d0d0d0"/></linearGradient>
+<linearGradient id="fr-side" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b0b0b0"/><stop offset=".13" stop-color="#f0f0f0"/><stop offset=".27" stop-color="#ffffff"/><stop offset=".49" stop-color="#f3f3f3"/><stop offset=".78" stop-color="#ffffff"/><stop offset="1" stop-color="#aeaeae"/></linearGradient>
+<linearGradient id="fr-blackglass" x1="0" y1="0" x2=".25" y2="1"><stop stop-color="#a2a2a2"/><stop offset=".15" stop-color="#838383"/><stop offset=".56" stop-color="#737373"/><stop offset="1" stop-color="#676767"/></linearGradient>
+<linearGradient id="fr-chrome" x1="0" y1="0" x2=".14" y2="1"><stop stop-color="#ffffff"/><stop offset=".2" stop-color="#e4e4e4"/><stop offset=".35" stop-color="#fefefe"/><stop offset=".46" stop-color="#9a9a9a"/><stop offset=".55" stop-color="#f7f7f7"/><stop offset=".72" stop-color="#e2e2e2"/><stop offset="1" stop-color="#878787"/></linearGradient>
+<linearGradient id="fr-tire" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#606060"/><stop offset=".22" stop-color="#818181"/><stop offset=".44" stop-color="#6b6b6b"/><stop offset=".8" stop-color="#797979"/><stop offset="1" stop-color="#5f5f5f"/></linearGradient>
+<linearGradient id="fr-lamp" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f7f7f7"/><stop offset=".18" stop-color="#b0b0b0"/><stop offset=".45" stop-color="#737373"/><stop offset=".7" stop-color="#6f6f6f"/><stop offset="1" stop-color="#eeeeee"/></linearGradient>
+<radialGradient id="fr-lens"><stop stop-color="#eaeaea"/><stop offset=".2" stop-color="#b3b3b3"/><stop offset=".39" stop-color="#7e7e7e"/><stop offset=".66" stop-color="#646464"/><stop offset=".82" stop-color="#9c9c9c"/><stop offset=".91" stop-color="#dbdbdb"/><stop offset="1" stop-color="#707070"/></radialGradient>
+<linearGradient id="fr-red" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d0d0d0"/><stop offset=".13" stop-color="#7f7f7f"/><stop offset=".35" stop-color="#a3a3a3"/><stop offset=".52" stop-color="#8b8b8b"/><stop offset=".71" stop-color="#b1b1b1"/><stop offset="1" stop-color="#707070"/></linearGradient>
+<linearGradient id="fr-highlight" x1="0" y1="0" x2="1" y2=".8"><stop stop-color="#ffffff" stop-opacity=".75"/><stop offset=".52" stop-color="#ffffff" stop-opacity=".09"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+<linearGradient id="fr-shadow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2b2b2b" stop-opacity="0"/><stop offset="1" stop-color="#2b2b2b" stop-opacity=".35"/></linearGradient>
+<clipPath id="fr-grille-clip"><path d="M63 103Q126 95 189 103L179 128Q126 137 73 128Z"/></clipPath>
+<clipPath id="fr-windshield-clip"><path d="M48 27Q126 19 204 27L222 73Q126 69 30 73Z"/></clipPath></defs>
+<g class="direction-label"><path d="M579 26l4-6 4 6" fill="none" stroke="currentColor"/><text x="583" y="15" text-anchor="middle">전방 FRONT</text><text x="583" y="1061" text-anchor="middle">후방 REAR</text><text x="350" y="262" text-anchor="middle">좌측 L</text><text x="816" y="262" text-anchor="middle">우측 R</text></g>
+<g id="car-scene"><g id="geometry" transform="translate(220 120)"><g id="vehicle-details"><g id="premium-side-left" class="vehicle-side" data-side="left" transform=""><path d="M82 153C118 151 142 169 150 206L163 296C190 328 206 377 212 443L214 495C211 548 196 601 176 634L173 685Q159 731 122 735L82 720Q57 703 47 670L48 212Q45 181 59 158Z" fill="url(#side-pearl)" stroke="#7c7c7c" stroke-width="1.2" filter="url(#side-shadow)"/>
+<path d="M158 301Q199 330 211 435L213 493Q211 568 176 625L157 594Z" fill="#727272" stroke="#f0f0f0" stroke-width="4"/>
+<path d="M160 326Q195 350 205 444L161 440Z" fill="url(#side-glass)" stroke="#919191" stroke-width="1"/>
+<path d="M161 472L207 480Q207 548 180 590L161 581Z" fill="url(#side-glass)" stroke="#919191" stroke-width="1"/>
+<path d="M165 333Q181 350 188 385L197 442L182 440Q175 374 165 348Z M166 483L181 487Q181 536 168 568Z" fill="#dddddd" opacity=".13"/>
+<path d="M205 484Q204 551 177 600" fill="none" stroke="#8d8d8d" opacity=".7" stroke-width="2"/>
+<path d="M161 302Q202 343 214 445L215 497Q210 573 177 627" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+<path d="M166 329Q175 345 181 368M176 615L169 628" fill="none" stroke="#c1c1c1" stroke-width="2"/><g class="part" id="part-10" data-code="10" data-base="side-pearl" role="button" tabindex="0" aria-pressed="false" aria-label="10 프론트펜더(좌)"><title>프론트펜더</title><path id="p10" class="surface" d="M82 153C118 151 142 169 150 206Q161 249 160 298L177 330L158 326H71L69 302C127 302 130 218 80 207L53 209L54 181Q54 162 82 153Z" fill="url(#side-pearl)" stroke="#9b9b9b" stroke-width=".85"/><g pointer-events="none"><path d="M60 193Q71 163 107 169Q136 174 148 215L157 294L164 311" fill="none" stroke="#ffffff" stroke-width="3"/><path d="M58 206C132 185 143 299 69 310" fill="none" stroke="#b9b9b9" stroke-width="3"/><path d="M81 157L119 169L115 189L67 183Z" fill="#ececec" stroke="#9e9e9e" stroke-width=".8"/><path d="M78 161L112 171L109 181L72 176Z" fill="#fefefe"/><path d="M145 234L150 282" stroke="#c2c2c2" fill="none" stroke-width="2"/></g><g class="part-badge" transform="translate(153 267) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">10</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-06" data-code="06" data-base="side-pearl" role="button" tabindex="0" aria-pressed="false" aria-label="06 프론트도어(좌)"><title>프론트도어</title><path id="p06" class="surface" d="M72 328L157 328L158 448Q120 451 72 455Z" fill="url(#side-pearl)" stroke="#9b9b9b" stroke-width=".85"/><g pointer-events="none"><path d="M79 333L79 448M84 335L143 335" stroke="#ffffff" stroke-width="2"/><path d="M89 333L91 443" stroke="#9d9d9d" stroke-width=".7" opacity=".45"/><path d="M98 340Q134 338 147 352L150 421Q113 411 96 435Z" fill="#ffffff" opacity=".2"/><ellipse cx="140" cy="421" rx="6" ry="18" fill="#878787" opacity=".15"/><rect x="138" y="404" width="7" height="32" rx="3.5" fill="url(#side-handle)" stroke="#8d8d8d" stroke-width=".8"/><path d="M140 407V430" stroke="#ffffff" stroke-width="1.5"/></g><g class="part-badge" transform="translate(113 382) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">06</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-08" data-code="08" data-base="side-pearl" role="button" tabindex="0" aria-pressed="false" aria-label="08 리어도어(좌)"><title>리어도어</title><path id="p08" class="surface" d="M72 459Q115 455 158 454L158 591L141 586L72 527Z" fill="url(#side-pearl)" stroke="#9b9b9b" stroke-width=".85"/><g pointer-events="none"><path d="M79 464V523L142 579" fill="none" stroke="#ffffff" stroke-width="2.2"/><path d="M89 461V519L143 567" fill="none" stroke="#adadad" stroke-width=".65" opacity=".6"/><path d="M98 463L150 462V554L98 523Z" fill="#ffffff" opacity=".2"/><ellipse cx="140" cy="550" rx="6" ry="18" fill="#878787" opacity=".15"/><rect x="138" y="534" width="7" height="32" rx="3.5" fill="url(#side-handle)" stroke="#8d8d8d" stroke-width=".8"/><path d="M140 537V559" stroke="#ffffff" stroke-width="1.5"/></g><g class="part-badge" transform="translate(113 499) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">08</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-12" data-code="12" data-base="side-pearl" role="button" tabindex="0" aria-pressed="false" aria-label="12 리어펜더(좌)"><title>리어펜더</title><path id="p12" class="surface" d="M71 531L140 591L174 605L191 577L205 570Q195 608 173 637V681Q160 727 122 735L81 720Q62 708 53 686L52 644C128 649 132 546 60 551L61 531Z" fill="url(#side-pearl)" stroke="#9b9b9b" stroke-width=".85"/><g pointer-events="none"><path d="M53 549C134 529 147 650 57 652" fill="none" stroke="#c7c7c7" stroke-width="3"/><path d="M67 650Q77 694 115 721Q149 719 165 679" fill="none" stroke="#ffffff" stroke-width="3"/><path d="M111 643L147 637L141 676L103 680Z" fill="#ffffff" opacity=".34"/><path d="M90 693L113 708L121 732L104 726L91 713Z" fill="url(#side-lens)" stroke="#616161" stroke-width=".8"/><path d="M96 698L108 708L115 724" fill="none" stroke="#d4d4d4" stroke-width="1.8"/><path d="M64 697L79 713L103 730L99 736L78 726L58 708Z" fill="#858585"/><path d="M67 700L82 715L98 726" fill="none" stroke="#aeaeae" stroke-width="2"/></g><g class="part-badge" transform="translate(137 654) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">12</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-25" data-code="25" data-base="side-edge" role="button" tabindex="0" aria-pressed="false" aria-label="25 사이드스텝(좌)"><title>사이드스텝</title><path id="p25" class="surface" d="M59 328H69V533L60 540L56 523V339Z" fill="url(#side-edge)" stroke="#9b9b9b" stroke-width=".85"/><path d="M61 334V520" fill="none" stroke="#ffffff" stroke-width="2" pointer-events="none"/><g class="part-badge" transform="translate(40 429) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">25</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-27" data-code="27" data-base="side-glass" role="button" tabindex="0" aria-pressed="false" aria-label="27 센터필러(좌)"><title>센터필러</title><path id="p27" class="surface" d="M160 448L210 457L211 475L160 467Z" fill="url(#side-glass)" stroke="#9b9b9b" stroke-width=".85"/><path d="M163 452L207 461" stroke="#c8c8c8" stroke-width="1.5" pointer-events="none"/><g class="part-badge" transform="translate(184 463) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">27</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><path d="M163 304Q151 296 151 316L157 334L172 341L177 333Z" fill="url(#side-pearl)" stroke="#919191" stroke-width="1"/><path d="M155 306L154 319L171 333" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M68 315L67 534" stroke="#999999" stroke-width="1.1" fill="none"/><use href="#premium-wheel" x="29" y="211" width="88" height="88"/><use href="#premium-wheel" x="29" y="554" width="88" height="88"/></g><g id="premium-side-right" class="vehicle-side" data-side="right" transform="translate(726 7) scale(-1 1)"><path d="M82 153C118 151 142 169 150 206L163 296C190 328 206 377 212 443L214 495C211 548 196 601 176 634L173 685Q159 731 122 735L82 720Q57 703 47 670L48 212Q45 181 59 158Z" fill="url(#side-pearl)" stroke="#7c7c7c" stroke-width="1.2" filter="url(#side-shadow)"/>
+<path d="M158 301Q199 330 211 435L213 493Q211 568 176 625L157 594Z" fill="#727272" stroke="#f0f0f0" stroke-width="4"/>
+<path d="M160 326Q195 350 205 444L161 440Z" fill="url(#side-glass)" stroke="#919191" stroke-width="1"/>
+<path d="M161 472L207 480Q207 548 180 590L161 581Z" fill="url(#side-glass)" stroke="#919191" stroke-width="1"/>
+<path d="M165 333Q181 350 188 385L197 442L182 440Q175 374 165 348Z M166 483L181 487Q181 536 168 568Z" fill="#dddddd" opacity=".13"/>
+<path d="M205 484Q204 551 177 600" fill="none" stroke="#8d8d8d" opacity=".7" stroke-width="2"/>
+<path d="M161 302Q202 343 214 445L215 497Q210 573 177 627" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+<path d="M166 329Q175 345 181 368M176 615L169 628" fill="none" stroke="#c1c1c1" stroke-width="2"/><g class="part" id="part-11" data-code="11" data-base="side-pearl" role="button" tabindex="0" aria-pressed="false" aria-label="11 프론트펜더(우)"><title>프론트펜더</title><path id="p11" class="surface" d="M82 153C118 151 142 169 150 206Q161 249 160 298L177 330L158 326H71L69 302C127 302 130 218 80 207L53 209L54 181Q54 162 82 153Z" fill="url(#side-pearl)" stroke="#9b9b9b" stroke-width=".85"/><g pointer-events="none"><path d="M60 193Q71 163 107 169Q136 174 148 215L157 294L164 311" fill="none" stroke="#ffffff" stroke-width="3"/><path d="M58 206C132 185 143 299 69 310" fill="none" stroke="#b9b9b9" stroke-width="3"/><path d="M81 157L119 169L115 189L67 183Z" fill="#ececec" stroke="#9e9e9e" stroke-width=".8"/><path d="M78 161L112 171L109 181L72 176Z" fill="#fefefe"/><path d="M145 234L150 282" stroke="#c2c2c2" fill="none" stroke-width="2"/></g><g class="part-badge" transform="translate(135 241) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">11</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-07" data-code="07" data-base="side-pearl" role="button" tabindex="0" aria-pressed="false" aria-label="07 프론트도어(우)"><title>프론트도어</title><path id="p07" class="surface" d="M72 328L157 328L158 448Q120 451 72 455Z" fill="url(#side-pearl)" stroke="#9b9b9b" stroke-width=".85"/><g pointer-events="none"><path d="M79 333L79 448M84 335L143 335" stroke="#ffffff" stroke-width="2"/><path d="M89 333L91 443" stroke="#9d9d9d" stroke-width=".7" opacity=".45"/><path d="M98 340Q134 338 147 352L150 421Q113 411 96 435Z" fill="#ffffff" opacity=".2"/><ellipse cx="140" cy="421" rx="6" ry="18" fill="#878787" opacity=".15"/><rect x="138" y="404" width="7" height="32" rx="3.5" fill="url(#side-handle)" stroke="#8d8d8d" stroke-width=".8"/><path d="M140 407V430" stroke="#ffffff" stroke-width="1.5"/></g><g class="part-badge" transform="translate(110 403) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">07</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-09" data-code="09" data-base="side-pearl" role="button" tabindex="0" aria-pressed="false" aria-label="09 리어도어(우)"><title>리어도어</title><path id="p09" class="surface" d="M72 459Q115 455 158 454L158 591L141 586L72 527Z" fill="url(#side-pearl)" stroke="#9b9b9b" stroke-width=".85"/><g pointer-events="none"><path d="M79 464V523L142 579" fill="none" stroke="#ffffff" stroke-width="2.2"/><path d="M89 461V519L143 567" fill="none" stroke="#adadad" stroke-width=".65" opacity=".6"/><path d="M98 463L150 462V554L98 523Z" fill="#ffffff" opacity=".2"/><ellipse cx="140" cy="550" rx="6" ry="18" fill="#878787" opacity=".15"/><rect x="138" y="534" width="7" height="32" rx="3.5" fill="url(#side-handle)" stroke="#8d8d8d" stroke-width=".8"/><path d="M140 537V559" stroke="#ffffff" stroke-width="1.5"/></g><g class="part-badge" transform="translate(116 502) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">09</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-13" data-code="13" data-base="side-pearl" role="button" tabindex="0" aria-pressed="false" aria-label="13 리어펜더(우)"><title>리어펜더</title><path id="p13" class="surface" d="M71 531L140 591L174 605L191 577L205 570Q195 608 173 637V681Q160 727 122 735L81 720Q62 708 53 686L52 644C128 649 132 546 60 551L61 531Z" fill="url(#side-pearl)" stroke="#9b9b9b" stroke-width=".85"/><g pointer-events="none"><path d="M53 549C134 529 147 650 57 652" fill="none" stroke="#c7c7c7" stroke-width="3"/><path d="M67 650Q77 694 115 721Q149 719 165 679" fill="none" stroke="#ffffff" stroke-width="3"/><path d="M111 643L147 637L141 676L103 680Z" fill="#ffffff" opacity=".34"/><path d="M90 693L113 708L121 732L104 726L91 713Z" fill="url(#side-lens)" stroke="#616161" stroke-width=".8"/><path d="M96 698L108 708L115 724" fill="none" stroke="#d4d4d4" stroke-width="1.8"/><path d="M64 697L79 713L103 730L99 736L78 726L58 708Z" fill="#858585"/><path d="M67 700L82 715L98 726" fill="none" stroke="#aeaeae" stroke-width="2"/></g><g class="part-badge" transform="translate(136 655) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">13</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-26" data-code="26" data-base="side-edge" role="button" tabindex="0" aria-pressed="false" aria-label="26 사이드스텝(우)"><title>사이드스텝</title><path id="p26" class="surface" d="M59 328H69V533L60 540L56 523V339Z" fill="url(#side-edge)" stroke="#9b9b9b" stroke-width=".85"/><path d="M61 334V520" fill="none" stroke="#ffffff" stroke-width="2" pointer-events="none"/><g class="part-badge" transform="translate(46 482) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">26</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-28" data-code="28" data-base="side-glass" role="button" tabindex="0" aria-pressed="false" aria-label="28 센터필러(우)"><title>센터필러</title><path id="p28" class="surface" d="M160 448L210 457L211 475L160 467Z" fill="url(#side-glass)" stroke="#9b9b9b" stroke-width=".85"/><path d="M163 452L207 461" stroke="#c8c8c8" stroke-width="1.5" pointer-events="none"/><g class="part-badge" transform="translate(185 465) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">28</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><path d="M163 304Q151 296 151 316L157 334L172 341L177 333Z" fill="url(#side-pearl)" stroke="#919191" stroke-width="1"/><path d="M155 306L154 319L171 333" fill="none" stroke="#ffffff" stroke-width="2"/><path d="M68 315L67 534" stroke="#999999" stroke-width="1.1" fill="none"/><use href="#premium-wheel" x="29" y="211" width="88" height="88"/><use href="#premium-wheel" x="29" y="554" width="88" height="88"/></g>
+<g id="top-vehicle" stroke-linejoin="round">
+ <!-- The body is modelled as a continuous pearl-painted shell, with independent repair surfaces above it. -->
+ <path d="M258 217Q265 158 334 151H396Q469 159 479 223L488 372L482 665Q473 732 404 741H320Q251 732 243 665L240 370Z" fill="#464646" opacity=".28" filter="url(#top-contact)" transform="translate(5 12)" pointer-events="none"/>
+ <g fill="#6a6a6a" stroke="#2d2d2d" stroke-width="1.2" pointer-events="none"><path d="M243 231Q236 231 236 244L236 283Q237 293 244 293Z"/><path d="M480 231Q488 231 488 244L489 283Q487 293 481 293Z"/><path d="M241 612Q235 612 235 625V673Q237 683 244 683Z"/><path d="M481 611Q489 611 489 625V673Q487 683 480 683Z"/></g>
+ <path d="M248 232Q249 181 287 158Q313 144 363 146Q413 144 440 158Q478 181 480 232L486 381L481 650Q479 704 447 722Q420 737 363 735Q308 737 280 722Q247 704 246 650L240 381Z" fill="url(#top-pearl)" stroke="#8e8e8e" stroke-width="1.3"/>
+ <path d="M252 232Q254 184 291 162Q323 150 362 150Q404 150 436 162Q473 184 476 232" fill="none" stroke="#ffffff" stroke-width="2.4" pointer-events="none"/>
+ <path d="M247 271Q241 389 245 532L249 653Q249 689 267 708L263 653L258 427Z" fill="#a4a4a4" opacity=".66" pointer-events="none"/>
+ <path d="M480 272Q487 389 481 532L477 653Q477 689 459 708L463 653L468 427Z" fill="#a0a0a0" opacity=".55" pointer-events="none"/>
+ <path d="M251 278L252 466L257 650Q258 687 273 703" fill="none" stroke="#ffffff" stroke-width="3" opacity=".88" pointer-events="none"/>
+ <path d="M475 278L475 466L469 651Q468 687 454 703" fill="none" stroke="#fdfdfd" stroke-width="2.5" opacity=".9" pointer-events="none"/>
+ <!-- Narrow side glazing and pillars establish the roof's raised plane. -->
+ <g pointer-events="none"><path d="M276 323Q287 370 286 415L278 563Q273 602 264 620L263 420Q261 365 266 340Z" fill="url(#top-sideglass)" stroke="#404040" stroke-width="2"/><path d="M449 323Q438 371 440 415L447 563Q454 602 462 620L464 420Q466 365 460 340Z" fill="url(#top-sideglass)" stroke="#404040" stroke-width="2"/>
+ <path d="M271 342Q280 371 279 415L273 550L268 584L268 418Z" fill="#909090" opacity=".31"/><path d="M455 342Q446 371 447 415L452 550L458 584L458 418Z" fill="#949494" opacity=".24"/>
+ <path d="M284 406L272 548M440 406L454 548" stroke="#f0f0f0" stroke-width="1.2" opacity=".35"/>
+ <path d="M264 471L282 467L281 482L264 487Z M445 467L463 471V487L445 482Z" fill="#6a6a6a"/>
+ <path d="M261 397L259 530L263 639M465 397L467 530L463 639" fill="none" stroke="#939393" stroke-width=".9"/>
+ <path d="M260 480L261 584M466 480L465 584" stroke="#ffffff" stroke-width="1.4"/>
+ <path d="M265 631Q280 606 289 572M462 631Q447 606 438 572" fill="none" stroke="#a3a3a3" stroke-width="1.2"/>
+ <path d="M270 625Q286 598 293 572M457 625Q441 598 434 572" fill="none" stroke="#ffffff" stroke-width="3.2"/>
+ <g stroke="#8d8d8d" stroke-width=".7" fill="url(#top-chrome)"><rect x="248" y="427" width="4" height="24" rx="2"/><rect x="250" y="555" width="4" height="24" rx="2"/><rect x="475" y="427" width="4" height="24" rx="2"/><rect x="473" y="555" width="4" height="24" rx="2"/></g></g>
+ <g class="part" id="part-03" data-code="03" data-base="top-hood" role="button" tabindex="0" aria-pressed="false" aria-label="03 보닛"><title>03 보닛</title><path id="p03" class="surface" d="M269 185Q278 160 311 154Q362 145 414 154Q447 160 457 185L469 305L446 320Q364 288 278 320L256 305Z" fill="url(#top-hood)" stroke="#a2a2a2" stroke-width=".95"/>
+ <g pointer-events="none"><path d="M310 156Q288 206 278 300L296 296Q306 215 331 152Z" fill="#ffffff" opacity=".62"/><path d="M406 152Q430 212 446 311L454 311Q451 240 435 162Z" fill="#cccccc" opacity=".38"/><path d="M302 158Q285 218 277 299" fill="none" stroke="#ffffff" stroke-width="2.6"/><path d="M424 158Q440 218 448 300" fill="none" stroke="#979797" stroke-width=".7" opacity=".66"/><path d="M426 159Q442 218 450 300" fill="none" stroke="#ffffff" stroke-width="1.8" opacity=".9"/><path d="M277 300Q362 276 448 300" fill="none" stroke="#d5d5d5" stroke-width="1.5"/><path d="M299 166Q357 154 423 165" fill="none" stroke="#ffffff" stroke-width="1.9"/><path d="M332 160L318 280L367 283L387 155Z" fill="url(#top-specular)" opacity=".48"/></g><g class="part-badge" transform="translate(362 227) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">03</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+ <!-- Slim headlamp lenses visible from above. -->
+ <g pointer-events="none"><path d="M261 199Q268 176 288 165L281 180L269 211L259 222Z" fill="#919191" stroke="#898989" stroke-width=".8"/><path d="M465 199Q458 176 438 165L445 180L457 211L467 222Z" fill="#919191" stroke="#898989" stroke-width=".8"/><path d="M264 197Q270 181 282 173L275 190L264 211Z M462 197Q456 181 444 173L451 190L462 211Z" fill="#f4f4f4"/><path d="M262 212L275 187M464 212L451 187" stroke="#ffffff" stroke-width="2.2"/><path d="M283 151Q363 141 442 154" stroke="#d2d2d2" stroke-width=".6" fill="none"/>
+ <path d="M273 317Q363 278 452 317L437 411Q362 395 287 411Z" fill="#686868" stroke="#989898" stroke-width=".9"/></g>
+ <g class="part" id="part-14" data-code="14" data-base="top-windshield" role="button" tabindex="0" aria-pressed="false" aria-label="14 앞유리"><title>14 앞유리</title><path id="p14" class="surface" d="M278 319Q361 280 446 319L433 404Q363 390 292 404Z" fill="url(#top-windshield)" stroke="#333333" stroke-width="1.2"/>
+ <g clip-path="url(#top-front-glass-clip)" pointer-events="none"><path d="M285 340Q363 313 441 340L437 368Q363 341 291 368Z" fill="#1e1e1e" opacity=".6"/>
+ <g fill="#7f7f7f" opacity=".14" stroke="#afafaf" stroke-width=".8"><path d="M305 394L305 365Q306 354 315 354H331Q340 354 341 365L345 401Z"/><path d="M381 402L385 365Q386 354 395 354H411Q420 354 421 365L421 394Z"/><rect x="312" y="352" width="24" height="12" rx="5"/><rect x="390" y="352" width="24" height="12" rx="5"/></g>
+ <ellipse cx="323" cy="372" rx="15" ry="12" fill="none" stroke="#b2b2b2" stroke-width="2" opacity=".13"/><path d="M311 373L323 378L335 373M323 378V382" fill="none" stroke="#b2b2b2" stroke-width="1.5" opacity=".11"/>
+ <path d="M278 316Q338 289 393 303L334 406L288 410Z" fill="url(#top-glass-reflection)"/><path d="M301 315L337 304L295 402L288 403Z" fill="#f4f4f4" opacity=".065"/><path d="M415 310L437 316L424 400L398 398Z" fill="#d2d2d2" opacity=".09"/>
+ <path d="M285 326Q362 294 440 326" fill="none" stroke="#e3e3e3" stroke-width="1" opacity=".33"/><path d="M305 331Q365 311 432 329" fill="none" stroke="#f1f1f1" stroke-width="8" opacity=".035"/><path d="M292 396Q346 386 382 392M371 392Q406 390 432 398" fill="none" stroke="#2a2a2a" stroke-width="2.4"/><path d="M298 394Q346 385 381 391M375 390Q405 389 430 396" fill="none" stroke="#868686" stroke-width=".6" opacity=".6"/><rect x="354" y="315" width="18" height="7" rx="2.5" fill="#1d1d1d" opacity=".85"/></g><g class="part-badge" transform="translate(362 345) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">14</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+ <g class="part" id="part-16" data-code="16" data-base="top-roof" role="button" tabindex="0" aria-pressed="false" aria-label="16 루프"><title>16 루프</title><path id="p16" class="surface" d="M291 405Q362 389 434 405L439 578Q363 593 286 578Z" fill="url(#top-roof)" stroke="#9a9a9a" stroke-width="1.1"/>
+ <g pointer-events="none"><path d="M295 411L291 568Q297 577 306 578L305 413Z" fill="#ffffff" opacity=".77"/><path d="M427 410L432 570Q427 578 420 579L419 413Z" fill="#cacaca" opacity=".33"/><path d="M298 410L295 564M428 410L433 566" fill="none" stroke="#ffffff" stroke-width="1.7"/><path d="M295 575Q363 587 434 575" stroke="#ffffff" stroke-width="1.7" fill="none"/><path d="M320 408L319 419M406 409L408 419" stroke="#ffffff" stroke-width="3" opacity=".65"/><path d="M324 526L314 572L369 581L389 523Z" fill="url(#top-specular)" opacity=".16"/></g><g class="part-badge" transform="translate(362 533) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">16</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+ <g class="part" id="part-15" data-code="15" data-base="top-sunroof" role="button" tabindex="0" aria-pressed="false" aria-label="15 선루프"><title>15 선루프</title><rect x="307.5" y="422.5" width="110" height="96" rx="15" fill="#6b6b6b"/><rect id="p15" class="surface" x="310" y="425" width="105" height="91" rx="13" fill="url(#top-sunroof)" stroke="#838383" stroke-width=".9"/>
+ <g clip-path="url(#top-roof-glass-clip)" pointer-events="none"><path d="M312 433Q342 422 367 428L344 516H311Z" fill="url(#top-glass-reflection)" opacity=".6"/><path d="M399 425H408L405 516H388Z" fill="#c5c5c5" opacity=".065"/><path d="M324 510L326 485Q327 477 335 477H346Q354 477 355 485L356 516M371 516L372 485Q373 477 381 477H392Q400 477 401 485L403 510" fill="#969696" opacity=".075"/><path d="M314 438V502Q314 510 322 511" fill="none" stroke="#cbcbcb" stroke-width="1.3" opacity=".2"/><path d="M319 429H400" stroke="#d6d6d6" stroke-width="1" opacity=".15"/></g><g class="part-badge" transform="translate(363 457) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">15</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+ <path d="M287 573Q363 588 439 573L451 652Q368 682 274 652Z" fill="#6e6e6e" stroke="#939393" stroke-width=".7" pointer-events="none"/>
+ <g class="part" id="part-19" data-code="19" data-base="top-windshield" role="button" tabindex="0" aria-pressed="false" aria-label="19 리어유리"><title>19 리어유리</title><path id="p19" class="surface" d="M290 577Q362 589 435 577L447 650Q368 677 278 650Z" fill="url(#top-windshield)" stroke="#393939" stroke-width="1.2"/>
+ <g clip-path="url(#top-rear-glass-clip)" pointer-events="none"><path d="M295 639Q363 621 436 639L441 653Q367 671 284 653Z" fill="#707070" opacity=".12"/><g fill="#999999" opacity=".10"><path d="M304 639V623Q304 618 310 618H330Q336 618 336 623V637Z"/><path d="M388 637V623Q388 618 394 618H414Q420 618 420 623V639Z"/><path d="M350 634V624Q350 620 355 620H373Q378 620 378 624V634Z"/></g>
+ <path d="M302 576L346 583L318 663L283 652Z" fill="url(#top-glass-reflection)" opacity=".65"/><path d="M404 580L423 578L441 650L415 657Z" fill="#b1b1b1" opacity=".1"/>
+ <g fill="none" stroke="#8e8e8e" stroke-width=".6" opacity=".2"><path d="M289 593Q362 605 437 593M287 604Q362 617 439 604M285 616Q362 629 441 616M283 628Q362 641 443 628M281 640Q362 654 445 640"/></g><path d="M291 580Q363 592 434 580" stroke="#c7c7c7" stroke-width="1" fill="none" opacity=".38"/><path d="M341 650Q363 654 385 651" fill="none" stroke="#484848" stroke-width="2.5" opacity=".75"/></g><g class="part-badge" transform="translate(362 621) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">19</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+ <g class="part" id="part-05" data-code="05" data-base="top-deck" role="button" tabindex="0" aria-pressed="false" aria-label="05 백도어"><title>05 백도어</title><path id="p05" class="surface" d="M277 653Q363 680 449 653L458 695Q440 715 405 717H321Q286 715 269 695Z" fill="url(#top-deck)" stroke="#9c9c9c" stroke-width="1"/>
+ <g pointer-events="none"><path d="M282 658Q362 683 443 658L449 683Q363 705 276 682Z" fill="#ffffff" opacity=".28"/><path d="M281 659Q363 684 444 659" fill="none" stroke="#ffffff" stroke-width="2.2"/><path d="M277 689Q362 715 450 689" fill="none" stroke="#d3d3d3" stroke-width="1.1"/><path d="M281 692Q363 716 447 692" fill="none" stroke="#ffffff" stroke-width="1.7"/><path d="M332 703Q363 708 395 703" fill="none" stroke="#989898" stroke-width=".65"/><ellipse cx="363" cy="706" rx="4.1" ry="2.4" fill="url(#top-chrome)"/></g><g class="part-badge" transform="translate(363 700) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">05</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+ <!-- Rear quarter lights wrap around the curved body, with a dark bezel and separate LED guide. -->
+ <g pointer-events="none"><path d="M252 675Q260 698 279 704L313 714L311 721Q274 714 259 704Z" fill="url(#top-tail)" stroke="#4a4a4a" stroke-width="1"/><path d="M475 675Q467 698 448 704L414 714L416 721Q453 714 468 704Z" fill="url(#top-tail)" stroke="#4a4a4a" stroke-width="1"/><path d="M256 685Q264 699 281 705L308 713M471 685Q464 699 446 705L419 713" stroke="#b2b2b2" stroke-width="2" fill="none"/><path d="M258 690Q266 703 282 708L307 715M469 690Q461 703 445 708L420 715" stroke="#7b7b7b" stroke-width="1.5" fill="none"/>
+ <path d="M266 711Q306 736 363 732Q420 736 460 711L453 723Q421 739 363 737Q306 739 273 723Z" fill="url(#top-edge-shade)"/>
+ <path d="M274 719Q312 733 363 732Q414 733 452 719" stroke="#ffffff" stroke-width="2" fill="none" opacity=".7"/><path d="M297 730Q361 739 427 730" stroke="#454545" stroke-width="2.4" fill="none" opacity=".65"/>
+ <!-- Mirror stalk, black lower housing, chrome lip and pearl-painted cap. -->
+ <path d="M251 357L242 360L239 370L250 366Z M476 357L485 360L488 370L477 366Z" fill="#727272"/>
+ <path d="M242 351Q229 353 219 362L220 374Q232 377 245 366L248 359Z" fill="#7c7c7c" stroke="#414141" stroke-width="1"/>
+ <path d="M241 350Q228 352 219 361L220 369Q233 370 244 362L247 356Z" fill="url(#top-pearl)" stroke="#8d8d8d" stroke-width=".8"/>
+ <path d="M221 369Q233 369 244 361" fill="none" stroke="#fafafa" stroke-width="1.8"/><path d="M223 359Q232 354 240 354" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+ <path d="M485 351Q498 353 508 362L507 374Q495 377 482 366L479 359Z" fill="#7c7c7c" stroke="#414141" stroke-width="1"/>
+ <path d="M486 350Q499 352 508 361L507 369Q494 370 483 362L480 356Z" fill="url(#top-pearl)" stroke="#8d8d8d" stroke-width=".8"/>
+ <path d="M506 369Q494 369 483 361" fill="none" stroke="#efefef" stroke-width="1.8"/><path d="M504 359Q495 354 487 354" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+ </g>
+</g>
+<g id="front-elevation" transform="translate(236 -84)" filter="url(#shadow)">
+<!-- Deep tread and sidewall contours read as rubber at illustration scale. -->
+<g fill="url(#fr-tire)" stroke="#393939" stroke-width=".8"><path d="M5 134Q5 127 11 128H30V173Q30 182 23 183H9Q3 181 3 174Z"/><path d="M222 129H243Q249 129 249 136L250 175Q250 182 243 183H229Q223 182 222 175Z"/></g>
+<g stroke="#727272" stroke-width=".7" opacity=".5" fill="none"><path d="M7 150L8 179"/><path d="M11 150L12 179"/><path d="M15 150L16 179"/><path d="M19 150L20 179"/><path d="M24 150L25 179"/><path d="M227 150L228 179"/><path d="M231 150L232 179"/><path d="M235 150L236 179"/><path d="M240 150L241 179"/><path d="M245 150L246 179"/></g>
+<!-- Shell, pillars and roof use distinct paint planes. -->
+<path d="M5 128L12 82L23 52Q35 21 46 15Q123 4 204 15Q218 20 230 52L242 82L248 129L241 159Q127 179 11 159Z" fill="url(#fr-side)" stroke="#747474" stroke-width=".9"/>
+<path d="M45 15Q126 5 207 16L216 30Q125 20 37 31Z" fill="url(#fr-hood)" stroke="#a9a9a9" stroke-width=".75"/>
+<path d="M43 17Q121 8 203 17" fill="none" stroke="#ffffff" stroke-width="2.3"/>
+<path d="M46 26Q126 18 206 26L226 74Q126 70 26 74Z" fill="#666666" stroke="#a4a4a4" stroke-width="1.1"/>
+<path d="M48 27Q126 19 204 27L222 73Q126 69 30 73Z" fill="url(#fr-blackglass)"/>
+<g clip-path="url(#fr-windshield-clip)" pointer-events="none">
+<path d="M65 71L68 52Q70 44 80 44H88Q100 43 104 56L105 71M149 71L151 52Q153 44 163 44H174Q185 46 186 59L188 72" fill="#343434" stroke="#767676" stroke-opacity=".22"/>
+<path d="M77 45V40Q76 37 81 36H89Q94 37 93 42V46M161 45V40Q160 37 165 36H173Q178 37 177 42V46" fill="#787878"/>
+<path d="M159 74C158 52 188 52 190 75" fill="none" stroke="#323232" stroke-width="4"/>
+<path d="M156 71Q167 60 180 63" stroke="#929292" stroke-width=".8" opacity=".27" fill="none"/>
+<path d="M39 29L119 20L58 74H29Z" fill="url(#fr-highlight)" opacity=".27"/>
+<path d="M133 22L185 23L120 72H75Z" fill="url(#fr-highlight)" opacity=".13"/>
+<path d="M33 69Q126 62 220 69L223 77H29Z" fill="#6c6c6c"/>
+<path d="M44 68L96 66M159 66L212 69" fill="none" stroke="#6f6f6f" stroke-width="1.1"/>
+<path d="M127 24V35M117 36H135" stroke="#404040" stroke-width="3"/>
+</g>
+<path d="M34 30L20 77L28 80L48 27M205 26L225 79L234 80L216 30" fill="url(#fr-hood)" stroke="#8f8f8f" stroke-width=".65"/>
+<!-- Wing mirrors: body, black lower shell, specular chrome edge. -->
+<g stroke="#4c4c4c" stroke-width=".8"><path d="M23 69L15 60L-13 58Q-21 60-20 67L-18 75L10 79L22 78Z" fill="#6f6f6f"/><path d="M16 61L-12 58Q-20 60-19 65L-17 69L12 71Z" fill="url(#fr-side)"/><path d="M229 69L239 60L265 58Q273 60 272 67L270 75L242 79L230 78Z" fill="#6f6f6f"/><path d="M239 61L265 58Q273 60 271 66L268 69L241 71Z" fill="url(#fr-side)"/></g>
+<path d="M-16 67L11 70M243 70L268 67" stroke="#ffffff" stroke-width=".65" fill="none"/>
+<!-- Hood curvature follows the windshield shoulder and grille. -->
+<path d="M24 78Q126 68 228 78L242 105L210 119H44L10 104Z" fill="url(#fr-hood)" stroke="#aaaaaa" stroke-width=".8"/>
+<path d="M31 79Q62 93 70 102L53 102L24 85ZM221 79Q190 93 182 102L199 102L228 85Z" fill="#bbbbbb" opacity=".31"/>
+<path d="M32 80Q60 87 76 99M220 80Q192 87 176 99" fill="none" stroke="#ffffff" stroke-width="2"/>
+<path d="M65 76Q124 71 186 76L169 97Q125 93 82 97Z" fill="#ffffff" opacity=".68"/>
+<path d="M47 104Q126 95 205 104" stroke="#9d9d9d" stroke-width=".8" fill="none"/>
+<g class="part" id="part-01" data-code="01" data-base="fr-pearl" role="button" tabindex="0" aria-pressed="false" aria-label="01 프론트범퍼"><title>01 프론트범퍼</title>
+<path id="p01" class="surface" d="M9 102Q36 104 55 115L73 130Q126 141 179 130L197 115Q220 104 243 102L249 133L249 152Q242 166 223 168H28Q8 168 2 152L3 132Z" fill="url(#fr-pearl)" stroke="#8e8e8e" stroke-width=".85"/>
+<g pointer-events="none"><path d="M7 119Q24 124 46 123L64 143L52 154L28 155L6 146Z M245 119Q228 124 206 123L188 143L200 154L224 155L246 146Z" fill="#999999" opacity=".28"/>
+<path d="M4 148L26 158L55 158L66 148H187L199 158H227L247 148L242 159Q232 168 218 167H32Q14 168 7 158Z" fill="url(#fr-shadow)"/>
+<path d="M13 117L45 121L60 141L54 147L15 147L9 142Z" fill="#6b6b6b" stroke="#6c6c6c" stroke-width="1.5"/><path d="M207 121L239 117L243 142L237 147H198L192 141Z" fill="#6b6b6b" stroke="#6c6c6c" stroke-width="1.5"/>
+<path d="M18 120L42 123L50 131L15 128ZM210 123L234 120L237 128L203 131Z" fill="#868686"/>
+<path d="M14 142L54 143M16 146L50 146M198 143L238 142M202 146L235 146" stroke="#868686" stroke-width=".8"/>
+<circle cx="29" cy="134" r="7" fill="url(#fr-lens)" stroke="#bebebe" stroke-width="1.1"/><circle cx="223" cy="134" r="7" fill="url(#fr-lens)" stroke="#bebebe" stroke-width="1.1"/>
+<path d="M59 151L68 142H183L193 151L192 160H60Z" fill="#6e6e6e"/><path d="M64 152H188M65 156H187" stroke="#797979" stroke-width=".7"/>
+<path d="M18 160Q126 171 236 160L232 164Q126 174 22 164Z" fill="#6e6e6e"/>
+<path d="M14 156L32 159H54M198 159H222L240 154" stroke="#ffffff" stroke-width="1.7" fill="none"/>
+<rect x="89" y="136" width="74" height="19" rx="2.2" fill="#e6e6e6" stroke="#818181" stroke-width=".8"/><rect x="91" y="137" width="70" height="16" rx="1" fill="url(#fr-hood)"/><path d="M95 140H157" stroke="white" stroke-width=".6"/>
+<circle cx="70" cy="138" r="1.5" fill="none" stroke="#b3b3b3" stroke-width=".6"/><circle cx="184" cy="138" r="1.5" fill="none" stroke="#b3b3b3" stroke-width=".6"/>
+</g><g class="part-badge" transform="translate(126 141) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">01</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+<!-- Functional radiator grille retains code 20 and transparent lattice. -->
+<g class="part" id="part-20" data-code="20" data-base="fr-blackglass" role="button" tabindex="0" aria-pressed="false" aria-label="20 라디에이터 그릴"><title>20 라디에이터 그릴</title>
+<path d="M58 101Q126 91 194 101L182 131Q126 141 70 131Z" fill="url(#fr-chrome)" stroke="#626262" stroke-width=".7"/>
+<path id="p20" class="surface" d="M63 103Q126 95 189 103L179 128Q126 137 73 128Z" fill="url(#fr-blackglass)" stroke="#424242" stroke-width="1"/>
+<g pointer-events="none" clip-path="url(#fr-grille-clip)"><path d="M64 98L67 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M64 98L67 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M75 98L78 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M75 98L78 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M86 98L89 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M86 98L89 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M97 98L100 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M97 98L100 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M108 98L111 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M108 98L111 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M119 98L122 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M119 98L122 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M130 98L133 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M130 98L133 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M141 98L144 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M141 98L144 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M152 98L155 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M152 98L155 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M163 98L166 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M163 98L166 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M174 98L177 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M174 98L177 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M185 98L188 136" fill="none" stroke="#2f2f2f" stroke-width="3"/><path d="M185 98L188 136" fill="none" stroke="url(#fr-chrome)" stroke-width="1.1"/><path d="M58 102Q126 107 194 102" fill="none" stroke="#323232" stroke-width="2.7"/><path d="M58 102Q126 107 194 102" fill="none" stroke="url(#fr-chrome)" stroke-width=".9"/><path d="M58 110Q126 115 194 110" fill="none" stroke="#323232" stroke-width="2.7"/><path d="M58 110Q126 115 194 110" fill="none" stroke="url(#fr-chrome)" stroke-width=".9"/><path d="M58 118Q126 123 194 118" fill="none" stroke="#323232" stroke-width="2.7"/><path d="M58 118Q126 123 194 118" fill="none" stroke="url(#fr-chrome)" stroke-width=".9"/><path d="M58 126Q126 131 194 126" fill="none" stroke="#323232" stroke-width="2.7"/><path d="M58 126Q126 131 194 126" fill="none" stroke="url(#fr-chrome)" stroke-width=".9"/></g>
+<path d="M63 102Q126 94 189 102M73 130Q126 139 179 130" stroke="#ffffff" stroke-width=".75" fill="none" opacity=".9" pointer-events="none"/>
+<ellipse cx="126" cy="110" rx="8" ry="9" fill="url(#fr-chrome)" stroke="#515151" stroke-width=".6" pointer-events="none"/><ellipse cx="126" cy="110" rx="5.5" ry="6.5" fill="#818181" stroke="#ededed" stroke-width=".7" pointer-events="none"/><path d="M122 108L126 104L130 108L126 116Z" fill="none" stroke="#c8c8c8" stroke-width=".9" pointer-events="none"/>
+<g class="part-badge" transform="translate(126 98) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">20</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+<g class="part" id="part-21" data-code="21" data-base="fr-lamp" role="button" tabindex="0" aria-pressed="false" aria-label="21 헤드램프(좌)"><title>21 헤드램프</title><path d="M11 90Q28 90 49 100L58 116L10 109Z" fill="#888888" stroke="#b9b9b9" stroke-width="1.2"/><path id="p21" class="surface" d="M13 93Q32 94 47 102L54 112L13 106Z" fill="url(#fr-lamp)" stroke="#cfcfcf" stroke-width=".8"/><g pointer-events="none"><ellipse cx="24" cy="101" rx="6.8" ry="7.2" fill="url(#fr-lens)" stroke="#d2d2d2" stroke-width="1"/><ellipse cx="40" cy="105" rx="5.2" ry="5.4" fill="url(#fr-lens)" stroke="#bbbbbb" stroke-width=".8"/><path d="M14 105L51 111" stroke="#f3f3f3" stroke-width="1.6"/><path d="M15 94L43 101" stroke="#ffffff" stroke-opacity=".7" stroke-width=".75"/><path d="M22 97L25 96M38 102L41 101" stroke="#f8f8f8" stroke-width="1.5"/><path d="M11 93L10 104" stroke="#d0d0d0" stroke-width="1.1"/></g><g class="part-badge" transform="translate(28 92) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">21</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-22" data-code="22" data-base="fr-lamp" role="button" tabindex="0" aria-pressed="false" aria-label="22 헤드램프(우)" transform="translate(252 0) scale(-1 1)"><title>22 헤드램프</title><path d="M11 90Q28 90 49 100L58 116L10 109Z" fill="#888888" stroke="#b9b9b9" stroke-width="1.2"/><path id="p22" class="surface" d="M13 93Q32 94 47 102L54 112L13 106Z" fill="url(#fr-lamp)" stroke="#cfcfcf" stroke-width=".8"/><g pointer-events="none"><ellipse cx="24" cy="101" rx="6.8" ry="7.2" fill="url(#fr-lens)" stroke="#d2d2d2" stroke-width="1"/><ellipse cx="40" cy="105" rx="5.2" ry="5.4" fill="url(#fr-lens)" stroke="#bbbbbb" stroke-width=".8"/><path d="M14 105L51 111" stroke="#f3f3f3" stroke-width="1.6"/><path d="M15 94L43 101" stroke="#ffffff" stroke-opacity=".7" stroke-width=".75"/><path d="M22 97L25 96M38 102L41 101" stroke="#f8f8f8" stroke-width="1.5"/><path d="M11 93L10 104" stroke="#d0d0d0" stroke-width="1.1"/></g><g class="part-badge" transform="translate(27 92) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">22</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+</g>
+
+<g id="rear-elevation" transform="translate(236 782)" filter="url(#shadow)">
+<g fill="url(#fr-tire)" stroke="#383838" stroke-width=".8"><path d="M6 82H31L30 123Q30 131 23 131H11Q4 130 4 124Z"/><path d="M221 82H246L248 124Q248 131 241 132H229Q222 131 222 124Z"/></g><g stroke="#777777" stroke-width=".6" opacity=".5"><path d="M8 107L8 129"/><path d="M12 107L12 129"/><path d="M17 107L17 129"/><path d="M22 107L22 129"/><path d="M27 107L27 129"/><path d="M225 107L225 129"/><path d="M230 107L230 129"/><path d="M235 107L235 129"/><path d="M240 107L240 129"/><path d="M244 107L244 129"/></g>
+<path d="M10 17L23 13Q40 7 52 7L200 7Q218 9 230 15L241 17L248 41L250 99Q246 114 231 117H22Q6 114 2 100L3 39Z" fill="url(#fr-side)" stroke="#848484" stroke-width=".9"/>
+<path d="M46 8Q126 2 206 8L218 25Q126 31 34 25Z" fill="url(#fr-blackglass)" stroke="#959595" stroke-width=".6"/>
+<path d="M45 12Q124 7 207 12M39 18Q128 14 212 19" stroke="#a2a2a2" opacity=".18" stroke-width=".7" fill="none"/>
+<path d="M24 12L40 9L28 26L13 26ZM213 9L229 12L239 26L224 26Z" fill="url(#fr-hood)" stroke="#9e9e9e" stroke-width=".5"/>
+<g class="part" id="part-04" data-code="04" data-base="fr-hood" role="button" tabindex="0" aria-pressed="false" aria-label="04 트렁크리드"><title>04 트렁크리드</title>
+<path id="p04" class="surface" d="M15 22Q126 32 237 22L232 76Q126 89 20 76Z" fill="url(#fr-hood)" stroke="#9d9d9d" stroke-width=".9"/>
+<g pointer-events="none"><path d="M17 23Q126 35 235 23L234 28Q126 40 18 28Z" fill="#8c8c8c" opacity=".38"/>
+<path d="M18 22Q126 32 234 22" stroke="#ffffff" stroke-width="2" fill="none"/>
+<path d="M65 42Q126 37 187 42L182 72H71Z" fill="#bfbfbf" opacity=".31"/><path d="M68 42Q126 39 185 42L179 47H74Z" fill="#797979" opacity=".4"/>
+<rect x="79" y="43" width="95" height="28" rx="2.4" fill="#b2b2b2"/><rect x="81" y="44" width="91" height="25" rx="1.6" fill="url(#fr-pearl)" stroke="#fafafa" stroke-width=".7"/><path d="M87 46H166" stroke="#ffffff" stroke-width="1"/>
+<path d="M28 76Q126 88 224 76" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+<path d="M72 39H180" stroke="url(#fr-chrome)" stroke-width="2.3"/><ellipse cx="126" cy="34" rx="4" ry="4.2" fill="url(#fr-chrome)" stroke="#8a8a8a" stroke-width=".5"/><path d="M124 34L126 31L128 34L126 37Z" fill="#909090"/>
+<path d="M28 69H43M210 69H225" stroke="#979797" stroke-width="1.4"/><path d="M28 68H43M210 68H225" stroke="#ffffff" stroke-width=".6"/>
+</g><g class="part-badge" transform="translate(126 57) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">04</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+<g class="part" id="part-02" data-code="02" data-base="fr-pearl" role="button" tabindex="0" aria-pressed="false" aria-label="02 리어범퍼"><title>02 리어범퍼</title>
+<path id="p02" class="surface" d="M4 77Q126 94 248 77L250 98Q247 114 228 116H26Q6 114 2 98Z" fill="url(#fr-pearl)" stroke="#8f8f8f" stroke-width=".85"/>
+<g pointer-events="none"><path d="M8 80Q126 96 245 80" fill="none" stroke="#ffffff" stroke-width="1.3" opacity=".8"/>
+<path d="M5 94L26 103Q126 115 227 103L248 94L245 105Q239 116 225 116H27Q12 116 7 105Z" fill="url(#fr-shadow)"/>
+<path d="M24 108Q126 121 228 108L234 115Q126 125 18 115Z" fill="#757575" stroke="#888888" stroke-width=".75"/>
+<path d="M58 112L61 117M88 115L89 121M163 115L162 121M194 112L191 118" stroke="#767676" stroke-width="1.5"/>
+<path d="M12 95L42 98L41 101L12 99Z M210 98L240 95V99L211 101Z" fill="#8e8e8e" stroke="#4b4b4b" stroke-width=".6"/>
+<path d="M14 96L40 99M212 99L238 96" stroke="#cccccc" stroke-width=".5"/>
+<path d="M28 113Q40 111 51 115L49 120H29Z M203 115Q214 111 226 113L225 120H205Z" fill="url(#fr-chrome)" stroke="#444444" stroke-width=".6"/><path d="M31 114L48 115L46 118H32Z M207 115L223 114L222 118H209Z" fill="#707070"/>
+<g fill="none" stroke="#b3b3b3" stroke-width=".7"><circle cx="54" cy="94" r="1.8"/><circle cx="90" cy="97" r="1.8"/><circle cx="162" cy="97" r="1.8"/><circle cx="199" cy="94" r="1.8"/></g>
+<path d="M16 106L30 109M223 109L238 106" stroke="#fbfbfb" stroke-width="1.1" fill="none"/>
+</g><g class="part-badge" transform="translate(126 97) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">02</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+<g class="part" id="part-23" data-code="23" data-base="fr-red" role="button" tabindex="0" aria-pressed="false" aria-label="23 리어컴비네이션(좌)"><title>23 리어컴비네이션</title><path d="M9 39L67 43L67 64L11 59Z" fill="#7c7c7c" stroke="#c9c9c9" stroke-width="1.2"/><path id="p23" class="surface" d="M12 42L64 46V60L14 56Z" fill="url(#fr-red)" stroke="#525252" stroke-width=".7"/><g pointer-events="none"><path d="M15 45L61 48V52L16 49Z" fill="#f2f2f2" stroke="#9c9c9c" stroke-width=".5"/><path d="M18 45V50M23 46V50M29 46V51M35 47V51M41 47V52M47 48V52M53 48V53M59 48V53" stroke="#b1b1b1" stroke-width=".5"/><path d="M16 53L60 56" stroke="#b2b2b2" stroke-width="1.8"/><path d="M17 55L59 58" stroke="#8a8a8a" stroke-width="1.4"/><path d="M47 44V61" stroke="#474747" stroke-width=".8"/><path d="M13 42L64 46" stroke="#cecece" stroke-width=".7"/><path d="M14 42L15 56" stroke="#a7a7a7" stroke-width="1"/></g><g class="part-badge" transform="translate(38 50) "><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">23</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g><g class="part" id="part-24" data-code="24" data-base="fr-red" role="button" tabindex="0" aria-pressed="false" aria-label="24 리어컴비네이션(우)" transform="translate(252 0) scale(-1 1)"><title>24 리어컴비네이션</title><path d="M9 39L67 43L67 64L11 59Z" fill="#7c7c7c" stroke="#c9c9c9" stroke-width="1.2"/><path id="p24" class="surface" d="M12 42L64 46V60L14 56Z" fill="url(#fr-red)" stroke="#525252" stroke-width=".7"/><g pointer-events="none"><path d="M15 45L61 48V52L16 49Z" fill="#f2f2f2" stroke="#9c9c9c" stroke-width=".5"/><path d="M18 45V50M23 46V50M29 46V51M35 47V51M41 47V52M47 48V52M53 48V53M59 48V53" stroke="#b1b1b1" stroke-width=".5"/><path d="M16 53L60 56" stroke="#b2b2b2" stroke-width="1.8"/><path d="M17 55L59 58" stroke="#8a8a8a" stroke-width="1.4"/><path d="M47 44V61" stroke="#474747" stroke-width=".8"/><path d="M13 42L64 46" stroke="#cecece" stroke-width=".7"/><path d="M14 42L15 56" stroke="#a7a7a7" stroke-width="1"/></g><g class="part-badge" transform="translate(38 50) scale(-1 1)"><rect x="-16" y="-12" width="32" height="24" rx="12"/><text text-anchor="middle" y="4.5">24</text><g class="state-marks" aria-hidden="true"><g class="detach-dot" transform="translate(-10 24)"><circle r="10"/><use href="#detach-tool" x="-6" y="-6" width="12" height="12"/></g><g class="paint-dot" transform="translate(10 24)"><circle r="10"/><use href="#paint-tool" x="-6" y="-6" width="12" height="12"/></g></g></g></g>
+</g>
+</g></g></g></svg>
+<div id="part-tooltip" class="part-tooltip" role="tooltip" aria-hidden="true"><span class="tip-code"></span><span class="tip-name"></span><span class="tip-state"></span></div>
+<div class="inspection-dock"><section id="magnifier" class="magnifier" aria-label="선택 부위 확대" aria-live="polite"><div class="magnifier-lens"><svg id="magnifier-svg" class="magnifier-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 100" role="img" aria-label="선택 부위 확대도"></svg><p id="magnifier-empty" hidden>부위를 선택하면 확대해서 볼 수 있습니다.</p><span class="lens-corner top-left"></span><span class="lens-corner bottom-right"></span><span class="lens-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="5.5"/><path d="m14 14 5 5M10 7v6M7 10h6"/></svg></span></div><div class="magnifier-copy"><div class="magnifier-kicker">선택 부위 확대</div><strong id="magnifier-name">프론트도어(우)</strong><span id="magnifier-state" class="detail-state">도장 + 탈착</span><span id="magnifier-code">부위 20</span></div></section><p class="inspect-hint">패널을 클릭하면<br>해당 부위를 확대해 보여드립니다.</p></div>
+<p class="diagram-foot">PDF 코드표 기준 · 28개 부위 (17·18 RV 전용)　 /　 전방 ↑ · 후방 ↓</p></section>
+<aside class="sidebar" aria-label="부위 상세 및 코드표">
+<section class="panel selection-panel" aria-label="선택한 부위"><div class="selection-heading"><h2>선택한 부위</h2><span id="detail-code" class="section-kicker">부위 코드 07</span></div><div id="selection" class="detail-main" aria-live="polite"><div class="detail-number" id="detail-icon" aria-hidden="true">07</div><div><h3 id="detail-name" class="detail-name">프론트도어(우)</h3><span id="detail-state" class="detail-state">입력된 수리 이력 없음</span></div></div><p id="detail-description" class="detail-description">전개도 또는 코드표에서 부위를 선택하거나 번호를 입력하세요.</p><div class="legend" aria-label="수리 유형 범례"><span><i class="swatch"></i>탈착</span><span><i class="swatch paint"></i>도장</span><span><i class="swatch both"></i>도장 + 탈착</span></div></section>
+<section class="panel find-panel"><form id="find-form"><label class="field-title" for="find-input">부위 번호로 찾기</label><div class="input-row"><input id="find-input" type="text" autocomplete="off" placeholder="예: 07, 10, 20" aria-describedby="find-help selection-message"><button class="primary" type="submit">찾기</button></div><p class="helper" id="find-help">01–28 · 여러 번호는 쉼표 또는 공백으로 구분</p><div id="selection-message" class="message" role="status"></div></form></section>
+<section class="panel codes-panel"><div class="codes-heading"><h2>부위 코드표</h2><span>01–28 · 클릭하여 확인</span></div><div id="code-list" class="code-list"></div></section>
+</aside></div>
+<section class="data-panel" aria-labelledby="data-title"><div class="data-header"><div><h2 id="data-title">수리 이력 표시</h2><p>탈착·도장 부위 번호를 입력하면 해당 패널에 표시됩니다.</p></div><div class="data-actions"><button id="demo-data" class="text-button" type="button">예시 적용</button><button id="clear-data" class="text-button" type="button">초기화</button></div></div>
+<form id="data-form" class="data-form"><label for="detach-input">탈착 <span class="section-kicker">r502-20</span><input id="detach-input" type="text" autocomplete="off" placeholder="예: 07, 10, 20"></label><label for="paint-input">도장 <span class="section-kicker">r502-21</span><input id="paint-input" type="text" autocomplete="off" placeholder="예: 02, 10, 26"></label><button type="submit" class="primary">전개도에 적용</button></form><div id="input-message" class="message" role="status"></div><div class="repair-summary"><span>표시된 수리 부위 <strong id="count">0</strong>개</span><div id="repair-list"></div></div>
+<details class="api-guide"><summary>개발 연동 안내</summary><p>트럭 전개도와 같은 입력 형식을 사용하며, 부위 번호는 승용차 코드표의 01–28을 따릅니다. 17·18(슬라이딩도어)은 RV 전용이라 승용 전개도에는 표시되지 않고 결과의 unsupported로 돌려줍니다.</p><pre><code>// 탈착 / 도장 (동시에 포함되면 도장 + 탈착)
+setRepairData({'r502-20': ['07', '10', '20', '26'], 'r502-21': ['02', '10', '26']});
+setRepairData('107 110 120 126 202 210 226'); // 기존 3자리 코드 형식
+setRepairData({});                       // 수리 이력 초기화
+setSelectedParts(['07', '10', '20']);     // 수리 이력과 별도로 부위 식별
+selectPart('26');                        // 한 부위 선택
+// 보고서 삽입: sample_car_25d_svg_simple.html?embed=1</code></pre></details></section>
+<footer class="page-foot"><span>기준: 전개도 외판패널 승용.pdf · 코드표10 외판패널 (1/2)</span><span>표시된 형태는 부위 식별을 위한 개념도입니다.</span></footer>
+</main><script>
+(() => {
+  'use strict';
+
+  // Source: 전개도 외판패널 승용.pdf, 코드표 10 — 승용 01–28.
+  const PART_NAMES = Object.freeze({
+    '01': '프론트범퍼',
+    '02': '리어범퍼',
+    '03': '보닛',
+    '04': '트렁크리드',
+    '05': '백도어',
+    '06': '프론트도어(좌)',
+    '07': '프론트도어(우)',
+    '08': '리어도어(좌)',
+    '09': '리어도어(우)',
+    '10': '프론트펜더(좌)',
+    '11': '프론트펜더(우)',
+    '12': '리어펜더(좌)',
+    '13': '리어펜더(우)',
+    '14': '앞유리',
+    '15': '선루프',
+    '16': '루프',
+    '17': '슬라이딩도어(좌)',
+    '18': '슬라이딩도어(우)',
+    '19': '리어유리',
+    '20': '라디에이터 그릴',
+    '21': '헤드램프(좌)',
+    '22': '헤드램프(우)',
+    '23': '리어컴비네이션(좌)',
+    '24': '리어컴비네이션(우)',
+    '25': '사이드스텝(좌)',
+    '26': '사이드스텝(우)',
+    '27': '센터필러(좌)',
+    '28': '센터필러(우)'
+  });
+  const CODES = Object.keys(PART_NAMES).sort();
+  // Sliding doors are RV-only: listed in the code table, never drawn on the sedan.
+  const OFF_DIAGRAM = new Set(['17', '18']);
+  const OFF_DIAGRAM_TEXT = 'RV 전용 · 승용 도면 없음';
+  const codeStateText = code => OFF_DIAGRAM.has(code) ? OFF_DIAGRAM_TEXT : stateText(code);
+  const unsupportedNote = codes => codes.length
+    ? ' 슬라이딩도어 ' + codes.join(', ') + '은(는) RV 전용이라 승용 전개도에서 제외했습니다.' : '';
+  const svg = document.getElementById('vehicle-svg');
+  const parts = Array.from(svg.querySelectorAll('.part[data-code]'));
+  const byId = id => document.getElementById(id);
+  const write = (id, text) => { byId(id).textContent = text; };
+  let repairData = { detach: new Set(), paint: new Set() };
+  let selectedCodes = new Set();
+  let detailCode = null;
+
+  function normalize(value) {
+    if (value === undefined || (typeof value === 'string' && !value.trim())) return [];
+    let entries;
+    if (Array.isArray(value)) entries = value;
+    else if (typeof value === 'string') entries = value.trim().split(/[\s,]+/).filter(Boolean);
+    else if (typeof value === 'number') entries = [value];
+    else throw new Error('부위 번호를 01부터 28까지의 숫자 또는 번호 목록으로 입력하세요.');
+    const result = [];
+    for (const entry of entries) {
+      const validNumber = typeof entry === 'number' && Number.isInteger(entry) && entry >= 1 && entry <= 28;
+      const validString = typeof entry === 'string' && /^(?:0?[1-9]|1\d|2[0-8])$/.test(entry.trim());
+      if (!validNumber && !validString) {
+        const label = typeof entry === 'string' || typeof entry === 'number'
+          ? String(entry).slice(0, 36) : '잘못된 값';
+        throw new Error('알 수 없는 부위 코드: ' + label + '. 01부터 28까지 입력하세요.');
+      }
+      const code = String(Number(entry)).padStart(2, '0');
+      if (!result.includes(code)) result.push(code);
+    }
+    return result;
+  }
+
+  function state(code) {
+    const detach = repairData.detach.has(code);
+    const paint = repairData.paint.has(code);
+    return detach && paint ? 'both' : detach ? 'detach' : paint ? 'paint' : 'none';
+  }
+
+  function stateText(code) {
+    return { both: '도장 + 탈착', detach: '탈착', paint: '도장', none: '입력된 수리 이력 없음' }[state(code)];
+  }
+
+  function textElement(tag, className, text) {
+    const element = document.createElement(tag);
+    element.className = className;
+    element.textContent = text;
+    return element;
+  }
+
+  function makeCodeButton(code, className) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = className;
+    button.dataset.code = code;
+    button.dataset.select = code;
+    button.classList.toggle('off-diagram', OFF_DIAGRAM.has(code));
+    const copy = textElement('span', 'code-copy', '');
+    copy.append(
+      textElement('span', 'code-name', PART_NAMES[code]),
+      textElement('small', 'code-state', codeStateText(code))
+    );
+    button.append(textElement('span', 'code-number', code), copy);
+    return button;
+  }
+
+  function renderMagnifier() {
+    const preview = byId('magnifier-svg');
+    const magnifier = byId('magnifier');
+    if (!preview || !magnifier) return;
+    const empty = byId('magnifier-empty');
+    preview.replaceChildren();
+    magnifier.classList.toggle('is-empty', !detailCode);
+    magnifier.dataset.state = detailCode ? state(detailCode) : 'none';
+    const offDiagram = OFF_DIAGRAM.has(detailCode);
+    preview.style.display = detailCode && !offDiagram ? '' : 'none';
+    empty.hidden = Boolean(detailCode) && !offDiagram;
+    empty.textContent = offDiagram ? '승용 전개도에 없는 부위입니다. (RV 전용)' : '부위를 선택하면 확대해서 볼 수 있습니다.';
+    write('magnifier-code', detailCode ? '부위 ' + detailCode : '부위 확대');
+    write('magnifier-name', detailCode ? PART_NAMES[detailCode] : '확인할 부위를 선택하세요');
+    write('magnifier-state', detailCode ? codeStateText(detailCode) : '선택한 부위 없음');
+    byId('magnifier-state').dataset.state = detailCode ? state(detailCode) : 'none';
+    preview.setAttribute('role', 'img');
+    preview.setAttribute('aria-label', detailCode
+      ? detailCode + ' ' + PART_NAMES[detailCode] + ' 확대도 · ' + stateText(detailCode)
+      : '선택한 부위 없음');
+    if (!detailCode) {
+      delete preview.dataset.code;
+      return;
+    }
+    preview.dataset.code = detailCode;
+
+    const source = byId('vehicle-details');
+    const selectedPart = parts.find(part => part.dataset.code === detailCode);
+    const rootMatrix = svg.getCTM();
+    if (!source || !selectedPart || !rootMatrix) return;
+    const rootInverse = rootMatrix.inverse();
+    const points = [];
+    // Every surface can have its own transform; map its four corners to the
+    // main SVG's user coordinates so mirrored and projected views crop correctly.
+    selectedPart.querySelectorAll('.surface').forEach(surface => {
+      const matrix = surface.getCTM();
+      if (!matrix) return;
+      const bounds = surface.getBBox();
+      const relative = rootInverse.multiply(matrix);
+      for (const [x, y] of [
+        [bounds.x, bounds.y],
+        [bounds.x + bounds.width, bounds.y],
+        [bounds.x, bounds.y + bounds.height],
+        [bounds.x + bounds.width, bounds.y + bounds.height]
+      ]) {
+        const point = svg.createSVGPoint();
+        point.x = x;
+        point.y = y;
+        points.push(point.matrixTransform(relative));
+      }
+    });
+    if (!points.length) return;
+    const left = Math.min(...points.map(point => point.x));
+    const right = Math.max(...points.map(point => point.x));
+    const top = Math.min(...points.map(point => point.y));
+    const bottom = Math.max(...points.map(point => point.y));
+    const aspect = 1.3;
+    // Keep a true close-up: tall or wide panels show their central detail
+    // instead of shrinking their entire geometry into the preview.
+    const height = Math.min(100, Math.max(60,
+      (bottom - top) * 1.2, (right - left) * 1.2 / aspect));
+    const width = height * aspect;
+    const x = (left + right - width) / 2;
+    const y = (top + bottom - height) / 2;
+    preview.setAttribute('viewBox', [x, y, width, height].map(value => value.toFixed(2)).join(' '));
+    preview.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+
+    const clone = source.cloneNode(true);
+    clone.querySelectorAll('.part-badge, title, desc').forEach(element => element.remove());
+    for (const element of [clone, ...clone.querySelectorAll('*')]) {
+      element.removeAttribute('id');
+      element.removeAttribute('tabindex');
+      element.removeAttribute('role');
+      element.removeAttribute('aria-pressed');
+      element.removeAttribute('aria-label');
+      element.setAttribute('pointer-events', 'none');
+      element.classList.remove('selected');
+      if (element.classList.contains('part')) {
+        element.classList.replace('part', 'preview-part');
+        if (element.dataset.code === detailCode) element.classList.add('selected', 'preview-selected');
+      }
+      if (element.classList.contains('surface')) element.classList.replace('surface', 'preview-surface');
+      if (element.classList.contains('repair-hatch')) element.classList.replace('repair-hatch', 'preview-hatch');
+    }
+    // Retain the source group's transform plus any transforms on its ancestors.
+    const wrapper = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    const parentMatrix = source.parentElement.getCTM();
+    if (parentMatrix) {
+      const matrix = rootInverse.multiply(parentMatrix);
+      wrapper.setAttribute('transform', 'matrix(' + [matrix.a, matrix.b, matrix.c, matrix.d, matrix.e, matrix.f].join(' ') + ')');
+    }
+    wrapper.setAttribute('aria-hidden', 'true');
+    wrapper.setAttribute('pointer-events', 'none');
+    wrapper.append(clone);
+    preview.append(wrapper);
+  }
+
+  function renderDetail() {
+    if (!detailCode) {
+      write('detail-code', '부위 선택');
+      write('detail-name', '확인할 부위를 선택하세요');
+      write('detail-state', '선택한 부위 없음');
+      write('detail-description', '전개도 또는 코드표에서 부위를 선택하거나 번호를 입력하세요.');
+      write('detail-icon', '—');
+      byId('detail-state').dataset.state = 'none';
+      renderMagnifier();
+      return;
+    }
+    write('detail-code', '부위 코드 ' + detailCode);
+    write('detail-name', PART_NAMES[detailCode]);
+    write('detail-state', stateText(detailCode));
+    write('detail-icon', detailCode);
+    byId('detail-state').dataset.state = state(detailCode);
+    if (OFF_DIAGRAM.has(detailCode)) write('detail-state', OFF_DIAGRAM_TEXT);
+    write('detail-description', OFF_DIAGRAM.has(detailCode)
+      ? '슬라이딩도어는 RV 차종에만 있는 부위라 승용 전개도에는 표시되지 않습니다.'
+      : state(detailCode) === 'none'
+      ? '현재 입력한 수리 코드에는 이 부위가 포함되어 있지 않습니다.'
+      : '입력된 수리 유형은 ' + stateText(detailCode) + '입니다. 해당 패널을 전개도에 표시했습니다.');
+    renderMagnifier();
+  }
+
+  function renderSelection() {
+    byId('selection-message').classList.remove('error');
+    for (const element of [...parts, ...byId('code-list').querySelectorAll('.code-item'), ...byId('repair-list').querySelectorAll('[data-select]')]) {
+      const selected = selectedCodes.has(element.dataset.code);
+      element.classList.toggle('selected', selected);
+      element.setAttribute('aria-pressed', String(selected));
+    }
+    byId('find-input').value = [...selectedCodes].join(', ');
+    write('selection-message', selectedCodes.size
+      ? selectedCodes.size + '개 부위를 표시했습니다: ' + [...selectedCodes].join(', ')
+      : '부위 번호를 입력하거나 전개도에서 선택하세요.');
+    renderDetail();
+  }
+
+  function renderRepairData() {
+    svg.querySelectorAll('.repair-hatch').forEach(element => element.remove());
+    for (const part of parts) {
+      const code = part.dataset.code;
+      const repairState = state(code);
+      part.dataset.state = repairState;
+      const label = code + ' ' + PART_NAMES[code] + ' · ' + stateText(code);
+      part.setAttribute('aria-label', label);
+      const title = part.querySelector('title');
+      if (title) title.textContent = label;
+      part.querySelectorAll('.part-badge').forEach(badge => { badge.dataset.state = repairState; });
+      part.querySelectorAll('.surface').forEach(surface => {
+        surface.setAttribute('fill', 'url(#' + (repairState === 'none' ? part.dataset.base : repairState) + ')');
+        if (repairState === 'both') {
+          const hatch = surface.cloneNode(true);
+          hatch.removeAttribute('id');
+          hatch.removeAttribute('tabindex');
+          hatch.removeAttribute('role');
+          hatch.setAttribute('class', 'repair-hatch');
+          hatch.setAttribute('fill', 'url(#both-stripes)');
+          hatch.setAttribute('stroke', 'none');
+          hatch.setAttribute('pointer-events', 'none');
+          hatch.setAttribute('aria-hidden', 'true');
+          surface.after(hatch);
+        }
+      });
+    }
+    for (const button of byId('code-list').querySelectorAll('.code-item')) {
+      const code = button.dataset.code;
+      button.dataset.state = state(code);
+      button.setAttribute('aria-label', code + ' ' + PART_NAMES[code] + ' · ' + stateText(code));
+      button.querySelector('.code-state').textContent = codeStateText(code);
+    }
+    const applied = CODES.filter(code => state(code) !== 'none');
+    write('count', String(applied.length));
+    const repairList = byId('repair-list');
+    repairList.replaceChildren();
+    if (!applied.length) {
+      repairList.append(textElement('p', 'empty-state', '입력된 수리 코드가 없습니다.'));
+    } else {
+      applied.forEach(code => {
+        const button = makeCodeButton(code, 'repair-row row');
+        button.dataset.state = state(code);
+        button.setAttribute('aria-label', code + ' ' + PART_NAMES[code] + ' · ' + stateText(code));
+        repairList.append(button);
+      });
+    }
+    renderSelection();
+    return applied;
+  }
+
+  // Same public contract as sample_svg.html. Every call replaces repair data.
+  // setRepairData({'r502-20': ['07', '10'], 'r502-21': ['02', '10']});
+  // setRepairData('107 110 202 210'); setRepairData({});
+  // 17·18 (RV sliding doors) are valid codes but have no panel here; they come back in `unsupported`.
+  window.setRepairData = function setRepairData(data = {}) {
+    if (typeof data === 'string') {
+      const legacy = data.trim() ? data.trim().split(/\s+/) : [];
+      if (legacy.some(code => !/^[12](?:0[1-9]|1\d|2[0-8])$/.test(code))) {
+        throw new Error('기존 수리 코드는 112 220처럼 입력하세요. 첫 자리는 탈착 1 또는 도장 2, 부위 번호는 01부터 28까지입니다.');
+      }
+      data = {
+        'r502-20': legacy.filter(code => code[0] === '1').map(code => code.slice(1)),
+        'r502-21': legacy.filter(code => code[0] === '2').map(code => code.slice(1))
+      };
+    }
+    if (!data || typeof data !== 'object' || Array.isArray(data)) {
+      throw new Error('r502-20(탈착), r502-21(도장)을 포함한 수리 코드 객체를 전달하세요.');
+    }
+    // Validate both collections before changing any state or UI.
+    const detach = normalize(data['r502-20']);
+    const paint = normalize(data['r502-21']);
+    const unsupported = [...new Set([...detach, ...paint])].filter(code => OFF_DIAGRAM.has(code)).sort();
+    repairData = {
+      detach: new Set(detach.filter(code => !OFF_DIAGRAM.has(code))),
+      paint: new Set(paint.filter(code => !OFF_DIAGRAM.has(code)))
+    };
+    byId('detach-input').value = detach.join(', ');
+    byId('paint-input').value = paint.join(', ');
+    byId('input-message').classList.remove('error');
+    write('input-message', unsupportedNote(unsupported).trim());
+    return { applied: renderRepairData(), unsupported };
+  };
+
+  // Neutral part selection is independent of paint/detach status.
+  window.setSelectedParts = function setSelectedParts(value) {
+    const codes = normalize(value);
+    selectedCodes = new Set(codes);
+    detailCode = codes[0] || null;
+    renderSelection();
+    return [...selectedCodes];
+  };
+
+  window.selectPart = function selectPart(value) {
+    const codes = normalize(value);
+    if (codes.length !== 1) throw new Error('상세 정보를 확인할 부위 번호 한 개를 입력하세요.');
+    return window.setSelectedParts(codes)[0];
+  };
+
+  const tooltip = byId('part-tooltip');
+  const tooltipHost = tooltip.parentElement;
+
+  // Pointer events follow the cursor; keyboard focus anchors to the part's top centre.
+  function showTooltip(part, event) {
+    const code = part.dataset.code;
+    const repairState = state(code);
+    tooltip.querySelector('.tip-code').textContent = code;
+    tooltip.querySelector('.tip-name').textContent = PART_NAMES[code];
+    tooltip.querySelector('.tip-state').textContent = repairState === 'none' ? '' : stateText(code);
+    tooltip.dataset.state = repairState;
+    const host = tooltipHost.getBoundingClientRect();
+    let x, y;
+    if (event && event.clientX !== undefined) {
+      x = event.clientX;
+      y = event.clientY;
+    } else {
+      const box = part.querySelector('.surface').getBoundingClientRect();
+      x = box.left + box.width / 2;
+      y = box.top;
+    }
+    // Flip below the pointer near the card's top edge and keep the label inside the card.
+    tooltip.classList.toggle('below', y - host.top < 56);
+    const half = tooltip.offsetWidth / 2 + 8;
+    const left = Math.min(Math.max(x - host.left, half), host.width - half);
+    tooltip.style.left = left + 'px';
+    tooltip.style.top = (y - host.top) + 'px';
+    tooltip.classList.add('visible');
+  }
+
+  function hideTooltip() {
+    tooltip.classList.remove('visible');
+  }
+
+  byId('code-list').replaceChildren(...CODES.map(code => makeCodeButton(code, 'code-item')));
+  for (const part of parts) {
+    part.setAttribute('role', 'button');
+    part.setAttribute('tabindex', '0');
+    // Badge rectangles extend the hit area for narrow panels; decoration stays passive.
+    part.querySelectorAll('*').forEach(element => {
+      const hitArea = element.classList.contains('surface') ||
+        (element.tagName.toLowerCase() === 'rect' && element.closest('.part-badge'));
+      element.setAttribute('pointer-events', hitArea ? 'visiblePainted' : 'none');
+    });
+    // The custom hover label replaces the slow native SVG title tooltip;
+    // aria-label still names the part for assistive technology.
+    part.querySelectorAll('title').forEach(title => title.remove());
+    part.addEventListener('pointerenter', event => showTooltip(part, event));
+    part.addEventListener('pointermove', event => showTooltip(part, event));
+    part.addEventListener('pointerleave', hideTooltip);
+    part.addEventListener('focus', () => showTooltip(part));
+    part.addEventListener('blur', hideTooltip);
+    part.addEventListener('click', () => window.selectPart(part.dataset.code));
+    part.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        window.selectPart(part.dataset.code);
+      }
+    });
+  }
+
+  for (const id of ['code-list', 'repair-list']) {
+    byId(id).addEventListener('click', event => {
+      const button = event.target.closest('[data-select]');
+      if (button && byId(id).contains(button)) window.selectPart(button.dataset.select);
+    });
+  }
+  byId('find-form').addEventListener('submit', event => {
+    event.preventDefault();
+    try {
+      window.setSelectedParts(byId('find-input').value);
+    } catch (error) {
+      byId('selection-message').classList.add('error');
+      write('selection-message', error.message);
+    }
+  });
+  byId('data-form').addEventListener('submit', event => {
+    event.preventDefault();
+    try {
+      const result = window.setRepairData({
+        'r502-20': byId('detach-input').value,
+        'r502-21': byId('paint-input').value
+      });
+      write('input-message', result.applied.length + '개 부위의 수리 코드를 적용했습니다.' + unsupportedNote(result.unsupported));
+    } catch (error) {
+      byId('input-message').classList.add('error');
+      write('input-message', error.message);
+    }
+  });
+  byId('clear-data').addEventListener('click', () => {
+    window.setRepairData({});
+    window.setSelectedParts([]);
+    write('input-message', '수리 코드와 부위 선택을 초기화했습니다.');
+  });
+  byId('demo-data').addEventListener('click', () => {
+    window.setRepairData({ 'r502-20': ['07', '10', '20', '26'], 'r502-21': ['02', '10', '26'] });
+    window.selectPart('07');
+    write('input-message', '예시 수리 코드입니다. 실제 차량의 수리 이력이 아닙니다.');
+  });
+  function updateCodeVisibility() {
+    const visible = byId('toggle-codes').checked;
+    svg.classList.toggle('hide-codes', !visible);
+  }
+  byId('toggle-codes').addEventListener('change', updateCodeVisibility);
+
+  window.setRepairData({ 'r502-20': ['07', '10', '20', '26'], 'r502-21': ['02', '10', '26'] });
+  window.selectPart('07');
+  write('input-message', '예시 수리 코드입니다. 실제 차량의 수리 이력이 아닙니다.');
+  updateCodeVisibility();
+
+  if (new URLSearchParams(location.search).has('embed')) {
+    document.body.classList.add('embed');
+    document.documentElement.classList.add('embed-document');
+    const stage = document.querySelector('.stage');
+    let lastHeight = 0;
+    const reportSize = () => {
+      const height = Math.ceil(stage.getBoundingClientRect().height);
+      if (height > 0 && height !== lastHeight) {
+        lastHeight = height;
+        parent.postMessage({ type: 'car-diagram-height', height }, '*');
+      }
+    };
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(reportSize).observe(stage);
+    window.addEventListener('resize', reportSize);
+    reportSize();
+  }
+})();
+
+</script></body></html>
